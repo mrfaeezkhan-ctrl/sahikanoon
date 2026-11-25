@@ -1,87 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SahiKanoon — Documents, Schemes, Laws & Constitution</title>
+  <title>SahiKanoon — Citizen Legal, Schemes & Rights Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes modalPop {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes floatPulse {
+      0%, 100% { transform: translateY(0px); box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4); }
+      50% { transform: translateY(-4px); box-shadow: 0 16px 30px -5px rgba(245, 158, 11, 0.6); }
+    }
+    .animate-card {
+      animation: fadeSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    .animate-modal {
+      animation: modalPop 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .ai-fab {
+      animation: floatPulse 3s ease-in-out infinite;
+    }
+    /* Custom Fluent Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.3); border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(245, 158, 11, 0.6); }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen font-sans">
+<body class="bg-slate-50 text-slate-900 dark:bg-[#070b14] dark:text-slate-100 min-h-screen transition-colors duration-300 selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- Ambient Top Gradient Glow -->
+  <div class="pointer-events-none fixed inset-x-0 top-0 h-72 bg-gradient-to-b from-amber-500/10 via-indigo-500/5 to-transparent dark:from-amber-500/10 dark:via-blue-600/5 dark:to-transparent z-0"></div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div>
-        <h1 class="text-xl font-bold text-amber-400 tracking-tight">⚖️ SahiKanoon</h1>
-        <p class="text-xs text-slate-400">India & Maharashtra Citizen Rights, Schemes & Documents</p>
+  <header class="sticky top-0 z-40 bg-white/85 dark:bg-[#0b1120]/85 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-slate-950 font-extrabold text-lg shadow-lg shadow-amber-500/20">
+          ⚖️
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-amber-600 to-orange-500 dark:from-amber-300 dark:to-amber-500 bg-clip-text text-transparent">SahiKanoon</h1>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Verified</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Citizen Rights, Documents, Schemes & Digital Safety</p>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <label for="langSelect" class="text-xs text-slate-400">Language:</label>
-        <select id="langSelect" class="bg-slate-800 border border-slate-700 text-sm rounded-lg px-2.5 py-1.5 text-white">
+
+      <!-- Controls: Theme, Language, Auth -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Theme Toggle -->
+        <button onclick="toggleTheme()" id="themeBtn" title="Switch Theme" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/90 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-sm transition-all">
+          ☀️
+        </button>
+
+        <!-- Language Selector (Default English) -->
+        <select id="langSelect" class="bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-medium rounded-xl px-3 py-2 text-slate-800 dark:text-white focus:outline-none focus:border-amber-500 transition-all">
+          <option value="en" selected>🌐 English</option>
           <option value="hinglish">Hinglish</option>
-          <option value="en">English</option>
           <option value="hi">हिंदी (Hindi)</option>
           <option value="mr">मराठी (Marathi)</option>
         </select>
+
+        <!-- Auth Button / User Badge -->
+        <div id="authArea">
+          <button onclick="openAuthModal()" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-1.5">
+            <span>🔐</span> <span>Login / Sign Up</span>
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- Main Navigation Tabs -->
-    <div class="max-w-6xl mx-auto px-4 pb-3 flex gap-2 overflow-x-auto">
-      <button onclick="switchTab('documents')" id="tab-documents" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-amber-500 text-slate-950 whitespace-nowrap">📄 Documents</button>
-      <button onclick="switchTab('schemes')" id="tab-schemes" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">🎓 Schemes & Scholarships</button>
-      <button onclick="switchTab('laws')" id="tab-laws" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">⚖️ Laws & Rights</button>
-      <button onclick="switchTab('cybercrime')" id="tab-cybercrime" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">🛡️ Cybercrime & Security</button>
-      <button onclick="switchTab('constitution')" id="tab-constitution" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">📜 Constitution</button>
+    <!-- Navigation Tabs -->
+    <div class="max-w-7xl mx-auto px-4 pb-3 flex gap-2 overflow-x-auto no-scrollbar">
+      <button onclick="switchTab('documents')" id="tab-documents" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 whitespace-nowrap transition-all">📄 Documents</button>
+      <button onclick="switchTab('schemes')" id="tab-schemes" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap transition-all">🎓 Schemes & Scholarships</button>
+      <button onclick="switchTab('laws')" id="tab-laws" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap transition-all">⚖️ Laws & Rights</button>
+      <button onclick="switchTab('cybercrime')" id="tab-cybercrime" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap transition-all">🛡️ Cybercrime & Security</button>
+      <button onclick="switchTab('constitution')" id="tab-constitution" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap transition-all">📜 Constitution</button>
+      <button onclick="switchTab('saved')" id="tab-saved" class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap transition-all">★ Saved (<span id="savedCount">0</span>)</button>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="max-w-6xl mx-auto px-4 py-6">
-    <!-- Search & Sub-filters -->
-    <div class="mb-6 space-y-3">
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Search Aadhaar, PAN, Scholarship, Traffic, Cybercrime, Article 21..."
-        class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-amber-400"
-      />
-      <div id="subFilters" class="flex flex-wrap gap-2"></div>
-    </div>
+  <!-- Main Workspace -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 py-6">
 
-    <!-- Emergency Banner for Cybercrime -->
-    <div id="cyberBanner" class="hidden mb-6 bg-red-950/60 border border-red-700/60 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3">
-      <div>
-        <h2 class="font-bold text-red-300 text-sm">🚨 Cyber Fraud Helpline: Call 1930 (24x7)</h2>
-        <p class="text-xs text-red-200/80">UPI/Bank fraud hone ke 1 ghante (Golden Hour) ke andar 1930 par call karein ya cybercrime.gov.in par report karein.</p>
+    <!-- Hero Search & Filter Bar -->
+    <div class="bg-white/80 dark:bg-slate-900/70 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 mb-6 shadow-sm">
+      <div class="relative">
+        <span class="absolute inset-y-0 left-4 flex items-center text-slate-400">🔍</span>
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search Aadhaar, Passport, Scholarship, Traffic Police, BNS, Cybercrime, Article 21..."
+          class="w-full bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-700/80 rounded-xl pl-11 pr-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all"
+        />
       </div>
-      <a href="https://cybercrime.gov.in/" target="_blank" class="px-3 py-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-semibold rounded-lg">Report Now ↗</a>
+      <div id="subFilters" class="flex flex-wrap gap-2 mt-3.5"></div>
     </div>
 
-    <!-- Status / Loader -->
-    <div id="statusMsg" class="text-center py-10 text-slate-400 text-sm">Loading SahiKanoon database...</div>
+    <!-- Cybercrime Emergency Alert Banner -->
+    <div id="cyberBanner" class="hidden mb-6 bg-gradient-to-r from-red-600/15 via-rose-600/10 to-amber-500/10 border border-red-500/30 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3 animate-card">
+      <div class="flex items-start gap-3">
+        <span class="text-2xl">🚨</span>
+        <div>
+          <h2 class="font-bold text-red-600 dark:text-red-300 text-sm">National Cybercrime Helpline: Call 1930 (24x7)</h2>
+          <p class="text-xs text-slate-600 dark:text-red-200/80 mt-0.5">Report UPI/Bank fraud within the 1-hour Golden Window to freeze scammer accounts immediately.</p>
+        </div>
+      </div>
+      <a href="https://cybercrime.gov.in/" target="_blank" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-bold rounded-xl shadow-md shadow-red-600/20 transition-all">Report on Cyber Portal ↗</a>
+    </div>
 
-    <!-- Cards Container -->
-    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+    <!-- Loading / Error State -->
+    <div id="statusMsg" class="text-center py-16 text-slate-500 dark:text-slate-400 text-sm">
+      <div class="inline-block w-7 h-7 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mb-3"></div>
+      <p>Connecting to SahiKanoon Legal Database...</p>
+    </div>
+
+    <!-- Dynamic Cards Grid -->
+    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5"></div>
   </main>
 
-  <footer class="border-t border-slate-800 mt-12 py-6 text-center text-xs text-slate-500">
-    SahiKanoon • Citizen Legal & Government Awareness Platform • Always verify on official govt portals linked on each card.
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800/80 mt-14 py-6 text-center text-xs text-slate-500">
+    SahiKanoon • Citizen Legal & Government Awareness Platform • Built for Public Empowerment
   </footer>
+
+  <!-- ============================================================ -->
+  <!-- 1. IN-APP OFFICIAL PROOF & LEGAL TEXT MODAL                  -->
+  <!-- ============================================================ -->
+  <div id="proofModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
+    <div id="proofModalBox" class="animate-modal bg-white dark:bg-[#0d1424] border border-slate-200 dark:border-slate-700 rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Top Bar -->
+      <div class="px-5 py-4 bg-slate-100/80 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-300 text-xs font-extrabold tracking-wide">📜 OFFICIAL PROOF & WRITTEN RECORD</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="toggleOfficerMode()" id="officerModeBtn" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all">🪪 Show to Officer</button>
+          <button onclick="closeProofModal()" class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-red-500 hover:text-white flex items-center justify-center text-sm font-bold transition-all">✕</button>
+        </div>
+      </div>
+
+      <!-- Modal Scrollable Content -->
+      <div id="proofModalBody" class="p-5 sm:p-6 overflow-y-auto space-y-4 text-sm"></div>
+
+      <!-- Modal Bottom Actions -->
+      <div class="px-5 py-3.5 bg-slate-50 dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2">
+        <button onclick="copyProofCitation()" id="copyCiteBtn" class="px-3.5 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs font-bold transition-all">
+          📋 Copy Written Law / Proof
+        </button>
+        <a id="proofExternalLink" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold shadow-md shadow-amber-500/20 transition-all">
+          Verify on Official Govt Portal ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 2. LOGIN & SIGN UP MODAL (SUPABASE AUTH)                     -->
+  <!-- ============================================================ -->
+  <div id="authModal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="animate-modal bg-white dark:bg-[#0d1424] border border-slate-200 dark:border-slate-700 rounded-2xl max-w-md w-full p-6 shadow-2xl">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-extrabold text-slate-900 dark:text-white">⚖️ SahiKanoon Citizen Account</h2>
+        <button onclick="closeAuthModal()" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-red-500 hover:text-white text-sm font-bold">✕</button>
+      </div>
+
+      <!-- Auth Tabs -->
+      <div class="grid grid-cols-2 gap-2 p-1 bg-slate-100 dark:bg-slate-900 rounded-xl mb-4">
+        <button onclick="setAuthMode('login')" id="authTabLogin" class="py-2 rounded-lg text-xs font-bold bg-white dark:bg-slate-800 text-amber-600 dark:text-amber-400 shadow-sm">Login</button>
+        <button onclick="setAuthMode('signup')" id="authTabSignup" class="py-2 rounded-lg text-xs font-bold text-slate-500 dark:text-slate-400">Create Account</button>
+      </div>
+
+      <form onsubmit="handleAuthSubmit(event)" class="space-y-3.5">
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">Email Address</label>
+          <input id="authEmail" type="email" required placeholder="you@example.com" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-amber-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">Password (min 6 characters)</label>
+          <input id="authPassword" type="password" required minlength="6" placeholder="••••••••" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-amber-500" />
+        </div>
+        <div id="authFeedback" class="text-xs hidden p-2.5 rounded-lg"></div>
+        <button type="submit" id="authSubmitBtn" class="w-full py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/20 transition-all">
+          Login to SahiKanoon
+        </button>
+      </form>
+
+      <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 text-center">
+        <button onclick="closeAuthModal()" class="text-xs text-slate-500 hover:text-amber-500 font-medium">Continue browsing as Guest →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 3. FLOATING AI LEGAL ASSISTANT CHAT BOX                      -->
+  <!-- ============================================================ -->
+  <button onclick="toggleAIChat()" class="ai-fab fixed bottom-5 right-5 z-40 px-4 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-extrabold text-xs sm:text-sm flex items-center gap-2 hover:scale-105 transition-transform">
+    <span class="text-base">🤖</span>
+    <span>Ask SahiKanoon AI</span>
+  </button>
+
+  <div id="aiChatWindow" class="hidden fixed bottom-20 right-4 sm:right-5 z-50 w-[92vw] sm:w-96 bg-white dark:bg-[#0d1424] border border-slate-200 dark:border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-modal" style="height: 490px;">
+    <!-- Chat Header -->
+    <div class="px-4 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-lg">🤖</span>
+        <div>
+          <h3 class="font-extrabold text-sm leading-tight">SahiKanoon AI Assistant</h3>
+          <p class="text-[10px] font-semibold opacity-80">Instant Laws, Documents & Cyber Help</p>
+        </div>
+      </div>
+      <button onclick="toggleAIChat()" class="w-7 h-7 rounded-lg bg-slate-950/15 hover:bg-slate-950/25 font-bold text-xs flex items-center justify-center">✕</button>
+    </div>
+
+    <!-- Quick Question Chips -->
+    <div class="px-3 py-2 bg-slate-50 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 flex gap-1.5 overflow-x-auto">
+      <button onclick="askQuickAI('Traffic police took my bike keys')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] whitespace-nowrap hover:border-amber-500">🚓 Bike keys rule</button>
+      <button onclick="askQuickAI('Cyber fraud UPI scam 1930')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] whitespace-nowrap hover:border-amber-500">🛡️ UPI Scam 1930</button>
+      <button onclick="askQuickAI('Aadhaar update fee and steps')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] whitespace-nowrap hover:border-amber-500">📄 Aadhaar fee</button>
+      <button onclick="askQuickAI('Company not paying salary')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] whitespace-nowrap hover:border-amber-500">💼 Salary delayed</button>
+      <button onclick="askQuickAI('Scholarship for students')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] whitespace-nowrap hover:border-amber-500">🎓 Scholarships</button>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="aiMessages" class="flex-1 p-3.5 overflow-y-auto space-y-3 text-xs">
+      <div class="bg-slate-100 dark:bg-slate-800/90 text-slate-800 dark:text-slate-200 p-3 rounded-2xl rounded-tl-none leading-relaxed">
+        👋 Namaste! Ask me anything about <b>Indian Laws, Traffic Police Rules, Cybercrime (1930), Maharashtra Scholarships, Documents, or Constitution Articles</b>. I will find the exact legal proof for you!
+      </div>
+    </div>
+
+    <!-- Chat Input -->
+    <form onsubmit="handleAIChatSubmit(event)" class="p-2.5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex gap-2">
+      <input id="aiInput" type="text" placeholder="Type your legal or document question..." class="flex-1 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-amber-500" />
+      <button type="submit" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs">Send</button>
+    </form>
+  </div>
 
   <script>
     // ============================================================
-    // SUPABASE CONNECTION (Sirf neeche apna Publishable Key paste karein)
+    // SUPABASE CONFIGURATION
     // ============================================================
     const SUPABASE_URL = 'https://alsrmtwjeljrjjhsgkex.supabase.co';
     const SUPABASE_KEY = 'sb_publishable_LNSGOQ2bGVPjA-baVD_2zg_TA4LnAwF';
 
     const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    // Global State (Default Language = English)
     let currentTab = 'documents';
-    let currentLang = 'hinglish';
+    let currentLang = 'en';
     let currentFilter = 'all';
+    let authMode = 'login';
+    let currentUser = null;
+    let officerMode = false;
+    let activeProofText = '';
+    let savedIds = JSON.parse(localStorage.getItem('sahikanoon_saved') || '[]');
     let cache = { documents: [], schemes: [], laws: [], constitution: [] };
 
     const langSelect = document.getElementById('langSelect');
@@ -91,17 +287,32 @@
     const subFilters = document.getElementById('subFilters');
     const cyberBanner = document.getElementById('cyberBanner');
 
+    // Theme Initialization
+    function initTheme() {
+      const savedTheme = localStorage.getItem('sahikanoon_theme') || 'dark';
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+      document.getElementById('themeBtn').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('sahikanoon_theme', isDark ? 'dark' : 'light');
+      document.getElementById('themeBtn').textContent = isDark ? '☀️' : '🌙';
+    }
+    initTheme();
+
+    // Language & Search Listeners
     langSelect.addEventListener('change', (e) => {
       currentLang = e.target.value;
       render();
     });
-
     searchInput.addEventListener('input', () => render());
 
     function getLocalized(item, field) {
-      return item[`${field}_${currentLang}`] || item[`${field}_hinglish`] || item[`${field}_en`] || '';
+      return item[`${field}_${currentLang}`] || item[`${field}_en`] || item[`${field}_hinglish`] || '';
     }
 
+    // Voice Read-Aloud
     function speakText(text) {
       if (!('speechSynthesis' in window)) return alert('Voice read-aloud is not supported in this browser.');
       window.speechSynthesis.cancel();
@@ -110,13 +321,358 @@
       window.speechSynthesis.speak(utter);
     }
 
+    // Bookmarks / Saved Items
+    function updateSavedCount() {
+      document.getElementById('savedCount').textContent = savedIds.length;
+    }
+    updateSavedCount();
+
+    function toggleSave(uid) {
+      if (savedIds.includes(uid)) {
+        savedIds = savedIds.filter(id => id !== uid);
+      } else {
+        savedIds.push(uid);
+      }
+      localStorage.setItem('sahikanoon_saved', JSON.stringify(savedIds));
+      updateSavedCount();
+      render();
+    }
+
+    // ============================================================
+    // AUTHENTICATION (LOGIN / SIGN UP)
+    // ============================================================
+    async function initAuth() {
+      try {
+        const { data } = await db.auth.getUser();
+        if (data && data.user) {
+          currentUser = data.user;
+          renderAuthHeader();
+        }
+      } catch (e) {}
+    }
+
+    function renderAuthHeader() {
+      const authArea = document.getElementById('authArea');
+      if (currentUser) {
+        const shortName = currentUser.email.split('@')[0];
+        authArea.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="hidden sm:inline-block px-3 py-1.5 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 text-xs font-bold border border-emerald-500/20">👤 ${shortName}</span>
+            <button onclick="handleLogout()" class="px-3 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-red-500 hover:text-white text-xs font-bold transition-all">Logout</button>
+          </div>
+        `;
+      } else {
+        authArea.innerHTML = `
+          <button onclick="openAuthModal()" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-slate-950 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-1.5">
+            <span>🔐</span> <span>Login / Sign Up</span>
+          </button>
+        `;
+      }
+    }
+
+    function openAuthModal() {
+      document.getElementById('authModal').classList.remove('hidden');
+      document.getElementById('authFeedback').classList.add('hidden');
+    }
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function setAuthMode(mode) {
+      authMode = mode;
+      const loginTab = document.getElementById('authTabLogin');
+      const signupTab = document.getElementById('authTabSignup');
+      const submitBtn = document.getElementById('authSubmitBtn');
+      if (mode === 'login') {
+        loginTab.className = 'py-2 rounded-lg text-xs font-bold bg-white dark:bg-slate-800 text-amber-600 dark:text-amber-400 shadow-sm';
+        signupTab.className = 'py-2 rounded-lg text-xs font-bold text-slate-500 dark:text-slate-400';
+        submitBtn.textContent = 'Login to SahiKanoon';
+      } else {
+        signupTab.className = 'py-2 rounded-lg text-xs font-bold bg-white dark:bg-slate-800 text-amber-600 dark:text-amber-400 shadow-sm';
+        loginTab.className = 'py-2 rounded-lg text-xs font-bold text-slate-500 dark:text-slate-400';
+        submitBtn.textContent = 'Create Free Citizen Account';
+      }
+    }
+
+    async function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('authEmail').value.trim();
+      const password = document.getElementById('authPassword').value;
+      const fb = document.getElementById('authFeedback');
+      fb.classList.remove('hidden');
+      fb.className = 'text-xs p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500';
+      fb.textContent = 'Please wait...';
+
+      try {
+        if (authMode === 'signup') {
+          const { data, error } = await db.auth.signUp({ email, password });
+          if (error) throw error;
+          if (data.user) {
+            currentUser = data.user;
+            renderAuthHeader();
+            fb.className = 'text-xs p-2.5 rounded-lg bg-emerald-500/20 text-emerald-500 font-semibold';
+            fb.textContent = 'Account created successfully! Welcome to SahiKanoon.';
+            setTimeout(closeAuthModal, 1000);
+          }
+        } else {
+          const { data, error } = await db.auth.signInWithPassword({ email, password });
+          if (error) throw error;
+          currentUser = data.user;
+          renderAuthHeader();
+          fb.className = 'text-xs p-2.5 rounded-lg bg-emerald-500/20 text-emerald-500 font-semibold';
+          fb.textContent = 'Logged in successfully!';
+          setTimeout(closeAuthModal, 800);
+        }
+      } catch (err) {
+        fb.className = 'text-xs p-2.5 rounded-lg bg-red-500/20 text-red-400 font-semibold';
+        fb.textContent = err.message || 'Authentication failed. Check credentials.';
+      }
+    }
+
+    async function handleLogout() {
+      await db.auth.signOut();
+      currentUser = null;
+      renderAuthHeader();
+    }
+
+    // ============================================================
+    // IN-APP OFFICIAL PROOF MODAL (WRITTEN LEGAL TEXT VIEWER)
+    // ============================================================
+    function openProof(type, id) {
+      officerMode = false;
+      document.getElementById('officerModeBtn').textContent = '🪪 Show to Officer';
+      const body = document.getElementById('proofModalBody');
+      const extLink = document.getElementById('proofExternalLink');
+      let item = cache[type].find(x => x.id === id);
+      if (!item) return;
+
+      if (type === 'laws') {
+        const title = getLocalized(item, 'title');
+        const summary = getLocalized(item, 'summary');
+        activeProofText = `${item.act_name} — ${item.section_number}\n${title}\n\nWritten Provision: ${summary}\nPenalty/Fine: ${item.fine_details}\nCitizen Rights: ${item.citizen_rights}\nOfficial Source: ${item.proof_url}`;
+        extLink.href = item.proof_url;
+        body.innerHTML = `
+          <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30">
+            <p class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">${item.act_name}</p>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1">${item.section_number}: ${title}</h3>
+          </div>
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <p class="text-[11px] font-bold uppercase text-slate-400 mb-1">📜 Statutory Provision & Written Law</p>
+              <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-100 font-medium">${summary}</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                <p class="text-[11px] font-bold uppercase text-amber-600 dark:text-amber-400">💰 Official Fine / Penalty</p>
+                <p class="text-xs sm:text-sm font-semibold mt-1">${item.fine_details}</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20">
+                <p class="text-[11px] font-bold uppercase text-red-600 dark:text-red-400">⚖️ Imprisonment / Jail Term</p>
+                <p class="text-xs sm:text-sm font-semibold mt-1">${item.jail_term}</p>
+              </div>
+            </div>
+            <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/25">
+              <p class="text-[11px] font-bold uppercase text-emerald-600 dark:text-emerald-400 mb-1">🛡️ Your Legal Rights & Immediate Action</p>
+              <p class="text-xs sm:text-sm leading-relaxed text-slate-800 dark:text-slate-200">${item.citizen_rights}</p>
+            </div>
+            <p class="text-[11px] text-slate-400 break-all">🔗 Official Statutory Source: <span class="underline">${item.proof_url}</span></p>
+          </div>
+        `;
+      } else if (type === 'constitution') {
+        const title = getLocalized(item, 'title');
+        const summary = getLocalized(item, 'summary');
+        activeProofText = `Constitution of India — ${item.article_number} (${item.part_number}: ${item.part_title})\n${title}\n\nSummary: ${summary}\nOfficial Text: ${item.official_text}\nSource: ${item.proof_url}`;
+        extLink.href = item.proof_url;
+        body.innerHTML = `
+          <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30">
+            <p class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">Constitution of India • ${item.part_number} (${item.part_title})</p>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-1">${item.article_number} — ${title}</h3>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+            <p class="text-[11px] font-bold uppercase text-slate-400">📖 Constitutional Provision</p>
+            <p class="text-sm sm:text-base leading-relaxed font-medium">${summary}</p>
+          </div>
+          <div class="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
+            <p class="text-[11px] font-bold uppercase text-indigo-500 dark:text-indigo-300">📜 Official Gazette Reference</p>
+            <p class="text-xs sm:text-sm mt-1">${item.official_text}</p>
+          </div>
+          <p class="text-[11px] text-slate-400 break-all">🔗 Verified Portal: <span class="underline">${item.proof_url}</span></p>
+        `;
+      } else if (type === 'documents') {
+        activeProofText = `${item.doc_name} (${item.state})\nFee: ${item.official_fee}\nTime: ${item.processing_time}\nRequired Docs: ${item.required_docs}\nSteps: ${item.making_steps}\nPortal: ${item.official_portal_url}`;
+        extLink.href = item.official_portal_url;
+        body.innerHTML = `
+          <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30">
+            <p class="text-xs font-extrabold uppercase text-amber-600 dark:text-amber-400">${item.category} • ${item.state}</p>
+            <h3 class="text-xl font-extrabold mt-1">${item.doc_name}</h3>
+            <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mt-1">💰 Official Govt Fee: ${item.official_fee}</p>
+          </div>
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <p class="font-bold text-amber-500 mb-1">1. Mandatory Documents Checklist</p>
+              <p class="leading-relaxed">${item.required_docs}</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <p class="font-bold text-amber-500 mb-1">2. Step-by-Step Application Procedure</p>
+              <p class="leading-relaxed">${item.making_steps}</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <p class="font-bold text-amber-500 mb-1">3. Status Tracking & Certificate Download</p>
+              <p class="leading-relaxed">${item.track_download_steps}</p>
+            </div>
+          </div>
+        `;
+      } else if (type === 'schemes') {
+        const title = getLocalized(item, 'title');
+        activeProofText = `${title} (${item.state} - ${item.status.toUpperCase()})\nBenefit: ${item.benefit_summary}\nEligibility: ${item.eligibility}\nPortal: ${item.proof_url}`;
+        extLink.href = item.proof_url;
+        body.innerHTML = `
+          <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30">
+            <span class="px-2 py-0.5 rounded text-[11px] font-bold ${item.status === 'active' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-red-500/20 text-red-400'}">${item.status.toUpperCase()}</span>
+            <h3 class="text-xl font-extrabold mt-1.5">${title}</h3>
+          </div>
+          <div class="space-y-3 text-xs sm:text-sm">
+            <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+              <p class="font-bold text-emerald-500 mb-1">🎁 Scheme Benefit</p>
+              <p>${item.benefit_summary}</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <p class="font-bold text-amber-500 mb-1">✅ Eligibility Criteria</p>
+              <p>${item.eligibility}</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+              <p class="font-bold text-amber-500 mb-1">📄 Documents & Apply Steps</p>
+              <p class="mb-2"><b>Docs:</b> ${item.documents_required}</p>
+              <p><b>Steps:</b> ${item.apply_steps}</p>
+            </div>
+          </div>
+        `;
+      }
+
+      document.getElementById('proofModal').classList.remove('hidden');
+    }
+
+    function closeProofModal() {
+      document.getElementById('proofModal').classList.add('hidden');
+    }
+
+    function toggleOfficerMode() {
+      officerMode = !officerMode;
+      const body = document.getElementById('proofModalBody');
+      const btn = document.getElementById('officerModeBtn');
+      if (officerMode) {
+        body.classList.add('text-base', 'sm:text-lg');
+        btn.textContent = '✓ Officer View ON';
+        btn.className = 'px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-bold';
+      } else {
+        body.classList.remove('text-base', 'sm:text-lg');
+        btn.textContent = '🪪 Show to Officer';
+        btn.className = 'px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold';
+      }
+    }
+
+    function copyProofCitation() {
+      navigator.clipboard.writeText(activeProofText);
+      const btn = document.getElementById('copyCiteBtn');
+      btn.textContent = '✅ Copied to Clipboard!';
+      setTimeout(() => { btn.textContent = '📋 Copy Written Law / Proof'; }, 2000);
+    }
+
+    // ============================================================
+    // FLOATING AI LEGAL CHAT ASSISTANT
+    // ============================================================
+    function toggleAIChat() {
+      document.getElementById('aiChatWindow').classList.toggle('hidden');
+    }
+
+    function askQuickAI(q) {
+      document.getElementById('aiInput').value = q;
+      handleAIChatSubmit(new Event('submit'));
+    }
+
+    function handleAIChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('aiInput');
+      const q = input.value.trim();
+      if (!q) return;
+
+      const msgBox = document.getElementById('aiMessages');
+      msgBox.innerHTML += `
+        <div class="flex justify-end">
+          <div class="bg-amber-500 text-slate-950 font-semibold px-3.5 py-2.5 rounded-2xl rounded-tr-none max-w-[85%]">
+            ${q}
+          </div>
+        </div>
+      `;
+      input.value = '';
+      msgBox.scrollTop = msgBox.scrollHeight;
+
+      setTimeout(() => {
+        const replyHTML = generateAIReply(q);
+        msgBox.innerHTML += `
+          <div class="bg-slate-100 dark:bg-slate-800/95 text-slate-800 dark:text-slate-100 p-3 rounded-2xl rounded-tl-none space-y-2 leading-relaxed">
+            ${replyHTML}
+          </div>
+        `;
+        msgBox.scrollTop = msgBox.scrollHeight;
+      }, 250);
+    }
+
+    function generateAIReply(query) {
+      const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
+      let matches = [];
+
+      const scoreItem = (obj) => {
+        const str = JSON.stringify(obj).toLowerCase();
+        return words.reduce((acc, w) => acc + (str.includes(w) ? 1 : 0), 0);
+      };
+
+      cache.laws.forEach(l => {
+        const s = scoreItem(l);
+        if (s > 0) matches.push({ score: s + 0.5, type: 'laws', id: l.id, title: `${l.act_name} (${l.section_number})`, desc: getLocalized(l, 'title') });
+      });
+      cache.documents.forEach(d => {
+        const s = scoreItem(d);
+        if (s > 0) matches.push({ score: s, type: 'documents', id: d.id, title: d.doc_name, desc: `Official Fee: ${d.official_fee}` });
+      });
+      cache.schemes.forEach(sc => {
+        const s = scoreItem(sc);
+        if (s > 0) matches.push({ score: s, type: 'schemes', id: sc.id, title: getLocalized(sc, 'title'), desc: sc.benefit_summary.slice(0, 95) + '...' });
+      });
+      cache.constitution.forEach(c => {
+        const s = scoreItem(c);
+        if (s > 0) matches.push({ score: s, type: 'constitution', id: c.id, title: `${c.article_number}: ${getLocalized(c, 'title')}`, desc: getLocalized(c, 'summary').slice(0, 95) + '...' });
+      });
+
+      matches.sort((a, b) => b.score - a.score);
+      const top = matches.slice(0, 2);
+
+      if (top.length === 0) {
+        return `I couldn't find an exact section for "<b>${query}</b>". Try keywords like <b>Aadhaar, Passport, Helmet, Bike keys, Salary, 1930, Ladki Bahin, Scholarship, or Article 21</b>.`;
+      }
+
+      return `
+        <p class="font-semibold text-amber-600 dark:text-amber-400">Here is what the official record says:</p>
+        ${top.map(m => `
+          <div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+            <p class="font-bold text-slate-900 dark:text-white">${m.title}</p>
+            <p class="text-[11px] text-slate-500 dark:text-slate-300 mt-0.5">${m.desc}</p>
+            <button onclick="openProof('${m.type}', ${m.id})" class="mt-2 px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-[11px]">📜 Open Full Written Proof</button>
+          </div>
+        `).join('')}
+      `;
+    }
+
+    // ============================================================
+    // TABS, SUB-FILTERS & CARD RENDERING
+    // ============================================================
     function switchTab(tab) {
       currentTab = tab;
       currentFilter = 'all';
       document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.className = 'tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap';
+        btn.className = 'tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap transition-all';
       });
-      document.getElementById(`tab-${tab}`).className = 'tab-btn px-4 py-2 rounded-lg text-sm font-medium bg-amber-500 text-slate-950 whitespace-nowrap';
+      document.getElementById(`tab-${tab}`).className = 'tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20 whitespace-nowrap transition-all';
       cyberBanner.classList.toggle('hidden', tab !== 'cybercrime');
       renderSubFilters();
       render();
@@ -157,10 +713,10 @@
         ];
       }
       subFilters.innerHTML = options.map(o => `
-        <button onclick="setFilter('${o.id}')" class="px-3 py-1 rounded-full text-xs font-medium border ${
+        <button onclick="setFilter('${o.id}')" class="px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
           currentFilter === o.id
-            ? 'bg-amber-500/20 border-amber-400 text-amber-300'
-            : 'bg-slate-900 border-slate-700 text-slate-400 hover:text-white'
+            ? 'bg-amber-500/15 border-amber-500 text-amber-600 dark:text-amber-300'
+            : 'bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-slate-400'
         }">${o.label}</button>
       `).join('');
     }
@@ -184,7 +740,7 @@
         renderSubFilters();
         render();
       } catch (err) {
-        statusMsg.innerHTML = `<span class="text-red-400">Database connect nahi hua. Check karein ki aapne <b>SUPABASE_KEY</b> sahi paste kiya hai. (${err.message})</span>`;
+        statusMsg.innerHTML = `<div class="p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-500 max-w-md mx-auto">Database connection failed. Please check your <b>SUPABASE_KEY</b>. (${err.message})</div>`;
       }
     }
 
@@ -192,140 +748,144 @@
       const q = searchInput.value.trim().toLowerCase();
       let html = '';
 
-      if (currentTab === 'documents') {
-        let list = cache.documents.filter(d => {
-          const matchFilter = currentFilter === 'all' || d.category === currentFilter;
-          const matchSearch = !q || JSON.stringify(d).toLowerCase().includes(q);
-          return matchFilter && matchSearch;
-        });
-
-        html = list.map(d => `
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div>
-              <div class="flex items-start justify-between gap-2 mb-2">
-                <h3 class="font-bold text-amber-300 text-base">${d.doc_name}</h3>
-                <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 whitespace-nowrap">${d.state}</span>
-              </div>
-              <p class="text-xs text-emerald-400 font-medium mb-2">💰 Fee: ${d.official_fee}</p>
-              <p class="text-xs text-slate-400 mb-3">⏱️ Time: ${d.processing_time} • Mode: ${d.apply_mode}</p>
-              <div class="space-y-2 text-xs text-slate-300">
-                <p><b class="text-white">Required Docs:</b> ${d.required_docs}</p>
-                <p><b class="text-white">Steps:</b> ${d.making_steps}</p>
-                <p><b class="text-white">Track/Download:</b> ${d.track_download_steps}</p>
-              </div>
+      const renderDocCard = (d, idx) => {
+        const uid = `documents_${d.id}`;
+        const isSaved = savedIds.includes(uid);
+        return `
+        <div style="animation-delay: ${Math.min(idx * 40, 300)}ms" class="animate-card group bg-white dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div>
+            <div class="flex items-start justify-between gap-2 mb-2.5">
+              <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-300">${d.state}</span>
+              <button onclick="toggleSave('${uid}')" class="text-base ${isSaved ? 'text-amber-400' : 'text-slate-400 hover:text-amber-400'}" title="Save">${isSaved ? '★' : '☆'}</button>
             </div>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
-              <button onclick="speakText(\`${(d.doc_name + '. ' + d.making_steps).replace(/`/g, '')}\`)" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">🔊 Suniye</button>
-              <a href="${d.official_portal_url}" target="_blank" class="text-xs px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold">Official Portal ↗</a>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base sm:text-lg mb-1.5 group-hover:text-amber-500 transition-colors">${d.doc_name}</h3>
+            <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-2">💰 Fee: ${d.official_fee}</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">⏱️ Time: ${d.processing_time} • Mode: ${d.apply_mode}</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2"><b>Required:</b> ${d.required_docs}</p>
+          </div>
+          <div class="flex items-center justify-between pt-3.5 border-t border-slate-100 dark:border-slate-800/80 gap-2">
+            <button onclick="speakText(\`${(d.doc_name + '. ' + d.making_steps).replace(/`/g, '')}\`)" class="text-xs px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-semibold transition-all">🔊 Listen</button>
+            <button onclick="openProof('documents', ${d.id})" class="text-xs px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold shadow-sm transition-all">📜 View Checklist & Proof</button>
+          </div>
+        </div>`;
+      };
+
+      const renderSchemeCard = (s, idx) => {
+        const uid = `schemes_${s.id}`;
+        const isSaved = savedIds.includes(uid);
+        const title = getLocalized(s, 'title');
+        const isClosed = s.status === 'inactive';
+        return `
+        <div style="animation-delay: ${Math.min(idx * 40, 300)}ms" class="animate-card group bg-white dark:bg-slate-900/80 backdrop-blur-md border ${isClosed ? 'border-red-500/30' : 'border-slate-200/90 dark:border-slate-800 hover:border-amber-500/50'} rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <div class="flex flex-wrap items-center gap-1.5">
+                <span class="text-[11px] px-2.5 py-0.5 rounded-lg font-bold ${isClosed ? 'bg-red-500/15 text-red-500' : 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400'}">${isClosed ? '⛔ CLOSED' : '✅ ACTIVE'}</span>
+                <span class="text-[11px] px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold">${s.state}</span>
+              </div>
+              <button onclick="toggleSave('${uid}')" class="text-base ${isSaved ? 'text-amber-400' : 'text-slate-400 hover:text-amber-400'}">${isSaved ? '★' : '☆'}</button>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base sm:text-lg mb-2 group-hover:text-amber-500 transition-colors">${title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2"><b class="text-amber-600 dark:text-amber-400">Benefit:</b> ${s.benefit_summary}</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2"><b>Eligibility:</b> ${s.eligibility}</p>
+          </div>
+          <div class="flex items-center justify-between pt-3.5 border-t border-slate-100 dark:border-slate-800/80 gap-2">
+            <button onclick="speakText(\`${(title + '. ' + s.benefit_summary).replace(/`/g, '')}\`)" class="text-xs px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-semibold transition-all">🔊 Listen</button>
+            <button onclick="openProof('schemes', ${s.id})" class="text-xs px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold shadow-sm transition-all">📜 View Details & Proof</button>
+          </div>
+        </div>`;
+      };
+
+      const renderLawCard = (l, idx) => {
+        const uid = `laws_${l.id}`;
+        const isSaved = savedIds.includes(uid);
+        const title = getLocalized(l, 'title');
+        const summary = getLocalized(l, 'summary');
+        return `
+        <div style="animation-delay: ${Math.min(idx * 40, 300)}ms" class="animate-card group bg-white dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="text-[11px] px-2.5 py-0.5 rounded-lg bg-indigo-500/15 text-indigo-600 dark:text-indigo-300 font-bold">${l.act_name} • ${l.section_number}</span>
+              <button onclick="toggleSave('${uid}')" class="text-base ${isSaved ? 'text-amber-400' : 'text-slate-400 hover:text-amber-400'}">${isSaved ? '★' : '☆'}</button>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base sm:text-lg mb-2 group-hover:text-amber-500 transition-colors">${title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">${summary}</p>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200/70 dark:border-slate-800 text-xs space-y-1">
+              <p><b class="text-amber-600 dark:text-amber-400">Penalty:</b> ${l.fine_details}</p>
+              <p class="text-emerald-600 dark:text-emerald-400 line-clamp-2"><b>Your Right:</b> ${l.citizen_rights}</p>
             </div>
           </div>
-        `).join('');
+          <div class="flex items-center justify-between pt-3.5 border-t border-slate-100 dark:border-slate-800/80 gap-2">
+            <button onclick="speakText(\`${(title + '. ' + summary).replace(/`/g, '')}\`)" class="text-xs px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-semibold transition-all">🔊 Listen</button>
+            <button onclick="openProof('laws', ${l.id})" class="text-xs px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold shadow-sm transition-all">📜 View Written Proof</button>
+          </div>
+        </div>`;
+      };
+
+      const renderConstCard = (c, idx) => {
+        const uid = `constitution_${c.id}`;
+        const isSaved = savedIds.includes(uid);
+        const title = getLocalized(c, 'title');
+        const summary = getLocalized(c, 'summary');
+        return `
+        <div style="animation-delay: ${Math.min(idx * 40, 300)}ms" class="animate-card group bg-white dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/90 dark:border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[11px] px-2.5 py-0.5 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-300 font-extrabold">${c.article_number}</span>
+                <span class="text-[11px] px-2.5 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-semibold">${c.part_number}</span>
+              </div>
+              <button onclick="toggleSave('${uid}')" class="text-base ${isSaved ? 'text-amber-400' : 'text-slate-400 hover:text-amber-400'}">${isSaved ? '★' : '☆'}</button>
+            </div>
+            <h3 class="font-extrabold text-slate-900 dark:text-white text-base sm:text-lg mb-2 group-hover:text-amber-500 transition-colors">${title}</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${summary}</p>
+          </div>
+          <div class="flex items-center justify-between pt-3.5 border-t border-slate-100 dark:border-slate-800/80 gap-2">
+            <button onclick="speakText(\`${(c.article_number + '. ' + title + '. ' + summary).replace(/`/g, '')}\`)" class="text-xs px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 font-semibold transition-all">🔊 Listen</button>
+            <button onclick="openProof('constitution', ${c.id})" class="text-xs px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold shadow-sm transition-all">📜 View Official Text</button>
+          </div>
+        </div>`;
+      };
+
+      if (currentTab === 'documents') {
+        html = cache.documents
+          .filter(d => (currentFilter === 'all' || d.category === currentFilter) && (!q || JSON.stringify(d).toLowerCase().includes(q)))
+          .map((d, i) => renderDocCard(d, i)).join('');
+      } else if (currentTab === 'schemes') {
+        html = cache.schemes
+          .filter(s => {
+            const mf = currentFilter === 'all' ||
+              (currentFilter === 'Scholarship' && s.category === 'Scholarship') ||
+              (currentFilter === 'Maharashtra' && s.state === 'Maharashtra') ||
+              (currentFilter === 'Central' && s.level === 'central') ||
+              (currentFilter === 'active' && s.status === 'active') ||
+              (currentFilter === 'inactive' && s.status === 'inactive');
+            return mf && (!q || JSON.stringify(s).toLowerCase().includes(q));
+          })
+          .map((s, i) => renderSchemeCard(s, i)).join('');
+      } else if (currentTab === 'laws' || currentTab === 'cybercrime') {
+        html = cache.laws
+          .filter(l => {
+            if (currentTab === 'cybercrime') return l.law_category === 'cybercrime' && (!q || JSON.stringify(l).toLowerCase().includes(q));
+            return l.law_category !== 'cybercrime' && (currentFilter === 'all' || l.law_category === currentFilter) && (!q || JSON.stringify(l).toLowerCase().includes(q));
+          })
+          .map((l, i) => renderLawCard(l, i)).join('');
+      } else if (currentTab === 'constitution') {
+        html = cache.constitution
+          .filter(c => !q || JSON.stringify(c).toLowerCase().includes(q))
+          .map((c, i) => renderConstCard(c, i)).join('');
+      } else if (currentTab === 'saved') {
+        let idx = 0;
+        cache.documents.filter(d => savedIds.includes(`documents_${d.id}`)).forEach(d => { html += renderDocCard(d, idx++); });
+        cache.schemes.filter(s => savedIds.includes(`schemes_${s.id}`)).forEach(s => { html += renderSchemeCard(s, idx++); });
+        cache.laws.filter(l => savedIds.includes(`laws_${l.id}`)).forEach(l => { html += renderLawCard(l, idx++); });
+        cache.constitution.filter(c => savedIds.includes(`constitution_${c.id}`)).forEach(c => { html += renderConstCard(c, idx++); });
       }
 
-      else if (currentTab === 'schemes') {
-        let list = cache.schemes.filter(s => {
-          const matchFilter =
-            currentFilter === 'all' ||
-            (currentFilter === 'Scholarship' && s.category === 'Scholarship') ||
-            (currentFilter === 'Maharashtra' && s.state === 'Maharashtra') ||
-            (currentFilter === 'Central' && s.level === 'central') ||
-            (currentFilter === 'active' && s.status === 'active') ||
-            (currentFilter === 'inactive' && s.status === 'inactive');
-          const matchSearch = !q || JSON.stringify(s).toLowerCase().includes(q);
-          return matchFilter && matchSearch;
-        });
-
-        html = list.map(s => {
-          const title = getLocalized(s, 'title');
-          const isClosed = s.status === 'inactive';
-          return `
-          <div class="bg-slate-900 border ${isClosed ? 'border-red-900/60' : 'border-slate-800'} rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div>
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="text-[11px] px-2 py-0.5 rounded font-semibold ${isClosed ? 'bg-red-900/60 text-red-300' : 'bg-emerald-900/60 text-emerald-300'}">${isClosed ? '⛔ INACTIVE / CLOSED' : '✅ ACTIVE'}</span>
-                <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">${s.state}</span>
-                <span class="text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">${s.category}</span>
-              </div>
-              <h3 class="font-bold text-white text-base mb-2">${title}</h3>
-              <div class="space-y-2 text-xs text-slate-300">
-                <p><b class="text-amber-300">Benefit:</b> ${s.benefit_summary}</p>
-                <p><b class="text-white">Eligibility:</b> ${s.eligibility}</p>
-                <p><b class="text-white">Documents:</b> ${s.documents_required}</p>
-                <p><b class="text-white">How to Apply:</b> ${s.apply_steps}</p>
-              </div>
-            </div>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
-              <button onclick="speakText(\`${(title + '. ' + s.benefit_summary).replace(/`/g, '')}\`)" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">🔊 Suniye</button>
-              <a href="${s.proof_url}" target="_blank" class="text-xs px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold">Official Portal ↗</a>
-            </div>
-          </div>`;
-        }).join('');
-      }
-
-      else if (currentTab === 'laws' || currentTab === 'cybercrime') {
-        let list = cache.laws.filter(l => {
-          if (currentTab === 'cybercrime') {
-            return l.law_category === 'cybercrime' && (!q || JSON.stringify(l).toLowerCase().includes(q));
-          } else {
-            const notCyber = l.law_category !== 'cybercrime';
-            const matchFilter = currentFilter === 'all' || l.law_category === currentFilter;
-            const matchSearch = !q || JSON.stringify(l).toLowerCase().includes(q);
-            return notCyber && matchFilter && matchSearch;
-          }
-        });
-
-        html = list.map(l => {
-          const title = getLocalized(l, 'title');
-          const summary = getLocalized(l, 'summary');
-          return `
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div>
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="text-[11px] px-2 py-0.5 rounded bg-indigo-900/60 text-indigo-300 font-semibold">${l.act_name} — ${l.section_number}</span>
-                ${l.show_to_officer ? '<span class="text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">🪪 Show to Officer</span>' : ''}
-              </div>
-              <h3 class="font-bold text-white text-base mb-2">${title}</h3>
-              <p class="text-xs text-slate-300 mb-3">${summary}</p>
-              <div class="space-y-1.5 text-xs text-slate-300 bg-slate-950/70 p-3 rounded-lg border border-slate-800">
-                <p><b class="text-amber-300">Fine / Penalty:</b> ${l.fine_details}</p>
-                <p><b class="text-red-300">Jail Term:</b> ${l.jail_term}</p>
-                <p><b class="text-emerald-300">Your Rights / Action:</b> ${l.citizen_rights}</p>
-              </div>
-            </div>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
-              <button onclick="speakText(\`${(title + '. ' + summary + ' ' + l.citizen_rights).replace(/`/g, '')}\`)" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">🔊 Suniye</button>
-              <a href="${l.proof_url}" target="_blank" class="text-xs px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold">Official Proof ↗</a>
-            </div>
-          </div>`;
-        }).join('');
-      }
-
-      else if (currentTab === 'constitution') {
-        let list = cache.constitution.filter(c => !q || JSON.stringify(c).toLowerCase().includes(q));
-        html = list.map(c => {
-          const title = getLocalized(c, 'title');
-          const summary = getLocalized(c, 'summary');
-          return `
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col justify-between gap-3">
-            <div>
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <span class="text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-semibold">${c.article_number}</span>
-                <span class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">${c.part_number} • ${c.part_title}</span>
-              </div>
-              <h3 class="font-bold text-white text-base mb-2">${title}</h3>
-              <p class="text-xs text-slate-300 leading-relaxed">${summary}</p>
-            </div>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
-              <button onclick="speakText(\`${(c.article_number + '. ' + title + '. ' + summary).replace(/`/g, '')}\`)" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">🔊 Suniye</button>
-              <a href="${c.proof_url}" target="_blank" class="text-xs px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold">Official Text ↗</a>
-            </div>
-          </div>`;
-        }).join('');
-      }
-
-      cardsGrid.innerHTML = html || `<div class="col-span-full text-center py-10 text-slate-400 text-sm">Koi matching result nahi mila.</div>`;
+      cardsGrid.innerHTML = html || `<div class="col-span-full text-center py-14 text-slate-500 dark:text-slate-400 text-sm">No matching records found. Try another search or click ★ on any card to save it here.</div>`;
     }
 
+    initAuth();
     loadAllData();
   </script>
 </body>
