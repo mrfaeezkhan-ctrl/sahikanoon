@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SahiKanoon — Indian Laws, Filled Form Guides, Schemes & Constitution</title>
-  <meta name="description" content="SahiKanoon is India's citizen legal and government document portal. Explore filled sample forms for Aadhaar, PAN, Domicile, MahaDBT & NSP scholarships, traffic & criminal laws, cybercrime 1930 help, RTI drafter, and the complete Constitution of India." />
-  <meta name="keywords" content="SahiKanoon, Indian Laws, Aadhaar Form Sample, MahaDBT Scholarship Guide, NSP OTR, Domicile Certificate Maharashtra, Cybercrime 1930, Zero FIR BNSS, Constitution of India 22 Parts, RTI Application" />
+  <title>SahiKanoon — Indian Laws, Filled Sample Forms, Schemes & Scholarships</title>
+  <meta name="description" content="SahiKanoon is India's citizen legal awareness and government document portal. Explore filled sample forms for Aadhaar, PAN, Domicile, MahaDBT, NSP & Private Scholarships, traffic & criminal laws, cybercrime 1930 help, RTI drafter, and the complete Constitution of India." />
+  <meta name="keywords" content="SahiKanoon, Indian Laws, Aadhaar Form Sample, MahaDBT Scholarship, NSP OTR, Private Scholarships India, Domicile Certificate Maharashtra, Cybercrime 1930, Zero FIR BNSS, Constitution of India 22 Parts, RTI Application" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sahikanoon.vercel.app/" />
   <meta property="og:title" content="SahiKanoon — Citizen Legal, Schemes & Filled Form Guide" />
-  <meta property="og:description" content="Step-by-step filled sample forms, verified Indian laws, scholarships, cybercrime protection & Constitution." />
+  <meta property="og:description" content="Step-by-step filled sample forms, verified Indian laws, govt & private scholarships, cybercrime protection & Constitution." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sahikanoon.vercel.app/" />
 
@@ -33,23 +33,68 @@
     }
   </script>
   <style>
-    body { background-color: #f8fafc; color: #0f172a; font-family: 'Inter', sans-serif; }
-    h1, h2, h3, .font-heading { font-family: 'Outfit', sans-serif; }
-    @keyframes pageSlideIn {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
+    body {
+      background-color: #f8fafc;
+      color: #0f172a;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
-    @keyframes cardPop {
-      from { opacity: 0; transform: translateY(12px) scale(0.99); }
+    h1, h2, h3, .font-heading {
+      font-family: 'Outfit', sans-serif;
+    }
+    /* Fluent Acrylic Glass */
+    .fluent-glass {
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+    }
+    /* Fluent Spring & Staggered Animations */
+    @keyframes fluentPageEnter {
+      from { opacity: 0; transform: translateY(16px) scale(0.992); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
-    @keyframes modalZoom {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    @keyframes fluentCardSpring {
+      0% { opacity: 0; transform: translateY(18px) scale(0.98); }
+      70% { opacity: 1; transform: translateY(-2px) scale(1.002); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
     }
-    .page-enter { animation: pageSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-    .card-anim { animation: cardPop 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
-    .animate-modal { animation: modalZoom 0.22s ease-out forwards; }
+    @keyframes modalSpring {
+      from { opacity: 0; transform: scale(0.94) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes shimmerSweep {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes typingDot {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+    .page-enter {
+      animation: fluentPageEnter 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .card-spring {
+      animation: fluentCardSpring 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+    }
+    .fluent-card {
+      transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+    .fluent-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px -10px rgba(37, 99, 235, 0.14), 0 4px 10px -4px rgba(15, 23, 42, 0.05);
+    }
+    .animate-modal {
+      animation: modalSpring 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .skeleton {
+      background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+      background-size: 200% 100%;
+      animation: shimmerSweep 1.4s infinite linear;
+    }
+    .dot-1 { animation: typingDot 1.2s infinite ease-in-out 0s; }
+    .dot-2 { animation: typingDot 1.2s infinite ease-in-out 0.2s; }
+    .dot-3 { animation: typingDot 1.2s infinite ease-in-out 0.4s; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
@@ -57,49 +102,50 @@
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
 
   <!-- ===================================================================== -->
-  <!-- TOP NAVIGATION BAR (PURE WHITE + ROYAL BLUE CIVIC-TECH HEADER)        -->
+  <!-- FLUENT ACRYLIC TOP HEADER & RESPONSIVE MULTI-PAGE NAVIGATION          -->
   <!-- ===================================================================== -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-2xs">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+  <header class="sticky top-0 z-40 fluent-glass border-b border-slate-200/90 shadow-2xs">
+    <div class="max-w-7xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-2.5">
       <!-- Brand -->
-      <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-blue-600 group-hover:bg-blue-700 text-white flex items-center justify-center font-extrabold text-lg shadow-md shadow-blue-600/20 transition-all">⚖️</div>
+      <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 group-hover:scale-105 text-white flex items-center justify-center font-extrabold text-base sm:text-lg shadow-md shadow-blue-600/25 transition-transform">⚖️</div>
         <div>
-          <div class="flex items-center gap-2">
-            <span class="font-heading text-xl font-extrabold tracking-tight text-slate-900">Sahi<span class="text-blue-600">Kanoon</span></span>
-            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Verified India</span>
+          <div class="flex items-center gap-1.5">
+            <span class="font-heading text-lg sm:text-xl font-extrabold tracking-tight text-slate-900">Sahi<span class="text-blue-600">Kanoon</span></span>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">India</span>
           </div>
-          <p id="ui-tagline" class="text-xs text-slate-500">Citizen Rights, Filled Form Guides, Schemes & Laws</p>
+          <p id="ui-tagline" class="text-[11px] text-slate-500 hidden sm:block">Citizen Rights, Filled Form Guides, Schemes & Scholarships</p>
         </div>
       </a>
 
       <!-- Right Controls: 4-Language Switcher + Verified Profile / Login -->
       <div class="flex items-center gap-2">
-        <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-slate-50 border border-slate-300 text-xs sm:text-sm font-bold rounded-xl px-3 py-2 text-slate-800 focus:outline-none focus:border-blue-600 cursor-pointer">
+        <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Select Language" class="bg-white border border-slate-300 hover:border-blue-500 text-xs font-bold rounded-xl px-2.5 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500/20 cursor-pointer transition-all">
           <option value="en" selected>🌐 English</option>
           <option value="hinglish">🇮🇳 Hinglish</option>
-          <option value="hi">🇮🇳 हिंदी (Hindi)</option>
-          <option value="mr">🇮🇳 मराठी (Marathi)</option>
+          <option value="hi">🇮🇳 हिंदी</option>
+          <option value="mr">🇮🇳 मराठी</option>
         </select>
 
-        <button onclick="handleHeaderAuthClick()" id="navAuthBtn" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition-all flex items-center gap-1.5">
+        <button onclick="handleHeaderAuthClick()" id="navAuthBtn" class="px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-bold shadow-xs transition-all flex items-center gap-1.5">
           <span id="navAuthIcon">🔐</span>
           <span id="navAuthLabel">Login / Verify OTP</span>
         </button>
       </div>
     </div>
 
-    <!-- Separate Multi-Page Navigation Strip -->
-    <nav class="max-w-7xl mx-auto px-4 pb-3 flex gap-2 overflow-x-auto no-scrollbar">
-      <a href="#home" onclick="navigateTo('home'); return false;" id="nav-home" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white whitespace-nowrap transition-all">🏠 Home</a>
-      <a href="#documents" onclick="navigateTo('documents'); return false;" id="nav-documents" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📄 Documents & Forms</a>
-      <a href="#schemes" onclick="navigateTo('schemes'); return false;" id="nav-schemes" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">🎓 Schemes & Scholarships</a>
-      <a href="#laws" onclick="navigateTo('laws'); return false;" id="nav-laws" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">⚖️ Laws & Rights</a>
-      <a href="#cybercrime" onclick="navigateTo('cybercrime'); return false;" id="nav-cybercrime" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">🛡️ Cybercrime 1930</a>
-      <a href="#constitution" onclick="navigateTo('constitution'); return false;" id="nav-constitution" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📜 Constitution</a>
-      <a href="#vault" onclick="navigateTo('vault'); return false;" id="nav-vault" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📁 My Vault</a>
-      <a href="#drafter" onclick="navigateTo('drafter'); return false;" id="nav-drafter" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📝 RTI & Letters</a>
-      <a href="#profile" onclick="navigateTo('profile'); return false;" id="nav-profile" class="nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">👤 Profile</a>
+    <!-- Responsive Multi-Page Navigation Bar (Wraps cleanly on desktop, scrolls smoothly on mobile — zero clipping) -->
+    <nav class="max-w-7xl mx-auto px-4 pb-2.5 flex flex-nowrap md:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar">
+      <a href="#home" onclick="navigateTo('home'); return false;" id="nav-home" class="nav-link px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-600 text-white whitespace-nowrap transition-all">🏠 Home</a>
+      <a href="#documents" onclick="navigateTo('documents'); return false;" id="nav-documents" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📄 Documents</a>
+      <a href="#schemes" onclick="navigateTo('schemes'); return false;" id="nav-schemes" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">🎓 Govt Schemes</a>
+      <a href="#private" onclick="navigateTo('private'); return false;" id="nav-private" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">🏫 Private Scholarships</a>
+      <a href="#laws" onclick="navigateTo('laws'); return false;" id="nav-laws" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">⚖️ Laws & Rights</a>
+      <a href="#cybercrime" onclick="navigateTo('cybercrime'); return false;" id="nav-cybercrime" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">🛡️ Cyber 1930</a>
+      <a href="#constitution" onclick="navigateTo('constitution'); return false;" id="nav-constitution" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📜 Constitution</a>
+      <a href="#vault" onclick="navigateTo('vault'); return false;" id="nav-vault" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📁 My Vault</a>
+      <a href="#drafter" onclick="navigateTo('drafter'); return false;" id="nav-drafter" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">📝 RTI & Letters</a>
+      <a href="#profile" onclick="navigateTo('profile'); return false;" id="nav-profile" class="nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all">👤 Profile</a>
     </nav>
   </header>
 
@@ -109,81 +155,119 @@
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-6">
 
     <!-- =================================================================== -->
-    <!-- PAGE 1: HOME — SITUATION-FIRST SHORTCUTS & QUICK EXPLORER (#home)   -->
+    <!-- PAGE 1: HOME PAGE WITH UNIFIED GLOBAL SEARCH & SITUATION CARDS      -->
     <!-- =================================================================== -->
     <section id="page-home" class="page-view hidden page-enter space-y-6">
-      <!-- Hero Banner -->
-      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xs grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        <div class="lg:col-span-8 space-y-3">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold">
-            <span>🇮🇳</span> <span id="ui-heroBadge">Free Citizen Legal & Document Empowerment Platform</span>
+      <!-- Hero + Unified Search -->
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xs space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-8 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold">
+              <span>🇮🇳</span> <span id="ui-heroBadge">India's Civic-Tech Legal, Form Guide & Scholarship Portal</span>
+            </div>
+            <h1 id="ui-heroTitle" class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Know Your Legal Rights & Fill Every Form Without Mistakes.
+            </h1>
+            <p id="ui-heroDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
+              Search across Documents, Filled Sample Forms, Govt & Private Scholarships, Laws, Constitution, or Official Status Portals in one place.
+            </p>
           </div>
-          <h1 id="ui-heroTitle" class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Know Your Exact Rights & Fill Any Govt Form Without Mistakes.
-          </h1>
-          <p id="ui-heroDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
-            Browse as Guest for free, or verify with 6-digit OTP to unlock Filled Sample Forms, Self-Declaration PDFs, Scholarship Checklists, and your Private Document Vault.
-          </p>
-          <div class="flex flex-wrap gap-2.5 pt-2">
-            <button onclick="navigateTo('documents')" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-sm transition-all" id="ui-btnExploreDocs">📄 Explore Documents & Sample Forms</button>
-            <button onclick="navigateTo('schemes')" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-sm transition-all" id="ui-btnExploreSchemes">🎓 Scholarships & Schemes</button>
-            <button onclick="toggleAIChat()" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold transition-all" id="ui-btnAskAI">🤖 Scan Notice / Ask AI</button>
+
+          <!-- Access Status Card -->
+          <div class="lg:col-span-4 bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-extrabold uppercase text-slate-500">Citizen Session</span>
+              <span id="homeStatusPill" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800">Guest Mode</span>
+            </div>
+            <p id="homeStatusText" class="text-xs text-slate-600 leading-relaxed">
+              Browse freely as Guest, or verify with 6-digit OTP to unlock Form Previews, Hamipatra PDFs & Application Tracker.
+            </p>
+            <button id="homeVerifyCta" onclick="navigateTo('login')" class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-98 text-white text-xs font-bold shadow-2xs transition-all">
+              🔐 Verify OTP & Unlock All →
+            </button>
           </div>
         </div>
 
-        <!-- Guest / Verified Status Box -->
-        <div class="lg:col-span-4 bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-extrabold uppercase text-slate-500" id="ui-accessStatusLabel">Access Mode</span>
-            <span id="homeStatusPill" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-100 text-amber-800">Guest Mode</span>
+        <!-- Unified Global Search Bar on Home Page -->
+        <div class="pt-2 border-t border-slate-100">
+          <div class="relative">
+            <span class="absolute inset-y-0 left-4 flex items-center text-slate-400 text-base">🔍</span>
+            <input
+              id="homeGlobalSearch"
+              type="text"
+              oninput="handleHomeGlobalSearch(this.value)"
+              placeholder="Search anything: Aadhaar form, MahaDBT, Kotak scholarship, Bike keys, Zero FIR, 1930, Article 21, Track Status..."
+              class="w-full bg-slate-50 border-2 border-slate-200 focus:border-blue-600 focus:bg-white rounded-2xl pl-11 pr-24 py-3.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-blue-500/10 transition-all"
+            />
+            <button id="clearHomeSearchBtn" onclick="document.getElementById('homeGlobalSearch').value=''; handleHomeGlobalSearch('');" class="hidden absolute inset-y-2 right-2.5 px-3 rounded-xl bg-slate-200 hover:bg-slate-300 text-xs font-bold text-slate-700">Clear</button>
           </div>
-          <p id="homeStatusText" class="text-xs text-slate-600 leading-relaxed">
-            You are browsing as a Guest. Verify your account with OTP to download forms, unlock scheme checklists & save documents.
-          </p>
-          <button id="homeVerifyCta" onclick="navigateTo('login')" class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all">
-            🔐 Login & Verify OTP Now →
-          </button>
+          <!-- Live Search Results Container -->
+          <div id="homeSearchResults" class="hidden mt-4 space-y-3"></div>
         </div>
       </div>
 
-      <!-- 6 Real-Life Emergency & Action Shortcuts -->
+      <!-- Quick Category Launchers -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <button onclick="navigateTo('documents')" class="fluent-card p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 text-left">
+          <span class="text-xl">📄</span>
+          <p class="font-heading font-extrabold text-sm text-slate-900 mt-1.5" id="qcard-1">Documents & Sample Forms</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">17 Govt IDs & Certificates</p>
+        </button>
+        <button onclick="navigateTo('schemes')" class="fluent-card p-4 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 text-left">
+          <span class="text-xl">🎓</span>
+          <p class="font-heading font-extrabold text-sm text-slate-900 mt-1.5" id="qcard-2">Govt Schemes & MahaDBT</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">Active & Closed Status</p>
+        </button>
+        <button onclick="navigateTo('private')" class="fluent-card p-4 rounded-2xl bg-white border border-slate-200 hover:border-indigo-500 text-left">
+          <span class="text-xl">🏫</span>
+          <p class="font-heading font-extrabold text-sm text-slate-900 mt-1.5" id="qcard-3">Private & CSR Scholarships</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">Reliance, Tata, HDFC, Kotak</p>
+        </button>
+        <button onclick="navigateTo('vault')" class="fluent-card p-4 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 text-left">
+          <span class="text-xl">🔎</span>
+          <p class="font-heading font-extrabold text-sm text-slate-900 mt-1.5" id="qcard-4">Track Application Status</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">Direct Official Status Links</p>
+        </button>
+      </div>
+
+      <!-- 6 Real-Life Emergency & Action Situations -->
       <div>
         <div class="flex items-center justify-between mb-3">
           <h2 id="ui-situationTitle" class="text-lg sm:text-xl font-extrabold text-slate-900">⚡ What Is Your Situation Right Now?</h2>
-          <span class="text-xs text-slate-500" id="ui-situationSub">Tap any situation for instant legal proof & steps</span>
+          <span class="text-xs text-slate-500 hidden sm:inline">Tap any card for instant written proof & steps</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <button onclick="triggerSituation('traffic')" class="card-anim p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 hover:shadow-md text-left transition-all group">
+          <button onclick="triggerSituation('traffic')" class="card-spring fluent-card p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 text-left group">
             <span class="text-2xl">🚓</span>
             <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-2 group-hover:text-blue-600" id="sit-1-t">Traffic Police Stopped Me / Took Keys</h3>
-            <p class="text-xs text-slate-500 mt-1" id="sit-1-d">Know exact Motor Vehicles Act rules, DigiLocker validity & officer limits.</p>
+            <p class="text-xs text-slate-500 mt-1" id="sit-1-d">Exact Motor Vehicles Act rules, DigiLocker validity & officer limits.</p>
           </button>
 
-          <button onclick="triggerSituation('cyber')" class="card-anim p-5 rounded-2xl bg-white border border-slate-200 hover:border-red-500 hover:shadow-md text-left transition-all group">
+          <button onclick="triggerSituation('cyber')" class="card-spring fluent-card p-5 rounded-2xl bg-white border border-slate-200 hover:border-red-500 text-left group">
             <span class="text-2xl">🚨</span>
             <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-2 group-hover:text-red-600" id="sit-2-t">UPI / Bank Fraud or Digital Arrest Scam</h3>
             <p class="text-xs text-slate-500 mt-1" id="sit-2-d">Call 1930 in Golden Hour & freeze scammer account immediately.</p>
           </button>
 
-          <button onclick="triggerSituation('fir')" class="card-anim p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 hover:shadow-md text-left transition-all group">
+          <button onclick="triggerSituation('fir')" class="card-spring fluent-card p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 text-left group">
             <span class="text-2xl">📋</span>
             <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-2 group-hover:text-blue-600" id="sit-3-t">Police Refusing to Register FIR</h3>
-            <p class="text-xs text-slate-500 mt-1" id="sit-3-d">Show Section 173 BNSS (Zero FIR) written proof & file SP complaint.</p>
+            <p class="text-xs text-slate-500 mt-1" id="sit-3-d">Show Section 173 BNSS (Zero FIR) written proof & file complaint.</p>
           </button>
 
-          <button onclick="triggerSituation('aadhaar')" class="card-anim p-5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition-all group">
+          <button onclick="triggerSituation('aadhaar')" class="card-spring fluent-card p-5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 text-left group">
             <span class="text-2xl">🪪</span>
             <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-2 group-hover:text-emerald-600" id="sit-4-t">Fill Aadhaar / PAN / Domicile Form</h3>
             <p class="text-xs text-slate-500 mt-1" id="sit-4-d">See filled sample form boxes, kagaz readiness meter & official fees.</p>
           </button>
 
-          <button onclick="triggerSituation('scholarship')" class="card-anim p-5 rounded-2xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition-all group">
+          <button onclick="triggerSituation('scholarship')" class="card-spring fluent-card p-5 rounded-2xl bg-white border border-slate-200 hover:border-indigo-500 text-left group">
             <span class="text-2xl">🎓</span>
-            <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-2 group-hover:text-emerald-600" id="sit-5-t">Apply for MahaDBT / NSP Scholarship</h3>
-            <p class="text-xs text-slate-500 mt-1" id="sit-5-d">Check active schemes, NPCI Aadhaar seeding & sample filled form.</p>
+            <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-2 group-hover:text-indigo-600" id="sit-5-t">Apply for Govt or Private Scholarship</h3>
+            <p class="text-xs text-slate-500 mt-1" id="sit-5-d">MahaDBT, NSP & Private CSR grants with filled sample forms.</p>
           </button>
 
-          <button onclick="triggerSituation('salary')" class="card-anim p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 hover:shadow-md text-left transition-all group">
+          <button onclick="triggerSituation('salary')" class="card-spring fluent-card p-5 rounded-2xl bg-white border border-slate-200 hover:border-blue-500 text-left group">
             <span class="text-2xl">💼</span>
             <h3 class="font-extrabold text-slate-900 text-sm sm:text-base mt-2 group-hover:text-blue-600" id="sit-6-t">Company Delayed Salary or F&F</h3>
             <p class="text-xs text-slate-500 mt-1" id="sit-6-d">Payment of Wages Act rules & 1-click legal demand notice.</p>
@@ -193,7 +277,7 @@
     </section>
 
     <!-- =================================================================== -->
-    <!-- PAGE 2: CATALOG PAGE (#documents, #schemes, #laws, #cyber, #const)  -->
+    <!-- PAGE 2: CATALOG (#documents, #schemes, #private, #laws, #cyber, #const) -->
     <!-- =================================================================== -->
     <section id="page-catalog" class="page-view hidden page-enter space-y-5">
       <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-2xs flex flex-wrap items-center justify-between gap-3">
@@ -202,18 +286,18 @@
           <p id="catalogSub" class="text-xs text-slate-500 mt-0.5">Subtitle</p>
         </div>
         <div class="flex flex-wrap gap-2">
-          <button onclick="toggleAIChat()" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">🤖 Ask AI</button>
+          <button onclick="toggleAIChat()" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-2xs transition-all">🤖 Ask AI</button>
           <a href="tel:1930" class="px-3.5 py-2 rounded-xl bg-red-50 text-red-700 border border-red-200 text-xs font-bold">🚨 SOS: 1930</a>
         </div>
       </div>
 
-      <!-- Cybercrime Alert (Only on #cybercrime) -->
+      <!-- Cybercrime Banner (Only on #cybercrime) -->
       <div id="cyberBanner" class="hidden bg-red-50 border border-red-200 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h3 class="font-bold text-red-900 text-sm">🚨 Cyber Fraud / UPI Scam? Call 1930 Within 1 Hour (Golden Hour)</h3>
           <p class="text-xs text-red-700">Immediate reporting freezes the scammer's bank account before withdrawal.</p>
         </div>
-        <a href="https://cybercrime.gov.in/" target="_blank" class="px-4 py-2 bg-red-600 text-white text-xs font-bold rounded-xl">cybercrime.gov.in ↗</a>
+        <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener" class="px-4 py-2 bg-red-600 text-white text-xs font-bold rounded-xl">cybercrime.gov.in ↗</a>
       </div>
 
       <!-- Complete Constitution 22 Parts + 12 Schedules Explorer (Only on #constitution) -->
@@ -221,7 +305,7 @@
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
             <h3 class="font-bold text-slate-900 text-sm">🇮🇳 Complete Constitution of India — Preamble, 22 Parts, 395+ Articles & 12 Schedules</h3>
-            <p class="text-xs text-slate-500">Filter by Part below or expand the full 22 Parts & 12 Schedules reference</p>
+            <p class="text-xs text-slate-500">Filter by Part below or expand the complete 22 Parts & 12 Schedules index</p>
           </div>
           <button onclick="document.getElementById('partsIndexDrawer').classList.toggle('hidden')" class="px-3 py-1.5 rounded-xl bg-blue-50 text-blue-700 border border-blue-200 text-xs font-bold">📖 All 22 Parts & 12 Schedules</button>
         </div>
@@ -256,73 +340,94 @@
 
       <!-- Search + Sub-filters -->
       <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs">
-        <input id="searchInput" type="text" oninput="renderCatalog()" placeholder="Search..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600" />
+        <input id="searchInput" type="text" oninput="renderCatalog()" placeholder="Search..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600 transition-all" />
         <div id="subFilters" class="flex flex-wrap gap-2 mt-3"></div>
       </div>
 
-      <div id="statusMsg" class="text-center py-12 text-slate-500 text-sm">Loading database...</div>
+      <!-- Shimmer Skeleton Loader -->
+      <div id="statusMsg" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="h-48 rounded-2xl skeleton"></div>
+        <div class="h-48 rounded-2xl skeleton"></div>
+        <div class="h-48 rounded-2xl skeleton"></div>
+        <div class="h-48 rounded-2xl skeleton"></div>
+      </div>
       <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
     </section>
 
     <!-- =================================================================== -->
-    <!-- PAGE 3: FULL DEDICATED DETAIL PAGE (#detail)                        -->
-    <!-- Includes: Kagaz Readiness Meter + Visual Filled Sample Form + Proof -->
+    <!-- PAGE 3: DEDICATED DETAIL PAGE (#detail)                             -->
+    <!-- Clean Point-Wise Steps + Top Tabs for Filled Sample Form            -->
     <!-- =================================================================== -->
     <section id="page-detail" class="page-view hidden page-enter space-y-5">
       <div class="flex flex-wrap items-center justify-between gap-2">
-        <button onclick="history.back()" class="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 border border-slate-300 text-xs sm:text-sm font-bold text-slate-800 shadow-2xs flex items-center gap-1.5">
+        <button onclick="goBackSafe()" class="px-4 py-2 rounded-xl bg-white hover:bg-slate-100 border border-slate-300 text-xs sm:text-sm font-bold text-slate-800 shadow-2xs flex items-center gap-1.5 transition-all">
           <span>←</span> <span id="ui-backBtn">Back</span>
         </button>
-        <div class="flex flex-wrap gap-2">
-          <button onclick="toggleOfficerScreen()" id="btnOfficerScreen" class="px-3.5 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold">🪪 Show to Officer</button>
-          <button onclick="shareCurrentDetail()" id="btnShareDetail" class="px-3.5 py-2 rounded-xl bg-white border border-slate-300 text-xs font-bold">📤 Copy / Share</button>
-        </div>
+        <div id="detailTopActions" class="flex flex-wrap gap-2"></div>
       </div>
 
       <div id="detailContainer" class="space-y-6"></div>
     </section>
 
     <!-- =================================================================== -->
-    <!-- PAGE 4: PRIVATE DOCUMENT VAULT & APPLICATION TRACKER (#vault)       -->
+    <!-- PAGE 4: TOP-SECURITY MY VAULT — APPLICATION TRACKER & STATUS LINKS  -->
+    <!-- (Zero personal document files stored — only Application IDs & URLs) -->
     <!-- =================================================================== -->
     <section id="page-vault" class="page-view hidden page-enter space-y-6">
-      <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-7 shadow-2xs">
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+      <!-- Part A: Searchable Direct Official Status Links -->
+      <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-7 shadow-2xs space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
           <div>
-            <span class="text-[11px] font-bold uppercase px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">OTP Protected Vault</span>
-            <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1.5">📁 My Document Vault & Application Token Tracker</h1>
-            <p class="text-xs text-slate-500 mt-0.5">Upload IDs/receipts via Camera or File and track your Application / Token IDs.</p>
+            <span class="text-[11px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">Direct Status Lookup</span>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1.5">🔎 Official Application Status Portals</h1>
+            <p class="text-xs text-slate-500">Search any certificate, scholarship, or ID below to open its direct official tracking link.</p>
+          </div>
+        </div>
+        <input id="statusPortalSearch" type="text" oninput="renderStatusPortals()" placeholder="Search portal: Aaple Sarkar, MahaDBT, NSP, Passport ARN, Aadhaar SRN, PAN, Driving Licence, 1930..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:bg-white focus:outline-none focus:border-blue-600" />
+        <div id="statusPortalsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+      </div>
+
+      <!-- Part B: Application & Token ID Tracker (Zero Document Files) -->
+      <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-7 shadow-2xs space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-[11px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">🔒 High-Security Token Vault</span>
+            <h2 class="text-xl font-extrabold text-slate-900 mt-1.5">📁 My Saved Application & Reference Numbers</h2>
+            <p class="text-xs text-slate-500">For maximum privacy, no ID photos or files are stored here—only your Application / Token IDs and status.</p>
           </div>
         </div>
 
-        <form onsubmit="handleVaultAdd(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-200 mb-6">
-          <div class="sm:col-span-3">
-            <label class="block text-[11px] font-bold text-slate-700 mb-1">Document / Scheme Name *</label>
-            <input id="vDocName" type="text" required placeholder="e.g. Domicile / MahaDBT" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs" />
-          </div>
-          <div class="sm:col-span-3">
-            <label class="block text-[11px] font-bold text-slate-700 mb-1">Application / Token ID</label>
-            <input id="vTokenId" type="text" placeholder="Optional App ID" class="w-full font-mono bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs" />
-          </div>
-          <div class="sm:col-span-2">
-            <label class="block text-[11px] font-bold text-slate-700 mb-1">Status</label>
-            <select id="vStatus" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs">
-              <option value="Ready / Verified">✅ Ready / Verified</option>
-              <option value="Applied">⏳ Applied</option>
-              <option value="Under Verification">🔍 Under Verification</option>
-              <option value="Approved">🎉 Approved</option>
+        <form onsubmit="handleVaultAdd(event)" class="grid grid-cols-1 sm:grid-cols-12 gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="sm:col-span-4">
+            <label class="block text-[11px] font-bold text-slate-700 mb-1">Service / Scholarship Name *</label>
+            <select id="vServiceSelect" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900">
+              <option value="Aaple Sarkar (Domicile / Income / Caste)">Aaple Sarkar (Domicile / Income / Caste)</option>
+              <option value="MahaDBT Scholarship">MahaDBT Scholarship</option>
+              <option value="NSP Scholarship (OTR)">NSP Scholarship (OTR)</option>
+              <option value="Private / CSR Scholarship">Private / CSR Scholarship</option>
+              <option value="Aadhaar Update (SRN)">Aadhaar Update (SRN)</option>
+              <option value="PAN Card (Acknowledgement)">PAN Card (Acknowledgement)</option>
+              <option value="Indian Passport (ARN)">Indian Passport (ARN)</option>
+              <option value="Parivahan Driving Licence">Parivahan Driving Licence</option>
+              <option value="Cybercrime 1930 Complaint">Cybercrime 1930 Complaint</option>
+              <option value="RTI Application">RTI Application</option>
             </select>
           </div>
-          <div class="sm:col-span-2">
-            <label class="block text-[11px] font-bold text-slate-700 mb-1">File / Camera</label>
-            <div class="flex gap-1">
-              <label class="flex-1 cursor-pointer bg-white hover:bg-blue-50 border border-slate-300 rounded-xl py-2 text-center text-[11px] font-bold">📎<input type="file" accept="image/*,.pdf" class="hidden" onchange="pickVaultFile(this)" /></label>
-              <label class="flex-1 cursor-pointer bg-white hover:bg-blue-50 border border-slate-300 rounded-xl py-2 text-center text-[11px] font-bold">📷<input type="file" accept="image/*" capture="environment" class="hidden" onchange="pickVaultFile(this)" /></label>
-            </div>
-            <p id="vFileLabel" class="text-[10px] text-blue-600 mt-1 truncate">Optional file</p>
+          <div class="sm:col-span-3">
+            <label class="block text-[11px] font-bold text-slate-700 mb-1">Application / Token ID *</label>
+            <input id="vTokenId" type="text" required placeholder="e.g. MH2026123456" class="w-full font-mono bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs" />
+          </div>
+          <div class="sm:col-span-3">
+            <label class="block text-[11px] font-bold text-slate-700 mb-1">Current Status</label>
+            <select id="vStatus" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs">
+              <option value="Applied / Submitted">⏳ Applied / Submitted</option>
+              <option value="Under Verification">🔍 Under Verification</option>
+              <option value="Approved / Issued">✅ Approved / Issued</option>
+              <option value="Action Needed / Sent Back">⚠️ Action Needed</option>
+            </select>
           </div>
           <div class="sm:col-span-2 flex items-end">
-            <button type="submit" class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs">+ Save Record</button>
+            <button type="submit" class="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-2xs">+ Save ID</button>
           </div>
         </form>
 
@@ -331,31 +436,31 @@
     </section>
 
     <!-- =================================================================== -->
-    <!-- PAGE 5: RTI, HAMIPATRA & OFFICER COMPLAINT DRAFTER (#drafter)       -->
+    <!-- PAGE 5: HAMIPATRA, RTI & OFFICER COMPLAINT DRAFTER (#drafter)       -->
     <!-- =================================================================== -->
     <section id="page-drafter" class="page-view hidden page-enter">
       <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-7 shadow-2xs">
-        <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-1">📝 Auto-Populated Self-Declaration (Hamipatra), RTI & Legal Letters</h1>
-        <p class="text-xs text-slate-500 mb-5">Automatically populated with your Verified Citizen Profile details. Downloading/Printing requires OTP verification.</p>
+        <h1 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-1">📝 Auto-Populated Hamipatra, RTI & Legal Letters</h1>
+        <p class="text-xs text-slate-500 mb-5">Automatically populated with your OTP-Verified Citizen Profile. Copy or Print requires OTP verification.</p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 mb-5">
-          <button onclick="generateDraft('hamipatra')" class="p-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100 text-left">
+          <button onclick="generateDraft('hamipatra')" class="p-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100 text-left transition-all">
             <p class="text-xs font-extrabold text-emerald-900">📜 Self-Declaration</p>
             <p class="text-[11px] text-slate-600 mt-0.5">Hamipatra for Certificates</p>
           </button>
-          <button onclick="generateDraft('rti')" class="p-3 rounded-2xl border border-blue-200 bg-blue-50/70 hover:bg-blue-100 text-left">
+          <button onclick="generateDraft('rti')" class="p-3 rounded-2xl border border-blue-200 bg-blue-50/70 hover:bg-blue-100 text-left transition-all">
             <p class="text-xs font-extrabold text-blue-900">📄 RTI Application</p>
             <p class="text-[11px] text-slate-600 mt-0.5">Sec 6 File Status Request</p>
           </button>
-          <button onclick="generateDraft('officer')" class="p-3 rounded-2xl border border-amber-200 bg-amber-50/70 hover:bg-amber-100 text-left">
+          <button onclick="generateDraft('officer')" class="p-3 rounded-2xl border border-amber-200 bg-amber-50/70 hover:bg-amber-100 text-left transition-all">
             <p class="text-xs font-extrabold text-amber-900">🚨 Officer Complaint</p>
             <p class="text-[11px] text-slate-600 mt-0.5">FIR Refusal / RTS Delay</p>
           </button>
-          <button onclick="generateDraft('salary')" class="p-3 rounded-2xl border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100 text-left">
+          <button onclick="generateDraft('salary')" class="p-3 rounded-2xl border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100 text-left transition-all">
             <p class="text-xs font-extrabold text-indigo-900">💼 Unpaid Salary</p>
             <p class="text-[11px] text-slate-600 mt-0.5">Wages Act Legal Notice</p>
           </button>
-          <button onclick="generateDraft('cyber')" class="p-3 rounded-2xl border border-red-200 bg-red-50/70 hover:bg-red-100 text-left">
+          <button onclick="generateDraft('cyber')" class="p-3 rounded-2xl border border-red-200 bg-red-50/70 hover:bg-red-100 text-left transition-all">
             <p class="text-xs font-extrabold text-red-900">🛡️ Cyber Complaint</p>
             <p class="text-[11px] text-slate-600 mt-0.5">1930 / Bank Freeze Letter</p>
           </button>
@@ -365,8 +470,8 @@
 
         <div class="flex flex-wrap items-center justify-between gap-3 mt-4">
           <div class="flex flex-wrap gap-2 text-[11px]">
-            <a href="https://pgportal.gov.in/" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-100 font-bold text-slate-700">CPGRAMS Portal ↗</a>
-            <a href="https://grievances.maharashtra.gov.in/" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-100 font-bold text-slate-700">Aaple Sarkar Grievance ↗</a>
+            <a href="https://pgportal.gov.in/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-slate-100 font-bold text-slate-700">CPGRAMS Portal ↗</a>
+            <a href="https://grievances.maharashtra.gov.in/" target="_blank" rel="noopener" class="px-3 py-1.5 rounded-lg bg-slate-100 font-bold text-slate-700">Aaple Sarkar Grievance ↗</a>
           </div>
           <div class="flex gap-2">
             <button onclick="requireVerified(() => copyDraft())" id="btnCopyDraft" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold">📋 Copy Letter</button>
@@ -377,58 +482,77 @@
     </section>
 
     <!-- =================================================================== -->
-    <!-- PAGE 6: LOGIN & 6-DIGIT OTP VERIFICATION PAGE (#login)              -->
+    <!-- PAGE 6: REDESIGNED HIGH-SECURITY CITIZEN LOGIN & 6-BOX OTP PAGE     -->
     <!-- =================================================================== -->
     <section id="page-login" class="page-view hidden page-enter">
-      <div class="max-w-4xl mx-auto bg-white border border-slate-200 rounded-3xl shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-        <div class="lg:col-span-5 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white p-7 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-bold uppercase px-3 py-1 rounded-full bg-white/10 text-blue-200">OTP Verified Access</span>
-            <h1 class="text-2xl sm:text-3xl font-extrabold mt-4">Sahi<span class="text-blue-400">Kanoon</span></h1>
-            <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
-              Verify once with a 6-digit OTP to unlock Form Downloads, Hamipatra PDFs, Scholarship Checklists, "Preview With My Details", and your Document Vault.
+      <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-3xl shadow-xl shadow-slate-900/5 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        <!-- Left Security & Trust Architecture Column -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white p-7 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-blue-500/20 blur-2xl"></div>
+          <div class="relative z-10 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[11px] font-bold">
+              <span>🔒</span> <span>Zero-File-Risk Security Architecture</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Sahi<span class="text-blue-400">Kanoon</span> Citizen Gateway</h1>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Verify once with your Email, Mobile Number, and 6-digit OTP to unlock personalized Sample Form Previews, Hamipatra PDFs, and Application Token Tracking.
             </p>
-            <div class="mt-6 space-y-2 text-xs text-slate-200">
-              <p>✅ 100% Free Citizen Verification</p>
-              <p>✅ Permanent Database Profile Sync</p>
-              <p>✅ State & District Smart Selector</p>
+            <div class="pt-2 space-y-2.5 text-xs">
+              <div class="p-3 rounded-2xl bg-white/5 border border-white/10">
+                <p class="font-bold text-white">🛡️ Strict Data Minimization</p>
+                <p class="text-slate-400 text-[11px] mt-0.5">We never ask for Aadhaar numbers, passwords, or ID file uploads.</p>
+              </div>
+              <div class="p-3 rounded-2xl bg-white/5 border border-white/10">
+                <p class="font-bold text-white">⚡ 6-Digit OTP + Session Protection</p>
+                <p class="text-slate-400 text-[11px] mt-0.5">XSS-sanitized inputs & verified Supabase session token.</p>
+              </div>
             </div>
           </div>
-          <button onclick="navigateTo('home')" class="mt-6 text-left text-xs text-blue-300 hover:underline font-semibold">← Continue as Guest</button>
+
+          <button onclick="navigateTo('home')" class="relative z-10 mt-6 text-left text-xs text-blue-300 hover:underline font-semibold">← Continue Browsing as Guest</button>
         </div>
 
+        <!-- Right Verification Form -->
         <div class="lg:col-span-7 p-6 sm:p-8">
-          <h2 class="text-xl font-extrabold text-slate-900 mb-1">Citizen Login & OTP Verification</h2>
-          <p class="text-xs text-slate-500 mb-5">Step 1: Enter your details & email/mobile → Step 2: Enter 6-digit OTP.</p>
+          <div class="flex items-center justify-between mb-5">
+            <div>
+              <h2 class="text-xl font-extrabold text-slate-900">Citizen Verification</h2>
+              <p class="text-xs text-slate-500">Complete basic details to receive your 6-digit OTP</p>
+            </div>
+            <span class="font-mono text-[11px] font-bold px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700" id="loginStepBadge">Step 1 of 2</span>
+          </div>
 
-          <!-- Step 1 Form -->
+          <!-- Step 1: Citizen Details -->
           <form id="otpStep1Form" onsubmit="sendVerificationOTP(event)" class="space-y-3.5 text-xs">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block font-bold text-slate-700 mb-1">Email Address (For OTP) *</label>
-                <input id="inEmail" type="email" required placeholder="Enter your email" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                <label class="block font-bold text-slate-700 mb-1">Gmail / Email Address (For OTP) *</label>
+                <input id="inEmail" type="email" required placeholder="yourname@gmail.com" class="w-full bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none transition-all" />
               </div>
               <div>
-                <label class="block font-bold text-slate-700 mb-1">Mobile Number *</label>
-                <input id="inPhone" type="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="10-digit mobile number" class="w-full font-mono bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                <label class="block font-bold text-slate-700 mb-1">Mobile Number (10 Digits) *</label>
+                <div class="flex">
+                  <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-slate-300 bg-slate-100 text-slate-600 font-mono font-bold text-xs">+91</span>
+                  <input id="inPhone" type="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="98XXXXXXXX" class="w-full font-mono bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-r-xl px-3 py-2.5 text-sm outline-none transition-all" />
+                </div>
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div class="sm:col-span-2">
-                <label class="block font-bold text-slate-700 mb-1">Full Name (As per ID) *</label>
-                <input id="inName" type="text" required placeholder="Enter full name" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                <label class="block font-bold text-slate-700 mb-1">Full Name (As per Official ID) *</label>
+                <input id="inName" type="text" required placeholder="Enter your full name" class="w-full bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none transition-all" />
               </div>
               <div>
                 <label class="block font-bold text-slate-700 mb-1">Age *</label>
-                <input id="inAge" type="number" min="10" max="110" required placeholder="Age" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                <input id="inAge" type="number" min="10" max="110" required placeholder="Age" class="w-full bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none transition-all" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block font-bold text-slate-700 mb-1">Category / Role *</label>
-                <select id="inRole" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm">
+                <label class="block font-bold text-slate-700 mb-1">Category / Occupation *</label>
+                <select id="inRole" class="w-full bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none">
                   <option value="Student">🎓 Student</option>
                   <option value="Salaried Employee">💼 Salaried Employee</option>
                   <option value="Self-Employed">🏪 Self-Employed / Business</option>
@@ -437,51 +561,63 @@
                 </select>
               </div>
               <div>
-                <label class="block font-bold text-slate-700 mb-1">State *</label>
-                <select id="inState" onchange="fillDistricts('inState','inDistrict','inDistrictCustom')" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm"></select>
+                <label class="block font-bold text-slate-700 mb-1">State / UT *</label>
+                <select id="inState" onchange="fillDistricts('inState','inDistrict','inDistrictCustom')" required class="w-full bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none"></select>
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div>
                 <label class="block font-bold text-slate-700 mb-1">District *</label>
-                <select id="inDistrict" onchange="toggleCustomDist('inDistrict','inDistrictCustom')" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm">
+                <select id="inDistrict" onchange="toggleCustomDist('inDistrict','inDistrictCustom')" required class="w-full bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none">
                   <option value="">-- State First --</option>
                 </select>
                 <input id="inDistrictCustom" type="text" placeholder="District name" class="hidden mt-1.5 w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs" />
               </div>
               <div>
                 <label class="block font-bold text-slate-700 mb-1">Area / Locality *</label>
-                <input id="inArea" type="text" required placeholder="Locality / Area" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                <input id="inArea" type="text" required placeholder="Locality / Area" class="w-full bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none" />
               </div>
               <div>
                 <label class="block font-bold text-slate-700 mb-1">PIN Code *</label>
-                <input id="inPin" type="text" maxlength="6" pattern="[0-9]{6}" required placeholder="6-digit PIN" class="w-full font-mono bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                <input id="inPin" type="text" maxlength="6" pattern="[0-9]{6}" required placeholder="6-digit PIN" class="w-full font-mono bg-slate-50 border border-slate-300 focus:bg-white focus:border-blue-600 rounded-xl px-3.5 py-2.5 text-sm outline-none" />
               </div>
             </div>
 
-            <div id="otpStep1Msg" class="hidden p-3 rounded-xl font-semibold"></div>
-
-            <button type="submit" id="btnSendOtp" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-sm">
-              Send 6-Digit Verification OTP →
+            <button type="submit" id="btnSendOtp" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-99 text-white font-bold text-sm shadow-md shadow-blue-600/20 transition-all">
+              Send 6-Digit Security OTP →
             </button>
           </form>
 
-          <!-- Step 2 OTP Verification Box -->
-          <form id="otpStep2Form" onsubmit="verifyOTPCode(event)" class="hidden space-y-4 pt-2">
-            <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs text-blue-900">
-              <p class="font-bold">📩 6-Digit OTP Sent!</p>
-              <p id="otpSentInfo" class="mt-1">Check your email inbox (and Spam folder) for the 6-digit verification code.</p>
+          <!-- Step 2: 6-Box Animated OTP Verification -->
+          <form id="otpStep2Form" onsubmit="verifyOTPCode(event)" class="hidden space-y-5 pt-2">
+            <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs text-blue-950 space-y-1">
+              <p class="font-extrabold">📩 Verification Code Dispatched</p>
+              <p id="otpSentInfo" class="leading-relaxed"></p>
             </div>
+
             <div>
-              <label class="block text-xs font-bold text-slate-700 mb-1">Enter 6-Digit OTP Code *</label>
-              <input id="inOtpCode" type="text" maxlength="6" pattern="[0-9]{6}" required placeholder="000000" class="w-full font-mono text-center text-xl tracking-widest bg-slate-50 border border-slate-300 rounded-xl px-4 py-3" />
+              <label class="block text-xs font-bold text-slate-700 mb-2">Enter 6-Digit OTP *</label>
+              <div class="grid grid-cols-6 gap-2 sm:gap-3 max-w-sm" id="otpBoxesGroup">
+                <input type="text" inputmode="numeric" maxlength="1" class="otp-digit h-12 sm:h-14 text-center font-mono text-xl font-extrabold bg-slate-50 border-2 border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl outline-none transition-all" />
+                <input type="text" inputmode="numeric" maxlength="1" class="otp-digit h-12 sm:h-14 text-center font-mono text-xl font-extrabold bg-slate-50 border-2 border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl outline-none transition-all" />
+                <input type="text" inputmode="numeric" maxlength="1" class="otp-digit h-12 sm:h-14 text-center font-mono text-xl font-extrabold bg-slate-50 border-2 border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl outline-none transition-all" />
+                <input type="text" inputmode="numeric" maxlength="1" class="otp-digit h-12 sm:h-14 text-center font-mono text-xl font-extrabold bg-slate-50 border-2 border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl outline-none transition-all" />
+                <input type="text" inputmode="numeric" maxlength="1" class="otp-digit h-12 sm:h-14 text-center font-mono text-xl font-extrabold bg-slate-50 border-2 border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl outline-none transition-all" />
+                <input type="text" inputmode="numeric" maxlength="1" class="otp-digit h-12 sm:h-14 text-center font-mono text-xl font-extrabold bg-slate-50 border-2 border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl outline-none transition-all" />
+              </div>
             </div>
+
             <div id="otpStep2Msg" class="hidden text-xs p-3 rounded-xl font-semibold"></div>
-            <div class="flex gap-2">
-              <button type="button" onclick="resetOtpStep()" class="px-4 py-3 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold">← Change Details</button>
-              <button type="submit" class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm">✅ Verify OTP & Unlock All Features</button>
+
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+              <button type="button" onclick="resetOtpStep()" class="text-slate-600 hover:text-slate-900 font-bold">← Edit Details</button>
+              <span id="otpTimerLabel" class="font-mono text-slate-500">Resend available in 60s</span>
             </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all">
+              ✅ Verify OTP & Activate Citizen Pass
+            </button>
           </form>
         </div>
       </div>
@@ -509,11 +645,11 @@
           <div class="grid grid-cols-2 gap-3 text-center">
             <div class="p-3.5 rounded-2xl bg-blue-50 border border-blue-100">
               <p id="profSavedCount" class="text-2xl font-extrabold text-blue-700">0</p>
-              <p class="text-xs font-semibold text-slate-600">Saved Laws</p>
+              <p class="text-xs font-semibold text-slate-600">Saved Bookmarks</p>
             </div>
             <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-100">
               <p id="profVaultCount" class="text-2xl font-extrabold text-emerald-700">0</p>
-              <p class="text-xs font-semibold text-slate-600">Vault Records</p>
+              <p class="text-xs font-semibold text-slate-600">Tracked App IDs</p>
             </div>
           </div>
 
@@ -524,7 +660,7 @@
         </div>
 
         <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 shadow-2xs">
-          <h2 class="text-lg font-extrabold text-slate-900 mb-1">✏️ Edit Verified Profile</h2>
+          <h2 class="text-lg font-extrabold text-slate-900 mb-1">✏️ Update Verified Profile</h2>
           <p class="text-xs text-slate-500 mb-4">Your details automatically populate Sample Form Previews and Hamipatra / RTI PDFs.</p>
 
           <form onsubmit="saveProfileChanges(event)" class="space-y-3.5 text-xs">
@@ -542,7 +678,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label class="block font-bold text-slate-700 mb-1">Mobile Number *</label>
-                <input id="edPhone" type="tel" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
+                <input id="edPhone" type="tel" pattern="[0-9]{10}" maxlength="10" required class="w-full font-mono bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm" />
               </div>
               <div>
                 <label class="block font-bold text-slate-700 mb-1">Role / Occupation</label>
@@ -595,7 +731,7 @@
   </footer>
 
   <!-- ===================================================================== -->
-  <!-- OTP GATE PROMPT MODAL (SHOWN WHEN GUEST TRIES RESTRICTED ACTION)      -->
+  <!-- OTP GATE MODAL (WHEN GUEST CLICKS LOCKED ACTION)                      -->
   <!-- ===================================================================== -->
   <div id="otpGateModal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
     <div class="animate-modal bg-white border border-slate-200 rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4">
@@ -605,7 +741,7 @@
       </div>
       <h3 class="text-lg font-extrabold text-slate-900">Verify Your Citizen Account to Unlock</h3>
       <p class="text-xs text-slate-600 leading-relaxed">
-        Guest mode allows free reading. To <b>download/print forms & Hamipatra, preview forms with your details, unlock scheme applications, or save documents to your Vault</b>, please complete a quick 6-digit OTP verification.
+        Guest mode lets you read everything freely. To <b>preview sample forms with your details, print Hamipatra/RTI PDFs, or save Application IDs in My Vault</b>, complete a quick 6-digit OTP verification.
       </p>
       <div class="flex gap-2 pt-2">
         <button onclick="document.getElementById('otpGateModal').classList.add('hidden')" class="flex-1 py-2.5 rounded-xl bg-slate-100 text-slate-700 text-xs font-bold">Stay as Guest</button>
@@ -615,40 +751,40 @@
   </div>
 
   <!-- ===================================================================== -->
-  <!-- CONTEXT-AWARE AI CHATBOT (CAMERA + FILE OCR + VOICE)                  -->
+  <!-- FLOATING CONTEXT-AWARE AI COPILOT + OCR SCANNER (PROPERLY ALIGNED)    -->
   <!-- ===================================================================== -->
-  <button onclick="toggleAIChat()" class="fixed bottom-5 right-5 z-40 px-4 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-xl flex items-center gap-2">
+  <button onclick="toggleAIChat()" class="fixed bottom-5 right-5 z-40 px-4 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold text-xs sm:text-sm shadow-xl shadow-blue-600/25 flex items-center gap-2 transition-all">
     <span>🤖</span> <span>SahiKanoon AI</span>
   </button>
 
-  <div id="aiChatWin" class="hidden fixed bottom-20 right-4 sm:right-5 z-50 w-[94vw] sm:w-[410px] bg-white border border-slate-200 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-modal" style="height: 520px;">
-    <div class="px-4 py-3.5 bg-gradient-to-r from-slate-900 to-blue-900 text-white flex items-center justify-between">
+  <div id="aiChatWin" class="hidden fixed bottom-20 right-4 sm:right-5 z-50 w-[92vw] sm:w-[400px] bg-white border border-slate-200 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-modal" style="height: 510px;">
+    <div class="px-4 py-3.5 bg-gradient-to-r from-slate-950 to-blue-900 text-white flex items-center justify-between">
       <div>
-        <h3 class="font-bold text-sm">🤖 SahiKanoon Context AI</h3>
-        <p class="text-[11px] text-blue-200">Understands active page • Voice 🎤 • Photo OCR 📷</p>
+        <h3 class="font-bold text-sm">🤖 SahiKanoon AI Copilot</h3>
+        <p class="text-[11px] text-blue-200">Page-Aware • Voice 🎤 • Photo/File OCR 📷</p>
       </div>
       <button onclick="toggleAIChat()" class="w-7 h-7 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-bold">✕</button>
     </div>
 
     <div class="px-3 py-2 bg-slate-50 border-b border-slate-200 flex gap-1.5 overflow-x-auto no-scrollbar">
-      <button type="button" onclick="quickAsk('How to fill Aadhaar form example')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap">🪪 Aadhaar sample</button>
-      <button type="button" onclick="quickAsk('MahaDBT scholarship form guide')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap">🎓 MahaDBT sample</button>
-      <button type="button" onclick="quickAsk('Traffic police took bike keys')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap">🚓 Bike keys</button>
-      <button type="button" onclick="quickAsk('UPI scam 1930')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap">🛡️ UPI Fraud</button>
+      <button type="button" onclick="quickAsk('Show Aadhaar sample form')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap hover:border-blue-500">🪪 Aadhaar sample</button>
+      <button type="button" onclick="quickAsk('Kotak or Reliance private scholarship')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap hover:border-blue-500">🏫 Private scholarship</button>
+      <button type="button" onclick="quickAsk('Traffic police took bike keys')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap hover:border-blue-500">🚓 Bike keys</button>
+      <button type="button" onclick="quickAsk('UPI fraud 1930')" class="px-2.5 py-1 rounded-full bg-white border border-slate-300 text-[11px] whitespace-nowrap hover:border-blue-500">🛡️ UPI 1930</button>
     </div>
 
     <div id="aiMsgs" class="flex-1 p-3.5 overflow-y-auto space-y-3 text-xs bg-slate-50/50">
       <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none leading-relaxed">
-        👋 Ask any question about <b>Filled Sample Forms, Scholarships, Laws, or Constitution</b> — or upload any <b>Notice/Challan photo</b> via <b>📷 / 📎</b> below!
+        👋 Hello! Ask me any question about <b>Filled Sample Forms, Govt or Private Scholarships, Laws, or Status Portals</b> — or scan a <b>Challan / Notice photo</b> using <b>📷 / 📎</b> below!
       </div>
     </div>
 
     <form onsubmit="sendAIChat(event)" class="p-2.5 border-t border-slate-200 bg-white flex items-center gap-1.5">
-      <label title="Upload File" class="cursor-pointer p-2 rounded-xl bg-slate-100 hover:bg-blue-50 border border-slate-200 text-xs font-bold">📎<input type="file" accept="image/*,.pdf" class="hidden" onchange="scanFileAI(this)" /></label>
-      <label title="Camera Scan" class="cursor-pointer p-2 rounded-xl bg-slate-100 hover:bg-blue-50 border border-slate-200 text-xs font-bold">📷<input type="file" accept="image/*" capture="environment" class="hidden" onchange="scanFileAI(this)" /></label>
+      <label title="Upload Image or PDF" class="cursor-pointer p-2 rounded-xl bg-slate-100 hover:bg-blue-50 border border-slate-200 text-xs font-bold">📎<input type="file" accept="image/*,.pdf" class="hidden" onchange="scanFileAI(this)" /></label>
+      <label title="Scan with Camera" class="cursor-pointer p-2 rounded-xl bg-slate-100 hover:bg-blue-50 border border-slate-200 text-xs font-bold">📷<input type="file" accept="image/*" capture="environment" class="hidden" onchange="scanFileAI(this)" /></label>
       <button type="button" onclick="voiceAsk()" class="p-2 rounded-xl bg-slate-100 hover:bg-blue-50 border border-slate-200 text-xs font-bold">🎤</button>
-      <input id="aiIn" type="text" placeholder="Ask about forms, laws, schemes..." class="flex-1 min-w-0 bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs" />
-      <button type="submit" class="px-3 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs">Send</button>
+      <input id="aiIn" type="text" placeholder="Ask about forms, laws, scholarships..." class="flex-1 min-w-0 bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-xs outline-none focus:border-blue-600" />
+      <button type="submit" class="px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs">Send</button>
     </form>
   </div>
 
@@ -660,17 +796,23 @@
     const SUPABASE_KEY = 'sb_publishable_LNSGOQ2bGVPjA-baVD_2zg_TA4LnAwF';
     const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+    // XSS Sanitizer
+    function esc(str) {
+      return String(str || '').replace(/[&<>"']/g, m => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    }
+
     // =========================================================================
-    // 4-LANGUAGE TRANSLATIONS (EN / HINGLISH / HI / MR)
+    // 100% 4-LANGUAGE TRANSLATION DICTIONARY (EN / HINGLISH / HI / MR)
     // =========================================================================
     const UI_TEXT = {
       en: {
-        tagline: "Citizen Rights, Filled Form Guides, Schemes & Laws",
+        tagline: "Citizen Rights, Filled Form Guides, Schemes & Scholarships",
         nav_home: "🏠 Home",
-        nav_documents: "📄 Documents & Forms",
-        nav_schemes: "🎓 Schemes & Scholarships",
+        nav_documents: "📄 Documents",
+        nav_schemes: "🎓 Govt Schemes",
+        nav_private: "🏫 Private Scholarships",
         nav_laws: "⚖️ Laws & Rights",
-        nav_cybercrime: "🛡️ Cybercrime 1930",
+        nav_cybercrime: "🛡️ Cyber 1930",
         nav_constitution: "📜 Constitution",
         nav_vault: "📁 My Vault",
         nav_drafter: "📝 RTI & Letters",
@@ -678,11 +820,22 @@
         login_cta: "Login / Verify OTP",
         back: "Back",
         listen: "🔊 Listen",
-        open_detail: "📜 Open Guide & Proof →",
+        open_detail: "📜 View Written Proof →",
         open_form: "📝 Open Filled Sample Form →",
         open_scheme: "🎓 View Sample Form & Apply →",
+        sec_req_docs: "1. Required Documents",
+        sec_steps: "2. Step-by-Step Process",
+        sec_track: "3. Track & Download",
+        sec_elig: "1. Eligibility Criteria",
+        sec_benefit: "2. Benefit / Scholarship Amount",
+        sec_apply: "3. How to Apply",
+        sec_statute: "📜 Statutory Written Provision",
+        sec_penalty: "💰 Official Penalty / Fine",
+        sec_jail: "⚖️ Imprisonment",
+        sec_rights: "🛡️ Your Citizen Rights & Immediate Action",
         fee: "Official Fee",
         time: "Time",
+        mode: "Mode",
         req: "Required Docs",
         benefit: "Benefit",
         elig: "Eligibility",
@@ -690,24 +843,26 @@
         right: "Your Right",
         active: "✅ ACTIVE",
         closed: "⛔ CLOSED",
-        search_ph: "Search Aadhaar, PAN, Domicile, MahaDBT, NSP, Traffic, Cybercrime, Article 21...",
+        search_ph: "Search Aadhaar, PAN, Domicile, MahaDBT, Kotak, Traffic, Cybercrime, Article 21...",
         headings: {
-          documents: ["Official Documents & Filled Sample Forms", "Click any document to see Kagaz Readiness Meter & Filled Sample Form"],
-          schemes: ["Government Schemes & Scholarships", "Click any scheme/scholarship for Filled Sample Form & Eligibility"],
+          documents: ["Official Documents & Filled Sample Forms", "Click any document for point-wise steps, Kagaz Readiness Meter & Filled Sample Form"],
+          schemes: ["Government Schemes & Scholarships", "Central & State schemes with Active/Closed status & Filled Sample Forms"],
+          private: ["Private & CSR Scholarships", "Verified corporate & foundation scholarships with Readiness Meter & Sample Forms"],
           laws: ["Citizen Laws & Everyday Rights", "Traffic (MVA), Criminal (BNS/BNSS), Office & RTI written proofs"],
           cybercrime: ["Cybercrime & Digital Security (1930)", "Golden Hour fraud response, IT Act & BNS cyber sections"],
           constitution: ["Constitution of India (Complete)", "Preamble, Fundamental Rights, Duties & All 22 Parts + 12 Schedules"]
         }
       },
       hinglish: {
-        tagline: "Citizen Rights, Bhara Hua Sample Form, Schemes aur Kanoon",
+        tagline: "Citizen Rights, Bhara Hua Sample Form, Schemes aur Scholarships",
         nav_home: "🏠 Home",
-        nav_documents: "📄 Documents & Sample Forms",
-        nav_schemes: "🎓 Schemes & Scholarships",
+        nav_documents: "📄 Documents",
+        nav_schemes: "🎓 Govt Schemes",
+        nav_private: "🏫 Private Scholarships",
         nav_laws: "⚖️ Kanoon & Adhikar",
-        nav_cybercrime: "🛡️ Cybercrime 1930",
-        nav_constitution: "📜 Samvidhan (Constitution)",
-        nav_vault: "📁 Mera Vault",
+        nav_cybercrime: "🛡️ Cyber 1930",
+        nav_constitution: "📜 Samvidhan",
+        nav_vault: "📁 My Vault",
         nav_drafter: "📝 RTI & Hamipatra",
         nav_profile: "👤 Profile",
         login_cta: "Login / OTP Verify",
@@ -716,8 +871,19 @@
         open_detail: "📜 Likhit Proof Dekhein →",
         open_form: "📝 Bhara Hua Sample Form →",
         open_scheme: "🎓 Sample Form & Apply →",
+        sec_req_docs: "1. Zaroori Documents (Kagaz)",
+        sec_steps: "2. Banane Ka Step-by-Step Tarika",
+        sec_track: "3. Status Track aur Download Kaise Karein",
+        sec_elig: "1. Patrata (Eligibility)",
+        sec_benefit: "2. Fayda / Scholarship Rashi",
+        sec_apply: "3. Apply Karne Ka Tarika",
+        sec_statute: "📜 Kanoon Ki Likhit Dhara (Provision)",
+        sec_penalty: "💰 Sarkari Jurmana (Fine)",
+        sec_jail: "⚖️ Saza / Jail",
+        sec_rights: "🛡️ Aapke Adhikar aur Turant Action",
         fee: "Sarkari Fee",
         time: "Samay",
+        mode: "Mode",
         req: "Zaroori Kagaz",
         benefit: "Fayda",
         elig: "Patrata",
@@ -725,34 +891,47 @@
         right: "Aapka Adhikar",
         active: "✅ CHALU HAI",
         closed: "⛔ BAND HAI",
-        search_ph: "Search karein: Aadhaar, PAN, Domicile, MahaDBT, Scholarship, Traffic, Article 21...",
+        search_ph: "Search karein: Aadhaar, PAN, Domicile, MahaDBT, Kotak, Traffic, Article 21...",
         headings: {
-          documents: ["Sarkari Documents & Bhare Hue Sample Forms", "Kisi bhi document par click karke Kagaz Meter aur Filled Sample Form dekhein"],
-          schemes: ["Sarkari Yojanaein & Scholarships", "MahaDBT aur NSP ka bhara hua sample form aur patrata dekhein"],
+          documents: ["Sarkari Documents & Bhare Hue Sample Forms", "Point-wise steps, Kagaz Meter aur Filled Sample Form dekhne ke liye click karein"],
+          schemes: ["Sarkari Yojanaein & Scholarships", "Maharashtra aur Central schemes — Active/Closed status aur Sample Form ke saath"],
+          private: ["Private & CSR Scholarships", "Reliance, Tata, HDFC, Kotak aur Infosys scholarships — Sample Form ke saath"],
           laws: ["Aam Nagrik Ke Kanoon & Adhikar", "Traffic police, Zero FIR, Salary aur RTI ke likhit kanoon"],
           cybercrime: ["Cybercrime & Online Suraksha (1930)", "UPI/Bank fraud hone par Golden Hour helpline aur kanooni madad"],
           constitution: ["Bharat Ka Samvidhan (Poora)", "Prastavana, Maulik Adhikar, Kartavya aur poore 22 Bhag + 12 Anusuchiyan"]
         }
       },
       hi: {
-        tagline: "नागरिक अधिकार, भरे हुए सैंपल फॉर्म, योजनाएं और कानून",
+        tagline: "नागरिक अधिकार, भरे हुए सैंपल फॉर्म, सरकारी और प्राइवेट छात्रवृत्ति",
         nav_home: "🏠 होम",
-        nav_documents: "📄 दस्तावेज़ और सैंपल फॉर्म",
-        nav_schemes: "🎓 योजनाएं और छात्रवृत्ति",
+        nav_documents: "📄 दस्तावेज़",
+        nav_schemes: "🎓 सरकारी योजनाएं",
+        nav_private: "🏫 प्राइवेट छात्रवृत्ति",
         nav_laws: "⚖️ कानून और अधिकार",
-        nav_cybercrime: "🛡️ साइबर क्राइम 1930",
-        nav_constitution: "📜 भारतीय संविधान",
+        nav_cybercrime: "🛡️ साइबर 1930",
+        nav_constitution: "📜 संविधान",
         nav_vault: "📁 मेरा वॉल्ट",
         nav_drafter: "📝 आरटीआई और पत्र",
         nav_profile: "👤 प्रोफ़ाइल",
-        login_cta: "लॉगिन / ओटीपी सत्यापन",
+        login_cta: "लॉगिन / ओटीपी",
         back: "वापस जाएं",
         listen: "🔊 सुनें",
         open_detail: "📜 लिखित प्रमाण देखें →",
         open_form: "📝 भरा हुआ सैंपल फॉर्म →",
         open_scheme: "🎓 सैंपल फॉर्म और आवेदन →",
+        sec_req_docs: "1. आवश्यक दस्तावेज़",
+        sec_steps: "2. आवेदन करने की चरण-दर-चरण प्रक्रिया",
+        sec_track: "3. स्थिति जांचें और डाउनलोड करें",
+        sec_elig: "1. पात्रता मानदंड",
+        sec_benefit: "2. लाभ / छात्रवृत्ति राशि",
+        sec_apply: "3. आवेदन कैसे करें",
+        sec_statute: "📜 कानूनी प्रावधान (लिखित नियम)",
+        sec_penalty: "💰 आधिकारिक जुर्माना",
+        sec_jail: "⚖️ कारावास / सजा",
+        sec_rights: "🛡️ आपके नागरिक अधिकार और कार्रवाई",
         fee: "सरकारी शुल्क",
         time: "समय",
+        mode: "माध्यम",
         req: "आवश्यक कागज़",
         benefit: "लाभ",
         elig: "पात्रता",
@@ -762,32 +941,45 @@
         closed: "⛔ बंद",
         search_ph: "खोजें: आधार, पैन, डोमिसाइल, छात्रवृत्ति, ट्रैफिक, साइबर क्राइम, अनुच्छेद 21...",
         headings: {
-          documents: ["सरकारी दस्तावेज़ और भरे हुए सैंपल फॉर्म", "किसी भी दस्तावेज़ पर क्लिक करके कागज़ मीटर और सैंपल फॉर्म देखें"],
-          schemes: ["सरकारी योजनाएं और छात्रवृत्तियां", "योजना की पात्रता और भरा हुआ सैंपल फॉर्म देखें"],
+          documents: ["सरकारी दस्तावेज़ और भरे हुए सैंपल फॉर्म", "क्रमवार चरण, कागज़ मीटर और भरा हुआ सैंपल फॉर्म देखें"],
+          schemes: ["सरकारी योजनाएं और छात्रवृत्तियां", "सक्रिय और बंद सरकारी योजनाओं की जानकारी व सैंपल फॉर्म"],
+          private: ["प्राइवेट और सीएसआर छात्रवृत्तियां", "रिलायंस, टाटा, एचडीएफसी, कोटक और इंफोसिस छात्रवृत्तियां"],
           laws: ["नागरिक कानून और अधिकार", "ट्रैफिक, एफआईआर, वेतन और आरटीआई के लिखित कानूनी नियम"],
           cybercrime: ["साइबर अपराध और सुरक्षा (1930)", "ऑनलाइन ठगी के लिए 1930 हेल्पलाइन और कानूनी उपाय"],
           constitution: ["भारत का संविधान (संपूर्ण)", "प्रस्तावना, मौलिक अधिकार, कर्तव्य तथा सभी 22 भाग और 12 अनुसूचियां"]
         }
       },
       mr: {
-        tagline: "नागरिक हक्क, भरलेले नमुना फॉर्म, योजना आणि कायदे",
+        tagline: "नागरिक हक्क, भरलेले नमुना फॉर्म, शासकीय व खाजगी शिष्यवृत्ती",
         nav_home: "🏠 मुख्य पृष्ठ",
-        nav_documents: "📄 कागदपत्रे आणि नमुना फॉर्म",
-        nav_schemes: "🎓 योजना आणि शिष्यवृत्ती",
+        nav_documents: "📄 कागदपत्रे",
+        nav_schemes: "🎓 शासकीय योजना",
+        nav_private: "🏫 खाजगी शिष्यवृत्ती",
         nav_laws: "⚖️ कायदे आणि हक्क",
-        nav_cybercrime: "🛡️ सायबर सुरक्षा १९३०",
-        nav_constitution: "📜 भारतीय संविधान",
+        nav_cybercrime: "🛡️ सायबर १९३०",
+        nav_constitution: "📜 संविधान",
         nav_vault: "📁 माझे वॉल्ट",
-        nav_drafter: "📝 माहिती अधिकार (RTI)",
+        nav_drafter: "📝 माहिती अधिकार",
         nav_profile: "👤 प्रोफाईल",
-        login_cta: "लॉगिन / OTP पडताळणी",
+        login_cta: "लॉगिन / OTP",
         back: "मागे जा",
         listen: "🔊 ऐका",
         open_detail: "📜 लेखी पुरावा पहा →",
         open_form: "📝 भरलेला नमुना फॉर्म →",
         open_scheme: "🎓 नमुना फॉर्म आणि अर्ज →",
+        sec_req_docs: "1. आवश्यक कागदपत्रे",
+        sec_steps: "2. अर्ज करण्याची टप्प्याटप्प्याने पद्धत",
+        sec_track: "3. स्थिती तपासा आणि डाउनलोड करा",
+        sec_elig: "1. पात्रता निकष",
+        sec_benefit: "2. लाभ / शिष्यवृत्ती रक्कम",
+        sec_apply: "3. अर्ज कसा करावा",
+        sec_statute: "📜 कायदेशीर तरतूद (लेखी नियम)",
+        sec_penalty: "💰 अधिकृत दंड",
+        sec_jail: "⚖️ शिक्षा / कारावास",
+        sec_rights: "🛡️ तुमचे हक्क आणि पुढील कार्यवाही",
         fee: "शासकीय शुल्क",
         time: "कालावधी",
+        mode: "पद्धत",
         req: "आवश्यक कागदपत्रे",
         benefit: "लाभ",
         elig: "पात्रता",
@@ -797,8 +989,9 @@
         closed: "⛔ बंद आहे",
         search_ph: "शोधा: आधार, पॅन, रहिवासी दाखला, शिष्यवृत्ती, वाहतूक नियम, कलम २१...",
         headings: {
-          documents: ["शासकीय कागदपत्रे आणि भरलेले नमुना फॉर्म", "कागदपत्रे तपासणी मीटर आणि भरलेला नमुना फॉर्म पहा"],
-          schemes: ["शासकीय योजना आणि शिष्यवृत्ती", "शिष्यवृत्ती पात्रता आणि भरलेला नमुना फॉर्म पहा"],
+          documents: ["शासकीय कागदपत्रे आणि भरलेले नमुना फॉर्म", "टप्प्याटप्प्याने माहिती, कागदपत्रे मीटर आणि भरलेला नमुना फॉर्म पहा"],
+          schemes: ["शासकीय योजना आणि शिष्यवृत्ती", "सुरू आणि बंद शासकीय योजना व भरलेला नमुना फॉर्म"],
+          private: ["खाजगी आणि CSR शिष्यवृत्ती", "रिलायन्स, टाटा, एचडीएफसी, कोटक आणि इन्फोसिस शिष्यवृत्ती"],
           laws: ["नागरिक कायदे आणि हक्क", "वाहतूक पोलीस, एफआयआर, पगार आणि माहिती अधिकार कायदे"],
           cybercrime: ["सायबर गुन्हे आणि सुरक्षा (१९३०)", "ऑनलाईन फसवणुकीसाठी १९३० हेल्पलाईन आणि कायदेशीर मदत"],
           constitution: ["भारताचे संविधान (संपूर्ण)", "उद्देशिका, मूलभूत हक्क, कर्तव्ये आणि सर्व २२ भाग व १२ अनुसूची"]
@@ -806,106 +999,284 @@
       }
     };
 
+    // Helper: Convert pipe-separated or numbered inline strings into clean vertical bullet list
+    function formatPointList(rawText) {
+      if (!rawText) return '';
+      let parts = String(rawText)
+        .split(/\s*\|\s*|\n+/)
+        .map(s => s.replace(/^\d+[\.\)]\s*/, '').trim())
+        .filter(Boolean);
+      if (parts.length <= 1) {
+        parts = String(rawText)
+          .split(/(?=\b\d+\.\s)/)
+          .map(s => s.replace(/^\d+[\.\)]\s*/, '').trim())
+          .filter(Boolean);
+      }
+      return `<ul class="space-y-2">${parts.map((p, idx) => `
+        <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <span class="shrink-0 w-5 h-5 rounded-md bg-blue-100 text-blue-700 font-mono text-[11px] font-bold flex items-center justify-center mt-0.5">${idx + 1}</span>
+          <span>${esc(p)}</span>
+        </li>
+      `).join('')}</ul>`;
+    }
+
     // =========================================================================
-    // FILLED SAMPLE FORM TEMPLATES (FOR DOCUMENTS & SCHOLARSHIPS/SCHEMES)
+    // PRIVATE & CSR SCHOLARSHIPS DATASET (DEDICATED SECTION)
+    // =========================================================================
+    const PRIVATE_SCHOLARSHIPS = [
+      {
+        id: 201,
+        category: "Merit-cum-Means",
+        provider: "Reliance Foundation",
+        status: "active",
+        amount: "Up to Rs 2,00,000 (UG) / Rs 6,00,000 (PG)",
+        title_en: "Reliance Foundation Undergraduate & Postgraduate Scholarship",
+        title_hinglish: "Reliance Foundation UG & PG Scholarship (Rs 2 Lakh tak)",
+        title_hi: "रिलायंस फाउंडेशन अंडरग्रेजुएट और पोस्टग्रेजुएट छात्रवृत्ति",
+        title_mr: "रिलायन्स फाउंडेशन पदवी आणि पदव्युत्तर शिष्यवृत्ती",
+        eligibility: "1st-year full-time UG/PG students across India | Minimum 60% in Class 12 | Annual family income under Rs 15 Lakh (priority to under Rs 2.5 Lakh) | Mandatory online Aptitude Test",
+        documents_required: "Aadhaar Card | Class 10th & 12th Marksheets | Current College Admission / Fee Receipt | Family Income Proof | 2 Short Essays (Statement of Purpose)",
+        apply_steps: "Visit scholarships.reliancefoundation.org | Register with email & mobile | Fill academic, income & essay sections | Appear for the online 60-minute Aptitude Test",
+        proof_url: "https://www.scholarships.reliancefoundation.org/",
+        sampleKey: "private_csr"
+      },
+      {
+        id: 202,
+        category: "Girls & Women",
+        provider: "Kotak Education Foundation",
+        status: "active",
+        amount: "Up to Rs 1,50,000 per year",
+        title_en: "Kotak Kanya Scholarship for Meritorious Girl Students",
+        title_hinglish: "Kotak Kanya Scholarship — Girl Students ke liye Rs 1.5 Lakh/saal",
+        title_hi: "कोटक कन्या छात्रवृत्ति (मेधावी छात्राओं के लिए)",
+        title_mr: "कोटक कन्या शिष्यवृत्ती (गुणवंत विद्यार्थिनींसाठी)",
+        eligibility: "Meritorious girl students who passed Class 12 with 75%+ marks | Admitted to 1st year of professional graduation (Engineering, MBBS, Architecture, Design, Law, Integrated PG) | Family income under Rs 6 Lakh/year",
+        documents_required: "Aadhaar Card | Class 12 Marksheet | College Seat Allotment / Fee Receipt | Annual Family Income Certificate | Bank Passbook",
+        apply_steps: "Apply online via kotakeducation.org or Buddy4Study Kotak Kanya portal | Upload academic & income proofs | Complete telephonic & video interview round",
+        proof_url: "https://kotakeducation.org/kotak-kanya-scholarship/",
+        sampleKey: "private_csr"
+      },
+      {
+        id: 203,
+        category: "Merit-cum-Means",
+        provider: "HDFC Bank Parivartan",
+        status: "active",
+        amount: "Rs 15,000 to Rs 75,000 per year",
+        title_en: "HDFC Bank Parivartan's ECSS Programme (School, UG & PG)",
+        title_hinglish: "HDFC Bank Parivartan ECSS Scholarship (Class 1 se PG tak)",
+        title_hi: "एचडीएफसी बैंक परिवर्तन ईसीएसएस छात्रवृत्ति योजना",
+        title_mr: "एचडीएफसी बँक परिवर्तन ECSS शिष्यवृत्ती योजना",
+        eligibility: "Students from Class 1–12, Diploma, ITI, Polytechnic, UG & PG courses | Minimum 55% marks in previous exam | Annual family income up to Rs 2.5 Lakh (personal/family crisis cases also prioritized)",
+        documents_required: "Passport Size Photo | Previous Year Marksheet | Identity Proof (Aadhaar/Voter ID) | Current Year Admission Proof | Income Certificate / Crisis Proof | Bank Passbook",
+        apply_steps: "Open Buddy4Study HDFC Parivartan ECSS page | Login and select School / UG / PG category | Fill details, upload clear PDFs and submit before deadline",
+        proof_url: "https://www.buddy4study.com/page/hdfc-bank-parivartans-ecss-programme",
+        sampleKey: "private_csr"
+      },
+      {
+        id: 204,
+        category: "Girls & Women",
+        provider: "Infosys Foundation",
+        status: "active",
+        amount: "Up to Rs 1,00,000 per year (Tuition & Books)",
+        title_en: "Infosys Foundation STEM Stars Scholarship for Girls",
+        title_hinglish: "Infosys Foundation STEM Stars Scholarship (Engineering/Medical/Science Girls)",
+        title_hi: "इंफोसिस फाउंडेशन स्टेम स्टार्स छात्रा छात्रवृत्ति",
+        title_mr: "इन्फोसिस फाउंडेशन STEM स्टार्स विद्यार्थिनी शिष्यवृत्ती",
+        eligibility: "Female students enrolled in 1st year of 4-year Engineering, Medical (MBBS), or Science/Tech UG courses at NIRF-accredited institutes | Annual family income up to Rs 8 Lakh",
+        documents_required: "Class 12 Marksheet & JEE/NEET/CET Scorecard | Aadhaar Card | College Admission Proof & Tuition Fee Receipt | Family Income Certificate | Bank Details",
+        apply_steps: "Visit Infosys Foundation STEM Stars portal | Register and verify email | Fill course, fee structure & family details | Upload documents and submit",
+        proof_url: "https://www.infosys.org/infosys-foundation/initiatives/stem-stars-scholarship.html",
+        sampleKey: "private_csr"
+      },
+      {
+        id: 205,
+        category: "Need-Based",
+        provider: "Tata Trusts",
+        status: "active",
+        amount: "30% to 80% of Tuition & Academic Fees",
+        title_en: "Tata Trusts Means Grant & Medical/Healthcare Scholarship",
+        title_hinglish: "Tata Trusts College & Medical Scholarship Grant",
+        title_hi: "टाटा ट्रस्ट मीन्स ग्रांट और मेडिकल छात्रवृत्ति",
+        title_mr: "टाटा ट्रस्ट शैक्षणिक आणि वैद्यकीय शिष्यवृत्ती",
+        eligibility: "Students studying in Mumbai/Maharashtra (Means Grant) or Medical/Healthcare UG & PG across India | Minimum 60% marks in previous academic year | Genuine financial need",
+        documents_required: "Aadhaar Card | All Previous Marksheets | Current Year College Fee Receipt | Family Income Proof (ITR / Salary Slip / Income Cert) | Cancelled Cheque / Passbook",
+        apply_steps: "Check active Tata Trusts notification on tatatrusts.org | Submit online application with scanned fee receipt & marksheets | Shortlisted candidates attend document verification",
+        proof_url: "https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants",
+        sampleKey: "private_csr"
+      },
+      {
+        id: 206,
+        category: "Merit-cum-Means",
+        provider: "Foundation For Excellence (FFE)",
+        status: "active",
+        amount: "Rs 40,000 to Rs 50,000/year + Laptop & Mentorship",
+        title_en: "Foundation For Excellence (FFE) B.Tech, MBBS & Law Scholarship",
+        title_hinglish: "FFE Scholarship — Engineering, Medical aur Law Students ke liye",
+        title_hi: "फाउंडेशन फॉर एक्सीलेंस (FFE) इंजीनियरिंग और मेडिकल छात्रवृत्ति",
+        title_mr: "फाउंडेशन फॉर एक्सलन्स (FFE) अभियांत्रिकी व वैद्यकीय शिष्यवृत्ती",
+        eligibility: "1st-year B.E./B.Tech, Integrated M.Tech, MBBS, BPharm, or 5-year Law students admitted through state/national entrance exam | Family income below Rs 3 Lakh/year",
+        documents_required: "Class 12 Marksheet | Entrance Exam Rank Card | College Allotment Letter & Fee Receipt | Family Income Proof | Parent Bank Statement",
+        apply_steps: "Register on ffe.org | Complete online form and connect with assigned FFE Facilitator for document verification | Receive annual renewal till graduation",
+        proof_url: "https://ffe.org/scholarships/",
+        sampleKey: "private_csr"
+      },
+      {
+        id: 207,
+        category: "Need-Based",
+        provider: "Sitaram Jindal Foundation",
+        status: "active",
+        amount: "Rs 500 to Rs 3,200 per month (Continuous)",
+        title_en: "Sitaram Jindal Foundation Scholarship (Class 11 to PG & Diploma)",
+        title_hinglish: "Sitaram Jindal Foundation Scholarship (11th, 12th, ITI, Diploma, BA/BCom/BSc/BCA)",
+        title_hi: "सीताराम जिंदल फाउंडेशन छात्रवृत्ति योजना",
+        title_mr: "सीताराम जिंदल फाउंडेशन शिष्यवृत्ती योजना",
+        eligibility: "Students in Class 11–12, ITI, Polytechnic Diploma, UG (BA, BCom, BSc, BCA, BBA) & PG | Minimum 60%–65% marks (55%–60% for girls) | Family income under Rs 2.5 Lakh (Rs 4 Lakh for salaried)",
+        documents_required: "Previous Exam Marksheet | Income Certificate | Aadhaar Card | Principal's Certificate & Fee Receipt | Hostel Certificate (if hosteller)",
+        apply_steps: "Download application form from sitaramjindalfoundation.org | Get Principal attestation | Send completed form by post to Bengaluru/Regional office",
+        proof_url: "https://www.sitaramjindalfoundation.org/scholarships-for-students-in-india.php",
+        sampleKey: "private_csr"
+      },
+      {
+        id: 208,
+        category: "Need-Based",
+        provider: "LIC Housing Finance (LIC HFL)",
+        status: "active",
+        amount: "Rs 15,000 to Rs 25,000 per year",
+        title_en: "LIC HFL Vidyadhan Scholarship (Class 10, 12 & Graduation)",
+        title_hinglish: "LIC HFL Vidyadhan Scholarship (10th, 12th aur College Students)",
+        title_hi: "एलआईसी एचएफएल विद्याधन छात्रवृत्ति योजना",
+        title_mr: "LIC HFL विद्याधन शिष्यवृत्ती योजना",
+        eligibility: "Students who passed Class 10 or Class 12 with at least 60% marks and enrolled in Class 11, UG, or PG | Annual family income under Rs 3.6 Lakh (priority to single-parent / orphan students)",
+        documents_required: "Photo ID (Aadhaar) | Previous Board Marksheet | Income Proof | Current Admission & Fee Receipt | Bank Account Passbook",
+        apply_steps: "Apply online via Buddy4Study LIC HFL Vidyadhan portal | Fill academic & family background form | Upload documents and complete telephonic verification",
+        proof_url: "https://www.buddy4study.com/page/lic-hfl-vidyadhan-scholarship",
+        sampleKey: "private_csr"
+      }
+    ];
+
+    // =========================================================================
+    // DIRECT OFFICIAL STATUS TRACKING LINKS (FOR VAULT & HOME SEARCH)
+    // =========================================================================
+    const STATUS_PORTALS = [
+      { name: "Aaple Sarkar Maharashtra (Domicile / Income / Caste)", code: "20-Digit Application ID", url: "https://aaplesarkar.mahaonline.gov.in/" },
+      { name: "MahaDBT 2.0 Scholarship Status", code: "MahaDBT Application ID", url: "https://mahadbt.maharashtra.gov.in/" },
+      { name: "National Scholarship Portal (NSP OTR)", code: "OTR / Application ID", url: "https://scholarships.gov.in/" },
+      { name: "Aadhaar Update / Enrolment Status (UIDAI)", code: "14-Digit EID or SRN", url: "https://myaadhaar.uidai.gov.in/CheckAadhaarStatus" },
+      { name: "PAN Card Status (NSDL / Protean)", code: "15-Digit Acknowledgement No", url: "https://tin.tin.nsdl.com/pantan/StatusTrack.html" },
+      { name: "Indian Passport Application Status", code: "15-Digit File / ARN Number", url: "https://portal2.passportindia.gov.in/AppOnlineProject/statusTracker/trackStatusInpNew" },
+      { name: "Parivahan Driving Licence / RC Status", code: "Application Number + DOB", url: "https://sarathi.parivahan.gov.in/" },
+      { name: "National Cybercrime Portal (1930 Status)", code: "1930 Acknowledgement No", url: "https://cybercrime.gov.in/Webform/chkackstatus.aspx" },
+      { name: "RTI Online Status (Central / Maharashtra)", code: "RTI Registration Number", url: "https://rtionline.gov.in/request/status.php" }
+    ];
+
+    // =========================================================================
+    // FILLED SAMPLE FORM TEMPLATES (DOCUMENTS, GOVT SCHEMES & PRIVATE CSR)
     // =========================================================================
     const SAMPLE_FORMS = {
       aadhaar: {
         title: "Aadhaar Enrolment / Update Form — Filled Sample",
         checklist: ["Proof of Identity (PAN / Passport / 10th Marksheet)", "Proof of Address (Electricity Bill / Bank Passbook)", "Proof of Date of Birth (Birth Certificate / 10th Marksheet)", "Active Mobile Number for OTP"],
         boxes: [
-          { box: "Box 1: Resident Status", sample: "[✓] Resident Indian   [ ] NRI", rule: "Always tick Resident Indian if living in India for 182+ days.", ok: true },
+          { box: "Box 1: Resident Status", sample: "[✓] Resident Indian   [ ] NRI", rule: "Tick Resident Indian if residing in India for 182+ days.", ok: true },
           { box: "Box 2: Purpose", sample: "[ ] New Enrolment   [✓] Update Request (Address / Mobile / DOB)", rule: "Tick exact field you want updated.", ok: true },
-          { box: "Box 4: Full Name (CAPITAL LETTERS)", sample: "A R J U N   R A J E S H   S H A R M A", rule: "Write full name matching 10th Marksheet/PAN. Never use initials like 'A. R. Sharma'.", ok: true, useUser: "name" },
+          { box: "Box 4: Full Name (CAPITAL LETTERS)", sample: "A R J U N   R A J E S H   S H A R M A", rule: "Write full name matching 10th Marksheet/PAN. Never use initials.", ok: true, useUser: "name" },
           { box: "Box 6: Date of Birth", sample: "15 / 08 / 2002   [✓] Verified   [ ] Declared", rule: "Tick 'Verified' when attaching Birth Certificate or 10th Marksheet.", ok: true },
           { box: "Box 7: Complete Address & PIN", sample: "C/O Rajesh Sharma, Flat 302, Sai Krupa Bldg, MG Road, Thane - 400601", rule: "Write exact building, street, locality, district & 6-digit PIN.", ok: true, useUser: "address" },
-          { box: "Signature / Thumb Box", sample: "[  Arjun Sharma  ] (Strictly inside box border)", rule: "Do not let signature touch the box border lines, otherwise scanner rejects it.", ok: false }
+          { box: "Signature / Thumb Box", sample: "[  Arjun Sharma  ] (Strictly inside box border)", rule: "Do not touch box border lines, otherwise scanner rejects the form.", ok: false }
         ]
       },
       pan: {
         title: "PAN Card (Form 49A) — Filled Sample",
-        checklist: ["Aadhaar Card (Linked with Mobile for e-Sign)", "2 Color Passport Photos (3.5cm x 2.5cm, White Background)", "Black Ink Pen for Signature", "Correct City AO Code"],
+        checklist: ["Aadhaar Card (Mobile Linked for e-Sign)", "2 Color Photos (3.5cm x 2.5cm, White Background)", "Black Ink Pen for Signature", "City AO Code"],
         boxes: [
-          { box: "Top Box: Assessing Officer (AO Code)", sample: "Area: MUM | AO Type: W | Range: 123 | AO No: 01", rule: "Use 'Search AO Code' button on NSDL/UTIITSL portal — never guess.", ok: true },
+          { box: "Top Box: Assessing Officer (AO Code)", sample: "Area: MUM | AO Type: W | Range: 123 | AO No: 01", rule: "Use 'Search AO Code' button on NSDL/UTIITSL — never guess.", ok: true },
           { box: "Item 1: Full Name Split", sample: "Last Name: SHARMA | First Name: ARJUN | Middle: RAJESH", rule: "Enter Surname in Last Name box first, then First Name.", ok: true, useUser: "name" },
-          { box: "Item 2: Name Printed on Card", sample: "ARJUN RAJESH SHARMA", rule: "Verify spelling carefully; this prints on your physical PAN card.", ok: true, useUser: "name" },
-          { box: "Item 6: Father's Name (Mandatory)", sample: "Last: SHARMA | First: RAJESH | Middle: MOHAN", rule: "Mandatory for all applicants (including married women).", ok: true },
+          { box: "Item 6: Father's Name (Mandatory)", sample: "Last: SHARMA | First: RAJESH | Middle: MOHAN", rule: "Mandatory for all individual applicants.", ok: true },
           { box: "Item 13: Source of Income", sample: "[✓] No Income (Student)  OR  [✓] Salary", rule: "Students without job should select 'No Income'.", ok: true }
         ]
       },
       passport: {
         title: "Indian Passport Online Form — Filled Sample",
-        checklist: ["10th Marksheet (For Non-ECR / ECNR stamp)", "Aadhaar Card (Current Address)", "Bank Passbook / Electricity Bill (1+ Year Residence Proof)", "Birth Certificate (If born on/after 26-01-1989)"],
+        checklist: ["10th Marksheet (For Non-ECR / ECNR stamp)", "Aadhaar Card (Current Address)", "Bank Passbook / Light Bill (1+ Year Residence)", "Birth Certificate (If born on/after 26-01-1989)"],
         boxes: [
-          { box: "Service Type", sample: "Fresh Passport | Normal | 36 Pages", rule: "Choose 36 pages unless you travel internationally every month.", ok: true },
-          { box: "Given Name vs Surname", sample: "Given Name: ARJUN RAJESH | Surname: SHARMA", rule: "Put First + Middle name in Given Name and Last name in Surname.", ok: true, useUser: "name" },
-          { box: "Non-ECR Category", sample: "[✓] Yes (10th Pass or Higher)", rule: "Carry original 10th marksheet to PSK to get ECNR status.", ok: true },
+          { box: "Service Type", sample: "Fresh Passport | Normal | 36 Pages", rule: "Choose 36 pages for standard travel.", ok: true },
+          { box: "Given Name vs Surname", sample: "Given Name: ARJUN RAJESH | Surname: SHARMA", rule: "First + Middle name in Given Name; Last name in Surname.", ok: true, useUser: "name" },
+          { box: "Non-ECR Category", sample: "[✓] Yes (10th Pass or Higher)", rule: "Carry original 10th marksheet to PSK.", ok: true },
           { box: "Present Residential Address", sample: "Flat 302, Sai Krupa, Thane, Maharashtra - 400601", rule: "Police verification happens at this exact address.", ok: true, useUser: "address" }
         ]
       },
       domicile: {
         title: "Age, Nationality & Domicile Certificate (Aaple Sarkar) — Filled Sample",
-        checklist: ["Aadhaar Card & Passport Photo (JPG 5KB–20KB)", "15 Years Continuous Residence Proof (Old Light Bill / School LC)", "Mandatory Signed Self-Declaration (Hamipatra PDF)", "Ration Card / Birth Certificate"],
+        checklist: ["Aadhaar Card & Photo (JPG 5KB–20KB)", "15 Years Continuous Residence Proof (Old Light Bill / School LC)", "Signed Self-Declaration (Hamipatra PDF)", "Ration Card / Birth Certificate"],
         boxes: [
           { box: "Department & Service", sample: "Revenue Department -> Age, Nationality & Domicile Certificate", rule: "Apply on aaplesarkar.mahaonline.gov.in.", ok: true },
-          { box: "Applicant Full Name", sample: "English: ARJUN RAJESH SHARMA | Marathi: अर्जुन राजेश शर्मा", rule: "Check Marathi auto-spelling carefully before submitting.", ok: true, useUser: "name" },
-          { box: "Years of Residence", sample: "18 Years (Since Birth / 2006)", rule: "Minimum 15 years residence in Maharashtra is required.", ok: true },
-          { box: "File Upload Specs", sample: "Photo: 160x200px (<20KB) | Docs: PDF (<2MB)", rule: "Oversized photos or blurry scans cause immediate rejection.", ok: false }
+          { box: "Applicant Full Name", sample: "English: ARJUN RAJESH SHARMA | Marathi: अर्जुन राजेश शर्मा", rule: "Check Marathi spelling carefully before submitting.", ok: true, useUser: "name" },
+          { box: "Years of Residence", sample: "18 Years (Since Birth)", rule: "Minimum 15 years residence in Maharashtra required.", ok: true },
+          { box: "File Upload Specs", sample: "Photo: 160x200px (<20KB) | Docs: PDF (<2MB)", rule: "Oversized photos cause upload failure.", ok: false }
         ]
       },
       income: {
         title: "Tehsildar Income Certificate — Filled Sample",
-        checklist: ["Ration Card (All Family Members Page)", "Parent's Salary Slip / Form 16 / Talathi Income Report", "Aadhaar Card & Electricity Bill", "Self-Declaration (Hamipatra)"],
+        checklist: ["Ration Card (All Family Members)", "Parent Salary Slip / Form 16 / Talathi Report", "Aadhaar Card & Electricity Bill", "Self-Declaration (Hamipatra)"],
         boxes: [
-          { box: "Certificate Validity", sample: "[✓] 1 Year Income Certificate (For Scholarships)", rule: "MahaDBT scholarships require current financial year 1-Year Income Certificate.", ok: true },
-          { box: "Annual Family Income", sample: "Rs. 1,45,000/- (One Lakh Forty-Five Thousand Only)", rule: "Must match Talathi panchnama / Form 16 total exactly.", ok: true },
-          { box: "Purpose", sample: "Educational / MahaDBT Scholarship Purpose", rule: "Mention exact purpose clearly.", ok: true }
+          { box: "Certificate Validity", sample: "[✓] 1 Year Income Certificate (For Scholarships)", rule: "MahaDBT requires current year 1-Year Income Certificate.", ok: true },
+          { box: "Annual Family Income", sample: "Rs. 1,45,000/-", rule: "Must match Talathi panchnama / Form 16 total.", ok: true },
+          { box: "Purpose", sample: "Educational / Scholarship Purpose", rule: "Mention exact purpose clearly.", ok: true }
         ]
       },
       caste: {
         title: "Caste & Non-Creamy Layer (NCL) — Filled Sample",
-        checklist: ["Father's / Grandfather's School Leaving Certificate (Pre-1950 SC / Pre-1967 OBC)", "Genealogy (Vanshavali) Family Tree Chart", "Applicant's School LC & Aadhaar", "Last 3 Years Income Certificates (For NCL)"],
+        checklist: ["Father's/Grandfather's School LC (Pre-1950 SC / Pre-1967 OBC)", "Genealogy (Vanshavali) Family Tree", "Applicant School LC & Aadhaar", "Last 3 Years Income Certificates (For NCL)"],
         boxes: [
-          { box: "Caste & Sub-Caste", sample: "Category: OBC | Caste: Kunbi (Sr. No. 83)", rule: "Spell caste exactly as printed in Maharashtra Govt Gazette list.", ok: true },
-          { box: "Vanshavali (Family Tree)", sample: "Grandfather (1962 LC) -> Father (1990 LC) -> Applicant", rule: "Clearly show blood relation to pre-1967 residence proof.", ok: true }
+          { box: "Caste & Sub-Caste", sample: "Category: OBC | Caste: Kunbi", rule: "Spell caste exactly as in Maharashtra Govt Gazette list.", ok: true },
+          { box: "Vanshavali (Family Tree)", sample: "Grandfather (1962 LC) -> Father (1990 LC) -> Applicant", rule: "Show clear blood relation to pre-1967 proof.", ok: true }
         ]
       },
       dl: {
         title: "Learner's & Driving Licence (Parivahan) — Filled Sample",
-        checklist: ["Aadhaar Card (Mobile Linked for Faceless e-KYC)", "Passport Photo & Signature Scan", "Blood Group Report", "Web-Camera (For Online LL Sign Test)"],
+        checklist: ["Aadhaar Card (Mobile Linked for e-KYC)", "Photo & Signature Scan", "Blood Group Report", "Webcam (For Home LL Sign Test)"],
         boxes: [
-          { box: "Authentication Mode", sample: "[✓] Submit via Aadhaar Authentication (No RTO Visit)", rule: "Allows giving Learner's Licence test from home.", ok: true },
-          { box: "Class of Vehicle", sample: "[✓] MCWG (Motorcycle With Gear)   [✓] LMV (Car)", rule: "MCWG covers both geared bikes and gearless scooters.", ok: true }
+          { box: "Authentication Mode", sample: "[✓] Submit via Aadhaar Authentication (No RTO Visit)", rule: "Allows giving LL test from home.", ok: true },
+          { box: "Class of Vehicle", sample: "[✓] MCWG (Bike/Scooter)   [✓] LMV (Car)", rule: "MCWG covers both geared and gearless two-wheelers.", ok: true }
         ]
       },
       mahadbt: {
-        title: "MahaDBT 2.0 Scholarship Profile & Application — Filled Sample",
-        checklist: ["Aadhaar Linked & Seeded with Bank Account (NPCI DBT Active)", "Income Certificate (With Barcode Number)", "Domicile & Caste / NCL Certificate (With Barcode)", "College CAP Allotment Letter & Current Year Fee Receipt"],
+        title: "MahaDBT 2.0 Scholarship Profile — Filled Sample",
+        checklist: ["Bank Account Seeded with Aadhaar on NPCI Mapper", "Income Certificate (With 20-Digit Barcode)", "Domicile & Caste/NCL Certificate (With Barcode)", "College CAP Allotment & Fee Receipt"],
         boxes: [
-          { box: "Step 1: Aadhaar & NPCI Bank Seeding", sample: "Bank Status: [✓] Aadhaar Mapped on NPCI Portal", rule: "If NPCI mapping is inactive, scholarship money will fail even after approval.", ok: false },
-          { box: "Step 2: Certificate Barcode Entry", sample: "Barcode: 12345678901234567890 (Auto-Fetch Enabled)", rule: "Enter exact 20-digit barcode from Aaple Sarkar certificate.", ok: true },
-          { box: "Step 3: Past & Current Qualification", sample: "10th % -> 12th % -> Current Year: 2nd Year (Pursuing)", rule: "Ensure gap certificate is uploaded if there is any academic year gap.", ok: true },
-          { box: "Step 4: Hostel Details", sample: "[✓] Day Scholar (Living at Home)  OR  [✓] Hosteller", rule: "Select Day Scholar if commuting from home.", ok: true }
+          { box: "Step 1: NPCI Aadhaar Bank Seeding", sample: "Bank Status: [✓] Aadhaar Mapped on NPCI Portal", rule: "If NPCI mapping is inactive, DBT payment fails even after approval.", ok: false },
+          { box: "Step 2: Certificate Barcode", sample: "Barcode: 12345678901234567890 (Auto-Fetch)", rule: "Enter exact 20-digit barcode from Aaple Sarkar certificate.", ok: true },
+          { box: "Step 3: Course & Hostel", sample: "Current Course: Pursuing | Hostel: [✓] Day Scholar", rule: "Select Day Scholar if commuting from home.", ok: true }
         ]
       },
       nsp: {
         title: "National Scholarship Portal (NSP OTR) — Filled Sample",
-        checklist: ["Aadhaar Card & Mobile Number", "NSP OTR App + Aadhaar Face RD App on Phone", "Previous Exam Marksheet & Bonafide Certificate", "Bank Account Seeded with Aadhaar"],
+        checklist: ["Aadhaar Card & Mobile", "NSP OTR App + Aadhaar Face RD App", "Previous Exam Marksheet & Bonafide", "NPCI Seeded Bank Account"],
         boxes: [
-          { box: "OTR (One Time Registration)", sample: "OTR ID: 2026XXXXXXXXXX (Face Auth Completed)", rule: "OTR details cannot be edited later — verify Name & DOB with Aadhaar.", ok: false },
-          { box: "Institute & Course Selection", sample: "Select AISHE Code of College -> Select Exact Course", rule: "Confirm AISHE code with your college scholarship clerk before locking.", ok: true }
+          { box: "OTR (One Time Registration)", sample: "OTR ID: 2026XXXXXXXXXX (Face Auth Done)", rule: "OTR details cannot be edited later — match with Aadhaar.", ok: false },
+          { box: "Institute AISHE Code", sample: "Select College AISHE Code -> Select Exact Course", rule: "Confirm AISHE code with your college clerk.", ok: true }
+        ]
+      },
+      private_csr: {
+        title: "Private & CSR Scholarship Application — Filled Sample",
+        checklist: ["Previous Board / Semester Marksheets (Self-Attested PDF)", "Family Income Certificate / Parent Salary Slip", "Current Year College Admission & Fee Receipt", "Personal Statement / SOP Essay (150–250 Words)"],
+        boxes: [
+          { box: "Applicant Name & Contact", sample: "ARJUN RAJESH SHARMA | Active Email & WhatsApp Number", rule: "All interview & document verification alerts come on this email/phone.", ok: true, useUser: "name" },
+          { box: "Residential Address", sample: "Flat 302, Sai Krupa, Thane, Maharashtra - 400601", rule: "Must match Aadhaar / Domicile address.", ok: true, useUser: "address" },
+          { box: "Statement of Purpose (SOP) Answer", sample: "\"I am pursuing my 1st year degree and aim to build practical tech solutions. Due to limited family income, this scholarship will cover my tuition fees and books...\"", rule: "Keep answers honest, specific about career goals & financial need—never copy-paste generic text.", ok: true },
+          { box: "Bank Account Details", sample: "Account Holder: Applicant Name Only | IFSC & Account No Verified", rule: "Scholarship funds are transferred directly to the student's own bank account.", ok: false }
         ]
       }
     };
 
     // =========================================================================
-    // EXTRA BUILT-IN CONSTITUTION ARTICLES (SO ALL 22 PARTS ARE REPRESENTED)
+    // BUILT-IN CONSTITUTION ARTICLES
     // =========================================================================
     const BUILTIN_CONSTITUTION = [
-      { id: 101, article_number: "Article 32", part_number: "Part III", part_title: "Fundamental Rights", title_en: "Right to Constitutional Remedies (Supreme Court Writs)", title_hinglish: "Supreme Court Mein Seedha Jane Ka Adhikar (Writs)", title_hi: "संवैधानिक उपचारों का अधिकार (सुप्रीम कोर्ट रिट)", title_mr: "घटनात्मक उपायांचा हक्क (सर्वोच्च न्यायालय)", summary_en: "Dr. B.R. Ambedkar called Article 32 the 'Heart and Soul' of the Constitution. Any citizen can directly approach the Supreme Court via Habeas Corpus, Mandamus, Prohibition, Certiorari, or Quo-Warranto if Fundamental Rights are violated.", summary_hinglish: "Agar aapke Fundamental Rights cheene jate hain, toh aap seedha Supreme Court ja sakte hain (Habeas Corpus, Mandamus writs ke zariye).", summary_hi: "मौलिक अधिकारों के हनन पर नागरिक सीधे सर्वोच्च न्यायालय जा सकते हैं।", summary_mr: "मूलभूत हक्कांचे उल्लंघन झाल्यास नागरिक थेट सर्वोच्च न्यायालयात दाद मागू शकतात.", official_text: "Constitution of India, Part III, Article 32 — Remedies for enforcement of rights conferred by this Part.", proof_url: "https://legislative.gov.in/constitution-of-india/" },
-      { id: 102, article_number: "Article 226", part_number: "Part VI", part_title: "The States (High Courts)", title_en: "Power of High Courts to Issue Writs", title_hinglish: "High Court Mein Writ Petition Dalne Ki Shakti", title_hi: "उच्च न्यायालय की रिट जारी करने की शक्ति", title_mr: "उच्च न्यायालयाचे रिट अधिकार", summary_en: "Empowers every State High Court (like Bombay High Court) to issue writs not only for Fundamental Rights but also for any other legal right against government authorities.", summary_hinglish: "Aap apne State High Court mein kisi bhi sarkari vibhag ke khilaf Writ Petition daal kar insaaf maang sakte hain.", summary_hi: "उच्च न्यायालय मौलिक और अन्य कानूनी अधिकारों की रक्षा के लिए रिट जारी कर सकता है।", summary_mr: "उच्च न्यायालय मूलभूत व कायदेशीर हक्कांच्या संरक्षणासाठी आदेश देऊ शकते.", official_text: "Constitution of India, Part VI, Article 226.", proof_url: "https://legislative.gov.in/constitution-of-india/" },
-      { id: 103, article_number: "Article 300A", part_number: "Part XII", part_title: "Finance, Property & Contracts", title_en: "Right to Property (No Deprivation Without Authority of Law)", title_hinglish: "Sampatti Ka Kanooni Adhikar (Right to Property)", title_hi: "संपत्ति का कानूनी अधिकार", title_mr: "मालमत्तेचा कायदेशीर हक्क", summary_en: "No person shall be deprived of his property save by authority of law. Government cannot acquire private land/home without due legal process and fair compensation.", summary_hinglish: "Koi bhi sarkar ya vyakti bina kanooni prakriya aur muawze ke aapki zameen ya ghar nahi chheen sakta.", summary_hi: "कानून के प्राधिकार के बिना किसी भी व्यक्ति को उसकी संपत्ति से वंचित नहीं किया जाएगा।", summary_mr: "कायदेशीर प्रक्रियेशिवाय कोणत्याही व्यक्तीची मालमत्ता हिरावून घेतली जाऊ शकत नाही.", official_text: "Constitution of India, Part XII, Article 300A (44th Amendment).", proof_url: "https://legislative.gov.in/constitution-of-india/" },
-      { id: 104, article_number: "Article 368", part_number: "Part XX", part_title: "Amendment of the Constitution", title_en: "Power of Parliament to Amend the Constitution", title_hinglish: "Samvidhan Mein Sanshodhan (Amendment) Ki Prakriya", title_hi: "संविधान में संशोधन करने की संसद की शक्ति", title_mr: "संविधान दुरुस्तीची प्रक्रिया", summary_en: "Lays down the procedure by which Parliament can amend constitutional provisions, subject to the Supreme Court's 'Basic Structure Doctrine'.", summary_hinglish: "Parliament samvidhan mein badlav kar sakti hai, lekin Samvidhan ke Basic Structure ko nahi badal sakti.", summary_hi: "संसद निर्धारित प्रक्रिया से संविधान में संशोधन कर सकती है।", summary_mr: "संसद विहित प्रक्रियेद्वारे संविधानात दुरुस्ती करू शकते.", official_text: "Constitution of India, Part XX, Article 368.", proof_url: "https://legislative.gov.in/constitution-of-india/" }
+      { id: 101, article_number: "Article 32", part_number: "Part III", part_title: "Fundamental Rights", title_en: "Right to Constitutional Remedies (Supreme Court Writs)", title_hinglish: "Supreme Court Mein Seedha Jane Ka Adhikar (Writs)", title_hi: "संवैधानिक उपचारों का अधिकार (सुप्रीम कोर्ट रिट)", title_mr: "घटनात्मक उपायांचा हक्क (सर्वोच्च न्यायालय)", summary_en: "Dr. B.R. Ambedkar called Article 32 the 'Heart and Soul' of the Constitution. Citizens can directly approach the Supreme Court via Habeas Corpus, Mandamus, Prohibition, Certiorari, or Quo-Warranto if Fundamental Rights are violated.", summary_hinglish: "Agar aapke Fundamental Rights cheene jate hain, toh aap seedha Supreme Court ja sakte hain (Habeas Corpus, Mandamus writs ke zariye).", summary_hi: "मौलिक अधिकारों के हनन पर नागरिक सीधे सर्वोच्च न्यायालय जा सकते हैं।", summary_mr: "मूलभूत हक्कांचे उल्लंघन झाल्यास नागरिक थेट सर्वोच्च न्यायालयात दाद मागू शकतात.", official_text: "Constitution of India, Part III, Article 32.", proof_url: "https://legislative.gov.in/constitution-of-india/" },
+      { id: 102, article_number: "Article 226", part_number: "Part VI", part_title: "The States (High Courts)", title_en: "Power of High Courts to Issue Writs", title_hinglish: "High Court Mein Writ Petition Dalne Ki Shakti", title_hi: "उच्च न्यायालय की रिट जारी करने की शक्ति", title_mr: "उच्च न्यायालयाचे रिट अधिकार", summary_en: "Empowers every State High Court (such as Bombay High Court) to issue writs not only for Fundamental Rights but also for any other legal right against government authorities.", summary_hinglish: "Aap apne State High Court mein kisi bhi sarkari vibhag ke khilaf Writ Petition daal kar insaaf maang sakte hain.", summary_hi: "उच्च न्यायालय मौलिक और अन्य कानूनी अधिकारों की रक्षा के लिए रिट जारी कर सकता है।", summary_mr: "उच्च न्यायालय मूलभूत व कायदेशीर हक्कांच्या संरक्षणासाठी आदेश देऊ शकते.", official_text: "Constitution of India, Part VI, Article 226.", proof_url: "https://legislative.gov.in/constitution-of-india/" },
+      { id: 103, article_number: "Article 300A", part_number: "Part XII", part_title: "Finance, Property & Contracts", title_en: "Right to Property (No Deprivation Without Authority of Law)", title_hinglish: "Sampatti Ka Kanooni Adhikar (Right to Property)", title_hi: "संपत्ति का कानूनी अधिकार", title_mr: "मालमत्तेचा कायदेशीर हक्क", summary_en: "No person shall be deprived of his property save by authority of law. Government cannot acquire private land/home without due legal process and fair compensation.", summary_hinglish: "Koi bhi sarkar ya vyakti bina kanooni prakriya aur muawze ke aapki zameen ya ghar nahi chheen sakta.", summary_hi: "कानून के प्राधिकार के बिना किसी भी व्यक्ति को उसकी संपत्ति से वंचित नहीं किया जाएगा।", summary_mr: "कायदेशीर प्रक्रियेशिवाय कोणत्याही व्यक्तीची मालमत्ता हिरावून घेतली जाऊ शकत नाही.", official_text: "Constitution of India, Part XII, Article 300A.", proof_url: "https://legislative.gov.in/constitution-of-india/" },
+      { id: 104, article_number: "Article 368", part_number: "Part XX", part_title: "Amendment of the Constitution", title_en: "Power of Parliament to Amend the Constitution", title_hinglish: "Samvidhan Mein Sanshodhan (Amendment) Ki Prakriya", title_hi: "संविधान में संशोधन करने की संसद की शक्ति", title_mr: "संविधान दुरुस्तीची प्रक्रिया", summary_en: "Lays down the procedure by which Parliament can amend constitutional provisions, subject to the Supreme Court's Basic Structure Doctrine.", summary_hinglish: "Parliament samvidhan mein badlav kar sakti hai, lekin Samvidhan ke Basic Structure ko nahi badal sakti.", summary_hi: "संसद निर्धारित प्रक्रिया से संविधान में संशोधन कर सकती है।", summary_mr: "संसद विहित प्रक्रियेद्वारे संविधानात दुरुस्ती करू शकते.", official_text: "Constitution of India, Part XX, Article 368.", proof_url: "https://legislative.gov.in/constitution-of-india/" }
     ];
 
     // =========================================================================
@@ -963,30 +1334,31 @@
     let currentLang = localStorage.getItem('sahikanoon_lang') || 'en';
     let currentRoute = 'home';
     let currentFilter = 'all';
-    let activeDetail = { type: 'documents', id: 1, showUserData: false, officerMode: false };
+    let activeDetail = { type: 'documents', id: 1, tab: 'steps', showUserData: false, officerMode: false };
     let pendingOtpProfile = null;
     let generatedLocalOtp = null;
+    let otpCooldownTimer = null;
     let profile = JSON.parse(localStorage.getItem('sahikanoon_profile') || 'null');
     let savedIds = JSON.parse(localStorage.getItem('sahikanoon_saved') || '[]');
     let vaultRecords = JSON.parse(localStorage.getItem('sahikanoon_vault') || '[]');
-    let cache = { documents: [], schemes: [], laws: [], constitution: [...BUILTIN_CONSTITUTION] };
+    let cache = {
+      documents: [],
+      schemes: [],
+      private: [...PRIVATE_SCHOLARSHIPS],
+      laws: [],
+      constitution: [...BUILTIN_CONSTITUTION]
+    };
 
-    function isVerified() {
-      return Boolean(profile && profile.verified);
-    }
-
-    function requireVerified(callback) {
-      if (isVerified()) {
-        callback();
-      } else {
-        document.getElementById('otpGateModal').classList.remove('hidden');
-      }
+    function isVerified() { return Boolean(profile && profile.verified); }
+    function requireVerified(cb) {
+      if (isVerified()) cb();
+      else document.getElementById('otpGateModal').classList.remove('hidden');
     }
 
     // =========================================================================
     // MULTI-PAGE ROUTER (WITH REAL BROWSER HISTORY)
     // =========================================================================
-    const ROUTES = ['home','documents','schemes','laws','cybercrime','constitution','detail','vault','drafter','profile','login'];
+    const ROUTES = ['home','documents','schemes','private','laws','cybercrime','constitution','detail','vault','drafter','profile','login'];
 
     function navigateTo(route, push = true) {
       if (!ROUTES.includes(route)) route = 'home';
@@ -999,6 +1371,11 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    function goBackSafe() {
+      if (window.history.length > 1) history.back();
+      else navigateTo('home');
+    }
+
     window.addEventListener('popstate', () => {
       const h = window.location.hash.replace('#', '');
       currentRoute = ROUTES.includes(h) ? h : 'home';
@@ -1007,11 +1384,11 @@
 
     function renderRoute() {
       document.querySelectorAll('.nav-link').forEach(a => {
-        a.className = 'nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all';
+        a.className = 'nav-link px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100/90 text-slate-700 hover:bg-slate-200 whitespace-nowrap transition-all';
       });
       const navEl = document.getElementById('nav-' + currentRoute);
       if (navEl) {
-        navEl.className = 'nav-link px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white shadow-2xs whitespace-nowrap transition-all';
+        navEl.className = 'nav-link px-3 py-1.5 rounded-xl text-xs font-bold bg-blue-600 text-white shadow-xs whitespace-nowrap transition-all';
       }
 
       document.querySelectorAll('.page-view').forEach(s => s.classList.add('hidden'));
@@ -1019,16 +1396,17 @@
 
       if (currentRoute === 'home') {
         document.getElementById('page-home').classList.remove('hidden');
-        document.title = 'SahiKanoon — Indian Laws, Filled Sample Forms & Schemes';
+        document.title = 'SahiKanoon — Indian Laws, Filled Sample Forms & Scholarships';
       } else if (currentRoute === 'login') {
         document.getElementById('page-login').classList.remove('hidden');
-        document.title = 'Login & OTP Verification — SahiKanoon';
+        document.title = 'Citizen OTP Verification — SahiKanoon';
       } else if (currentRoute === 'profile') {
         if (!isVerified()) { navigateTo('login'); return; }
         document.getElementById('page-profile').classList.remove('hidden');
         syncProfileUI();
       } else if (currentRoute === 'vault') {
         document.getElementById('page-vault').classList.remove('hidden');
+        renderStatusPortals();
         renderVault();
       } else if (currentRoute === 'drafter') {
         document.getElementById('page-drafter').classList.remove('hidden');
@@ -1058,13 +1436,64 @@
       }
       else if (key === 'aadhaar') {
         const doc = cache.documents[0];
-        if (doc) openDetail('documents', doc.id); else navigateTo('documents');
+        if (doc) openDetail('documents', doc.id, 'sample'); else navigateTo('documents');
       }
-      else if (key === 'scholarship') {
-        const sch = cache.schemes.find(s => s.category === 'Scholarship') || cache.schemes[0];
-        if (sch) openDetail('schemes', sch.id); else navigateTo('schemes');
-      }
+      else if (key === 'scholarship') { navigateTo('private'); }
       else if (key === 'salary') { navigateTo('laws'); currentFilter = 'office'; renderSubFilters(); renderCatalog(); }
+    }
+
+    // =========================================================================
+    // UNIFIED HOME GLOBAL SEARCH
+    // =========================================================================
+    function handleHomeGlobalSearch(raw) {
+      const q = raw.trim().toLowerCase();
+      const box = document.getElementById('homeSearchResults');
+      const clr = document.getElementById('clearHomeSearchBtn');
+      if (!q) {
+        box.classList.add('hidden');
+        clr.classList.add('hidden');
+        return;
+      }
+      clr.classList.remove('hidden');
+      box.classList.remove('hidden');
+
+      let hits = [];
+      cache.documents.forEach(d => {
+        if (JSON.stringify(d).toLowerCase().includes(q)) hits.push({ badge: '📄 Document + Sample Form', title: d.doc_name, sub: d.official_fee, action: `openDetail('documents',${d.id},'sample')` });
+      });
+      cache.private.forEach(p => {
+        if (JSON.stringify(p).toLowerCase().includes(q)) hits.push({ badge: '🏫 Private Scholarship', title: loc(p,'title'), sub: p.amount, action: `openDetail('private',${p.id},'sample')` });
+      });
+      cache.schemes.forEach(s => {
+        if (JSON.stringify(s).toLowerCase().includes(q)) hits.push({ badge: '🎓 Govt Scheme', title: loc(s,'title'), sub: s.benefit_summary.slice(0,75), action: `openDetail('schemes',${s.id},'sample')` });
+      });
+      cache.laws.forEach(l => {
+        if (JSON.stringify(l).toLowerCase().includes(q)) hits.push({ badge: `⚖️ ${l.act_name} ${l.section_number}`, title: loc(l,'title'), sub: l.fine_details, action: `openDetail('laws',${l.id})` });
+      });
+      cache.constitution.forEach(c => {
+        if (JSON.stringify(c).toLowerCase().includes(q)) hits.push({ badge: `📜 ${c.article_number}`, title: loc(c,'title'), sub: c.part_title, action: `openDetail('constitution',${c.id})` });
+      });
+      STATUS_PORTALS.forEach(sp => {
+        if (sp.name.toLowerCase().includes(q) || q.includes('status') || q.includes('track')) hits.push({ badge: '🔎 Official Status Portal', title: sp.name, sub: `Requires: ${sp.code}`, action: `window.open('${sp.url}','_blank')` });
+      });
+
+      const top = hits.slice(0, 6);
+      if (!top.length) {
+        box.innerHTML = `<div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-600">No instant match for "<b>${esc(raw)}</b>". Try searching <b>Aadhaar, Domicile, MahaDBT, Kotak, Reliance, Bike keys, 1930, or Article 21</b>.</div>`;
+        return;
+      }
+      box.innerHTML = `
+        <p class="text-xs font-bold text-slate-500">Top ${top.length} Instant Matches:</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          ${top.map(h => `
+            <button onclick="${h.action}" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/70 border border-slate-200 hover:border-blue-400 text-left transition-all">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-white border border-slate-200 text-blue-700">${h.badge}</span>
+              <p class="font-bold text-xs sm:text-sm text-slate-900 mt-1.5 line-clamp-1">${esc(h.title)}</p>
+              <p class="text-[11px] text-slate-500 mt-0.5 line-clamp-1">${esc(h.sub)}</p>
+            </button>
+          `).join('')}
+        </div>
+      `;
     }
 
     // =========================================================================
@@ -1084,6 +1513,7 @@
       document.getElementById('nav-home').textContent = t.nav_home;
       document.getElementById('nav-documents').textContent = t.nav_documents;
       document.getElementById('nav-schemes').textContent = t.nav_schemes;
+      document.getElementById('nav-private').textContent = t.nav_private;
       document.getElementById('nav-laws').textContent = t.nav_laws;
       document.getElementById('nav-cybercrime').textContent = t.nav_cybercrime;
       document.getElementById('nav-constitution').textContent = t.nav_constitution;
@@ -1100,8 +1530,51 @@
     }
 
     // =========================================================================
-    // LOGIN & 6-DIGIT OTP VERIFICATION
+    // HIGH-SECURITY LOGIN & 6-BOX OTP VERIFICATION
     // =========================================================================
+    function setupOtpBoxes() {
+      const boxes = document.querySelectorAll('.otp-digit');
+      boxes.forEach((box, idx) => {
+        box.addEventListener('input', (e) => {
+          e.target.value = e.target.value.replace(/[^0-9]/g, '');
+          if (e.target.value && idx < boxes.length - 1) boxes[idx + 1].focus();
+        });
+        box.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !box.value && idx > 0) boxes[idx - 1].focus();
+        });
+        box.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const pasted = (e.clipboardData.getData('text') || '').replace(/[^0-9]/g, '').slice(0, 6);
+          pasted.split('').forEach((ch, i) => { if (boxes[i]) boxes[i].value = ch; });
+          if (boxes[Math.min(pasted.length, 5)]) boxes[Math.min(pasted.length, 5)].focus();
+        });
+      });
+    }
+    setupOtpBoxes();
+
+    function getEnteredOtp() {
+      return Array.from(document.querySelectorAll('.otp-digit')).map(b => b.value).join('');
+    }
+
+    function clearOtpBoxes() {
+      document.querySelectorAll('.otp-digit').forEach(b => b.value = '');
+    }
+
+    function startOtpCooldown() {
+      clearInterval(otpCooldownTimer);
+      let sec = 60;
+      const lbl = document.getElementById('otpTimerLabel');
+      otpCooldownTimer = setInterval(() => {
+        sec--;
+        if (sec <= 0) {
+          clearInterval(otpCooldownTimer);
+          lbl.innerHTML = `<button type="button" onclick="resetOtpStep()" class="text-blue-600 font-bold hover:underline">Resend OTP Now</button>`;
+        } else {
+          lbl.textContent = `Resend available in ${sec}s`;
+        }
+      }, 1000);
+    }
+
     function handleHeaderAuthClick() {
       navigateTo(isVerified() ? 'profile' : 'login');
     }
@@ -1112,9 +1585,8 @@
       if (!dist) return alert('Please select or enter your District.');
 
       const btn = document.getElementById('btnSendOtp');
-      const msg1 = document.getElementById('otpStep1Msg');
       btn.disabled = true;
-      btn.textContent = 'Sending 6-Digit OTP...';
+      btn.textContent = 'Generating Security OTP...';
 
       pendingOtpProfile = {
         email: document.getElementById('inEmail').value.trim(),
@@ -1144,37 +1616,46 @@
 
       document.getElementById('otpStep1Form').classList.add('hidden');
       document.getElementById('otpStep2Form').classList.remove('hidden');
+      document.getElementById('loginStepBadge').textContent = 'Step 2 of 2';
+      clearOtpBoxes();
+      document.querySelectorAll('.otp-digit')[0].focus();
+      startOtpCooldown();
 
       const info = document.getElementById('otpSentInfo');
       if (emailSentViaSupabase) {
-        info.innerHTML = `We sent a 6-digit OTP to <b>${pendingOtpProfile.email}</b> (Mobile: +91-${pendingOtpProfile.phone}). Check Inbox or Spam.`;
+        info.innerHTML = `6-digit OTP sent to <b>${esc(pendingOtpProfile.email)}</b> (+91-${esc(pendingOtpProfile.phone)}). Check Inbox or Spam.`;
       } else {
-        info.innerHTML = `Instant Verification Code for <b>${pendingOtpProfile.email}</b> (+91-${pendingOtpProfile.phone}): <span class="font-mono font-extrabold text-blue-700 bg-white px-2 py-0.5 rounded border border-blue-300">${generatedLocalOtp}</span>`;
+        info.innerHTML = `Instant Security OTP for <b>${esc(pendingOtpProfile.email)}</b> (+91-${esc(pendingOtpProfile.phone)}): <span class="font-mono font-extrabold text-blue-700 bg-white px-2.5 py-0.5 rounded border border-blue-300">${generatedLocalOtp}</span>`;
       }
 
       btn.disabled = false;
-      btn.textContent = 'Send 6-Digit Verification OTP →';
-      msg1.classList.add('hidden');
+      btn.textContent = 'Send 6-Digit Security OTP →';
     }
 
     function resetOtpStep() {
+      clearInterval(otpCooldownTimer);
       document.getElementById('otpStep2Form').classList.add('hidden');
       document.getElementById('otpStep1Form').classList.remove('hidden');
+      document.getElementById('loginStepBadge').textContent = 'Step 1 of 2';
     }
 
     async function verifyOTPCode(e) {
       e.preventDefault();
-      const token = document.getElementById('inOtpCode').value.trim();
+      const token = getEnteredOtp();
       const msg2 = document.getElementById('otpStep2Msg');
+      if (token.length !== 6) {
+        msg2.classList.remove('hidden');
+        msg2.className = 'text-xs p-3 rounded-xl bg-red-50 text-red-600 font-semibold';
+        msg2.textContent = 'Please enter all 6 digits of the OTP.';
+        return;
+      }
+
       msg2.classList.remove('hidden');
       msg2.className = 'text-xs p-3 rounded-xl bg-blue-50 text-blue-700 font-semibold';
-      msg2.textContent = 'Verifying 6-digit OTP...';
+      msg2.textContent = 'Verifying security code...';
 
-      let verifiedOk = false;
-
-      if (token === generatedLocalOtp) {
-        verifiedOk = true;
-      } else if (SUPABASE_KEY !== 'PASTE_YOUR_PUBLISHABLE_KEY_HERE') {
+      let verifiedOk = (token === generatedLocalOtp);
+      if (!verifiedOk && SUPABASE_KEY !== 'PASTE_YOUR_PUBLISHABLE_KEY_HERE') {
         try {
           const { data, error } = await db.auth.verifyOtp({
             email: pendingOtpProfile.email,
@@ -1187,10 +1668,11 @@
 
       if (!verifiedOk) {
         msg2.className = 'text-xs p-3 rounded-xl bg-red-50 text-red-600 font-semibold';
-        msg2.textContent = 'Invalid OTP code. Please check and enter the 6-digit code again.';
+        msg2.textContent = 'Incorrect 6-digit OTP. Please check and try again.';
         return;
       }
 
+      clearInterval(otpCooldownTimer);
       profile = { ...pendingOtpProfile, verified: true };
       localStorage.setItem('sahikanoon_profile', JSON.stringify(profile));
       syncProfileUI();
@@ -1205,8 +1687,8 @@
         document.getElementById('navAuthLabel').textContent = profile.name;
         document.getElementById('homeStatusPill').textContent = '✅ OTP Verified';
         document.getElementById('homeStatusPill').className = 'px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800';
-        document.getElementById('homeStatusText').textContent = `Welcome ${profile.name}! All Filled Sample Forms, Hamipatra PDFs, and Vault features are unlocked.`;
-        document.getElementById('homeVerifyCta').textContent = '👤 Open My Verified Profile →';
+        document.getElementById('homeStatusText').textContent = `Welcome ${profile.name}! Sample Form Previews, Hamipatra PDFs, and Application Tracker are active.`;
+        document.getElementById('homeVerifyCta').textContent = '👤 Open Verified Profile →';
         document.getElementById('homeVerifyCta').onclick = () => navigateTo('profile');
 
         document.getElementById('profCardName').textContent = profile.name;
@@ -1227,7 +1709,7 @@
         const tips = [];
         if (age >= 18) tips.push('✅ <b>Voter ID & Driving Licence:</b> Eligible (18+ verified).');
         if (age >= 18 && age <= 35) tips.push('✅ <b>Youth Internship & Skill Schemes:</b> Eligible for PM Internship & CM Yuva schemes.');
-        if (profile.role === 'Student') tips.push('🎓 <b>Scholarships:</b> Eligible to check MahaDBT & NSP OTR scholarships.');
+        if (profile.role === 'Student') tips.push('🎓 <b>Scholarships:</b> Eligible for MahaDBT, NSP & Private CSR Scholarships.');
         if (profile.state === 'Maharashtra') tips.push('🏛️ <b>Aaple Sarkar Maharashtra:</b> Domicile, Income, Caste & NCL online services available.');
         document.getElementById('profEligibility').innerHTML = tips.map(x => `<li>${x}</li>`).join('');
       } else {
@@ -1274,7 +1756,7 @@
     async function loadDatabase() {
       const status = document.getElementById('statusMsg');
       if (SUPABASE_KEY === 'PASTE_YOUR_PUBLISHABLE_KEY_HERE') {
-        status.innerHTML = `<div class="max-w-md mx-auto p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 text-xs"><b>Action Needed:</b> Replace <code>PASTE_YOUR_PUBLISHABLE_KEY_HERE</code> in <code>index.html</code> with your Supabase <code>sb_publishable_...</code> key.</div>`;
+        status.innerHTML = `<div class="col-span-full max-w-md mx-auto p-4 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 text-xs"><b>Action Needed:</b> Replace <code>PASTE_YOUR_PUBLISHABLE_KEY_HERE</code> in <code>index.html</code> with your Supabase <code>sb_publishable_...</code> key.</div>`;
         return;
       }
       try {
@@ -1291,12 +1773,12 @@
         const dbConst = c.data || [];
         cache.constitution = [...dbConst, ...BUILTIN_CONSTITUTION.filter(b => !dbConst.some(x => x.article_number === b.article_number))];
         status.classList.add('hidden');
-        if (['documents','schemes','laws','cybercrime','constitution'].includes(currentRoute)) {
+        if (['documents','schemes','private','laws','cybercrime','constitution'].includes(currentRoute)) {
           renderSubFilters();
           renderCatalog();
         }
       } catch (err) {
-        status.innerHTML = `<div class="max-w-md mx-auto p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs">Database error: ${err.message}</div>`;
+        status.innerHTML = `<div class="col-span-full max-w-md mx-auto p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs">Database error: ${esc(err.message)}</div>`;
       }
     }
 
@@ -1312,12 +1794,19 @@
         ];
       } else if (currentRoute === 'schemes') {
         opts = [
-          { id: 'all', label: 'All Schemes' },
+          { id: 'all', label: 'All Govt Schemes' },
           { id: 'Scholarship', label: '🎓 Scholarships' },
           { id: 'Maharashtra', label: 'Maharashtra' },
           { id: 'Central', label: 'Central Govt' },
           { id: 'active', label: '✅ Active' },
           { id: 'inactive', label: '⛔ Closed' }
+        ];
+      } else if (currentRoute === 'private') {
+        opts = [
+          { id: 'all', label: 'All Private Scholarships' },
+          { id: 'Merit-cum-Means', label: '🏆 Merit-cum-Means' },
+          { id: 'Girls & Women', label: '👩‍🎓 Girls & Women' },
+          { id: 'Need-Based', label: '🤝 Financial Need-Based' }
         ];
       } else if (currentRoute === 'laws') {
         opts = [
@@ -1338,8 +1827,8 @@
         ];
       }
       document.getElementById('subFilters').innerHTML = opts.map(o => `
-        <button onclick="currentFilter='${o.id}'; renderSubFilters(); renderCatalog();" class="px-3 py-1.5 rounded-xl text-xs font-semibold border ${
-          currentFilter === o.id ? 'bg-blue-600 text-white border-blue-600' : 'bg-slate-50 text-slate-600 border-slate-200 hover:border-blue-400'
+        <button onclick="currentFilter='${o.id}'; renderSubFilters(); renderCatalog();" class="px-3 py-1.5 rounded-xl text-xs font-semibold border transition-all ${
+          currentFilter === o.id ? 'bg-blue-600 text-white border-blue-600 shadow-2xs' : 'bg-slate-50 text-slate-600 border-slate-200 hover:border-blue-400'
         }">${o.label}</button>
       `).join('');
     }
@@ -1370,21 +1859,22 @@
       if (currentRoute === 'documents') {
         html = cache.documents.filter(d => (currentFilter === 'all' || d.category === currentFilter) && (!q || JSON.stringify(d).toLowerCase().includes(q))).map((d, i) => {
           const uid = `documents_${d.id}`;
+          const firstReq = (d.required_docs || '').split('|')[0].trim();
           return `
-          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-anim bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-2xs hover:shadow-md transition-all">
+          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-spring fluent-card bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 flex flex-col justify-between gap-4">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700">${d.state} • ${d.category}</span>
+                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700">${esc(d.state)} • ${esc(d.category)}</span>
                 <button onclick="toggleSave('${uid}')" class="text-lg ${savedIds.includes(uid) ? 'text-amber-500' : 'text-slate-300'}">${savedIds.includes(uid) ? '★' : '☆'}</button>
               </div>
-              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-1.5">${d.doc_name}</h3>
-              <p class="font-mono text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 mb-2">💰 ${t.fee}: ${d.official_fee}</p>
-              <p class="text-xs text-slate-500 mb-2">⏱️ <b>${t.time}:</b> ${d.processing_time}</p>
-              <p class="text-xs text-slate-600 line-clamp-2"><b>${t.req}:</b> ${d.required_docs}</p>
+              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-1.5">${esc(d.doc_name)}</h3>
+              <p class="font-mono text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg px-2.5 py-1.5 mb-2">💰 ${t.fee}: ${esc(d.official_fee)}</p>
+              <p class="text-xs text-slate-500 mb-1.5">⏱️ <b>${t.time}:</b> ${esc(d.processing_time)}</p>
+              <p class="text-xs text-slate-600 line-clamp-1"><b>${t.req}:</b> ${esc(firstReq)}...</p>
             </div>
-            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
-              <button onclick="speakText('${d.doc_name.replace(/'/g,'')}. ${d.official_fee.replace(/'/g,'')}')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
-              <button onclick="openDetail('documents',${d.id})" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">${t.open_form}</button>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100 gap-2">
+              <button onclick="openDetail('documents',${d.id},'steps')" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold">📋 Steps</button>
+              <button onclick="openDetail('documents',${d.id},'sample')" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">${t.open_form}</button>
             </div>
           </div>`;
         }).join('');
@@ -1397,23 +1887,47 @@
           const closed = s.status === 'inactive';
           const isElig = isVerified() && !closed && (s.state === 'All India' || s.state === profile.state);
           return `
-          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-anim bg-white border ${closed ? 'border-red-200' : 'border-slate-200 hover:border-blue-500'} rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-2xs hover:shadow-md transition-all">
+          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-spring fluent-card bg-white border ${closed ? 'border-red-200' : 'border-slate-200 hover:border-blue-500'} rounded-2xl p-5 flex flex-col justify-between gap-4">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex flex-wrap gap-1.5">
                   <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg ${closed ? 'bg-red-50 text-red-700' : 'bg-emerald-50 text-emerald-700'}">${closed ? t.closed : t.active}</span>
-                  <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-lg bg-slate-100">${s.state}</span>
+                  <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-lg bg-slate-100">${esc(s.state)}</span>
                   ${isElig ? `<span class="text-[11px] font-bold px-2 py-0.5 rounded-lg bg-blue-50 text-blue-700">✨ Eligible</span>` : ''}
                 </div>
                 <button onclick="toggleSave('${uid}')" class="text-lg ${savedIds.includes(uid) ? 'text-amber-500' : 'text-slate-300'}">${savedIds.includes(uid) ? '★' : '☆'}</button>
               </div>
-              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-2">${loc(s,'title')}</h3>
-              <p class="text-xs text-slate-700 mb-2"><b class="text-blue-700">${t.benefit}:</b> ${s.benefit_summary}</p>
-              <p class="text-xs text-slate-500 line-clamp-2"><b>${t.elig}:</b> ${s.eligibility}</p>
+              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-2">${esc(loc(s,'title'))}</h3>
+              <p class="text-xs text-slate-700 mb-2"><b class="text-blue-700">${t.benefit}:</b> ${esc(s.benefit_summary)}</p>
+              <p class="text-xs text-slate-500 line-clamp-2"><b>${t.elig}:</b> ${esc(s.eligibility)}</p>
             </div>
             <div class="flex items-center justify-between pt-3 border-t border-slate-100">
-              <button onclick="speakText('${loc(s,'title').replace(/'/g,'')}. ${s.benefit_summary.replace(/'/g,'')}')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
-              <button onclick="openDetail('schemes',${s.id})" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">${t.open_scheme}</button>
+              <button onclick="speakText('${esc(loc(s,'title'))}. ${esc(s.benefit_summary)}')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
+              <button onclick="openDetail('schemes',${s.id},'sample')" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">${t.open_scheme}</button>
+            </div>
+          </div>`;
+        }).join('');
+      } else if (currentRoute === 'private') {
+        html = cache.private.filter(p => (currentFilter === 'all' || p.category === currentFilter) && (!q || JSON.stringify(p).toLowerCase().includes(q))).map((p, i) => {
+          const uid = `private_${p.id}`;
+          return `
+          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-spring fluent-card bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 flex flex-col justify-between gap-4">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-emerald-50 text-emerald-700">${t.active}</span>
+                  <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-indigo-50 text-indigo-700">${esc(p.provider)}</span>
+                  <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-lg bg-slate-100">${esc(p.category)}</span>
+                </div>
+                <button onclick="toggleSave('${uid}')" class="text-lg ${savedIds.includes(uid) ? 'text-amber-500' : 'text-slate-300'}">${savedIds.includes(uid) ? '★' : '☆'}</button>
+              </div>
+              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-1.5">${esc(loc(p,'title'))}</h3>
+              <p class="font-mono text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg px-2.5 py-1.5 mb-2">🎓 Grant: ${esc(p.amount)}</p>
+              <p class="text-xs text-slate-600 line-clamp-2"><b>${t.elig}:</b> ${esc(p.eligibility)}</p>
+            </div>
+            <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+              <button onclick="openDetail('private',${p.id},'steps')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">📋 Details</button>
+              <button onclick="openDetail('private',${p.id},'sample')" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold">${t.open_scheme}</button>
             </div>
           </div>`;
         }).join('');
@@ -1424,21 +1938,21 @@
         }).map((l, i) => {
           const uid = `laws_${l.id}`;
           return `
-          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-anim bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-2xs hover:shadow-md transition-all">
+          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-spring fluent-card bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 flex flex-col justify-between gap-4">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="font-mono text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-slate-900 text-white">${l.act_name} • ${l.section_number}</span>
+                <span class="font-mono text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-slate-900 text-white">${esc(l.act_name)} • ${esc(l.section_number)}</span>
                 <button onclick="toggleSave('${uid}')" class="text-lg ${savedIds.includes(uid) ? 'text-amber-500' : 'text-slate-300'}">${savedIds.includes(uid) ? '★' : '☆'}</button>
               </div>
-              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-2">${loc(l,'title')}</h3>
-              <p class="text-xs text-slate-600 mb-3">${loc(l,'summary')}</p>
+              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-2">${esc(loc(l,'title'))}</h3>
+              <p class="text-xs text-slate-600 mb-3">${esc(loc(l,'summary'))}</p>
               <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
-                <p><b>${t.penalty}:</b> <span class="text-red-700 font-semibold">${l.fine_details}</span></p>
-                <p class="text-emerald-800 line-clamp-2"><b>${t.right}:</b> ${l.citizen_rights}</p>
+                <p><b>${t.penalty}:</b> <span class="text-red-700 font-semibold">${esc(l.fine_details)}</span></p>
+                <p class="text-emerald-800 line-clamp-2"><b>${t.right}:</b> ${esc(l.citizen_rights)}</p>
               </div>
             </div>
             <div class="flex items-center justify-between pt-3 border-t border-slate-100">
-              <button onclick="speakText('${loc(l,'title').replace(/'/g,'')}. ${l.citizen_rights.replace(/'/g,'')}')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
+              <button onclick="speakText('${esc(loc(l,'title'))}. ${esc(l.citizen_rights)}')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
               <button onclick="openDetail('laws',${l.id})" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">${t.open_detail}</button>
             </div>
           </div>`;
@@ -1447,20 +1961,20 @@
         html = cache.constitution.filter(c => (currentFilter === 'all' || (c.part_number || '').includes(currentFilter)) && (!q || JSON.stringify(c).toLowerCase().includes(q))).map((c, i) => {
           const uid = `constitution_${c.id}`;
           return `
-          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-anim bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 flex flex-col justify-between gap-4 shadow-2xs hover:shadow-md transition-all">
+          <div style="animation-delay:${Math.min(i*30,240)}ms" class="card-spring fluent-card bg-white border border-slate-200 hover:border-blue-500 rounded-2xl p-5 flex flex-col justify-between gap-4">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <div class="flex gap-1.5">
-                  <span class="font-mono text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-600 text-white">${c.article_number}</span>
-                  <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-lg bg-slate-100">${c.part_number}</span>
+                  <span class="font-mono text-[11px] font-bold px-2.5 py-0.5 rounded-lg bg-blue-600 text-white">${esc(c.article_number)}</span>
+                  <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-lg bg-slate-100">${esc(c.part_number)}</span>
                 </div>
                 <button onclick="toggleSave('${uid}')" class="text-lg ${savedIds.includes(uid) ? 'text-amber-500' : 'text-slate-300'}">${savedIds.includes(uid) ? '★' : '☆'}</button>
               </div>
-              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-2">${loc(c,'title')}</h3>
-              <p class="text-xs text-slate-600 leading-relaxed">${loc(c,'summary')}</p>
+              <h3 class="text-base sm:text-lg font-extrabold text-slate-900 mb-2">${esc(loc(c,'title'))}</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">${esc(loc(c,'summary'))}</p>
             </div>
             <div class="flex items-center justify-between pt-3 border-t border-slate-100">
-              <button onclick="speakText('${c.article_number}. ${loc(c,'title').replace(/'/g,'')}')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
+              <button onclick="speakText('${esc(c.article_number)}. ${esc(loc(c,'title'))}')" class="px-3 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
               <button onclick="openDetail('constitution',${c.id})" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">${t.open_detail}</button>
             </div>
           </div>`;
@@ -1471,9 +1985,10 @@
     }
 
     // =========================================================================
-    // FULL DETAIL VIEW (KAGAZ READINESS METER + FILLED SAMPLE FORM + PROOF)
+    // FULL DETAIL VIEW (CLEAN POINT-WISE STEPS + TOP SAMPLE FORM TABS)
     // =========================================================================
     function getSampleKey(type, item) {
+      if (type === 'private') return item.sampleKey || 'private_csr';
       const name = ((item.doc_name || item.title_en || '')).toLowerCase();
       if (type === 'documents') {
         if (name.includes('aadhaar')) return 'aadhaar';
@@ -1492,9 +2007,14 @@
       return null;
     }
 
-    function openDetail(type, id) {
-      activeDetail = { type, id, showUserData: false, officerMode: false };
+    function openDetail(type, id, initialTab = 'steps') {
+      activeDetail = { type, id, tab: initialTab, showUserData: false, officerMode: false };
       navigateTo('detail');
+    }
+
+    function switchDetailTab(tabName) {
+      activeDetail.tab = tabName;
+      renderDetailView();
     }
 
     function toggleUserPreviewOnSample() {
@@ -1512,7 +2032,7 @@
       const bar = document.getElementById('readinessBar');
       const lbl = document.getElementById('readinessPct');
       if (bar) bar.style.width = pct + '%';
-      if (lbl) lbl.textContent = pct === 100 ? '✅ 100% Ready to Apply!' : `Readiness: ${pct}% (${done}/${checks.length} Kagaz Ready)`;
+      if (lbl) lbl.textContent = pct === 100 ? '✅ 100% Ready to Apply!' : `Readiness: ${pct}% (${done}/${checks.length} Ready)`;
     }
 
     function renderSampleFormSection(sampleKey) {
@@ -1521,140 +2041,194 @@
       const useUser = activeDetail.showUserData && isVerified();
 
       const formatSampleValue = (boxObj) => {
-        if (!useUser || !boxObj.useUser) return boxObj.sample;
-        if (boxObj.useUser === 'name') return profile.name.toUpperCase();
-        if (boxObj.useUser === 'address') return `${profile.area}, ${profile.district}, ${profile.state} - ${profile.pincode}`;
-        return boxObj.sample;
+        if (!useUser || !boxObj.useUser) return esc(boxObj.sample);
+        if (boxObj.useUser === 'name') return esc(profile.name.toUpperCase());
+        if (boxObj.useUser === 'address') return esc(`${profile.area}, ${profile.district}, ${profile.state} - ${profile.pincode}`);
+        return esc(boxObj.sample);
       };
 
       return `
-        <!-- 1. Interactive Kagaz Readiness Meter -->
-        <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 shadow-2xs space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div>
-              <span class="text-[11px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Step 1 • Kagaz Readiness Check</span>
-              <h3 class="text-lg font-extrabold text-slate-900 mt-1">Tick the Documents You Have Ready</h3>
-            </div>
-            <span id="readinessPct" class="font-mono text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">Readiness: 0%</span>
-          </div>
-          <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-            <div id="readinessBar" class="h-full bg-emerald-500 transition-all duration-300" style="width: 0%"></div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-            ${sf.checklist.map(c => `
-              <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-blue-400">
-                <input type="checkbox" class="kagaz-check w-4 h-4 accent-emerald-600" onchange="updateDetailReadiness()" />
-                <span class="font-medium text-slate-800">${c}</span>
-              </label>
-            `).join('')}
-          </div>
-        </div>
-
-        <!-- 2. Visual Filled Sample Form -->
-        <div class="bg-white border-2 border-blue-200 rounded-3xl p-5 sm:p-7 shadow-2xs space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
-            <div>
-              <span class="text-[11px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-blue-600 text-white">Step 2 • Visual Filled Sample Form</span>
-              <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-1.5">${sf.title}</h3>
-              <p class="text-xs text-slate-500">Look at how each box is filled properly so your application never gets rejected.</p>
-            </div>
-            <button onclick="toggleUserPreviewOnSample()" class="px-4 py-2.5 rounded-xl ${useUser ? 'bg-emerald-600 text-white' : 'bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-300'} text-xs font-extrabold transition-all">
-              ${useUser ? '✅ Showing Your Profile Details' : '👤 Preview With My Details (OTP)'}
-            </button>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            ${sf.boxes.map(b => `
-              <div class="p-4 rounded-2xl bg-slate-50 border ${b.ok ? 'border-slate-200' : 'border-red-200'} space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-extrabold text-slate-800">${b.box}</span>
-                  <span class="text-[10px] font-bold px-2 py-0.5 rounded ${b.ok ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">${b.ok ? '✓ Sahi Tarika' : '⚠️ Rejection Alert'}</span>
-                </div>
-                <div class="font-mono text-xs sm:text-sm font-bold bg-white border border-dashed border-blue-400 rounded-xl px-3 py-2.5 text-blue-950">
-                  ${formatSampleValue(b)}
-                </div>
-                <p class="text-[11px] text-slate-600 leading-relaxed">${b.rule}</p>
+        <div class="space-y-5 page-enter">
+          <!-- 1. Kagaz Readiness Meter -->
+          <div class="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 shadow-2xs space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <span class="text-[11px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Step 1 • Kagaz Readiness Check</span>
+                <h3 class="text-lg font-extrabold text-slate-900 mt-1">Tick the Documents You Have Ready</h3>
               </div>
-            `).join('')}
+              <span id="readinessPct" class="font-mono text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">Readiness: 0%</span>
+            </div>
+            <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+              <div id="readinessBar" class="h-full bg-emerald-500 transition-all duration-300" style="width: 0%"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+              ${sf.checklist.map(c => `
+                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-blue-400">
+                  <input type="checkbox" class="kagaz-check w-4 h-4 accent-emerald-600" onchange="updateDetailReadiness()" />
+                  <span class="font-medium text-slate-800">${esc(c)}</span>
+                </label>
+              `).join('')}
+            </div>
           </div>
 
-          <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 justify-end">
-            <button onclick="requireVerified(() => { navigateTo('drafter'); generateDraft('hamipatra'); })" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold">📜 Generate Self-Declaration (Hamipatra)</button>
-            <button onclick="requireVerified(() => window.print())" class="px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold">🖨️ Print Sample Guide</button>
+          <!-- 2. Visual Filled Sample Form -->
+          <div class="bg-white border-2 border-blue-200 rounded-3xl p-5 sm:p-7 shadow-2xs space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
+              <div>
+                <span class="text-[11px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-blue-600 text-white">Step 2 • Visual Filled Sample Form</span>
+                <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mt-1.5">${esc(sf.title)}</h3>
+                <p class="text-xs text-slate-500">See how each field is filled properly so your application never gets rejected.</p>
+              </div>
+              <button onclick="toggleUserPreviewOnSample()" class="px-4 py-2.5 rounded-xl ${useUser ? 'bg-emerald-600 text-white' : 'bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-300'} text-xs font-extrabold transition-all">
+                ${useUser ? '✅ Showing Your Profile Details' : '👤 Preview With My Details (OTP)'}
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              ${sf.boxes.map(b => `
+                <div class="p-4 rounded-2xl bg-slate-50 border ${b.ok ? 'border-slate-200' : 'border-red-200'} space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-extrabold text-slate-800">${esc(b.box)}</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded ${b.ok ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">${b.ok ? '✓ Correct Format' : '⚠️ Rejection Alert'}</span>
+                  </div>
+                  <div class="font-mono text-xs sm:text-sm font-bold bg-white border border-dashed border-blue-400 rounded-xl px-3 py-2.5 text-blue-950">
+                    ${formatSampleValue(b)}
+                  </div>
+                  <p class="text-[11px] text-slate-600 leading-relaxed">${esc(b.rule)}</p>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-2 justify-end">
+              <button onclick="requireVerified(() => { navigateTo('drafter'); generateDraft('hamipatra'); })" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold">📜 Generate Self-Declaration (Hamipatra)</button>
+              <button onclick="requireVerified(() => window.print())" class="px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold">🖨️ Print Sample Guide</button>
+            </div>
           </div>
         </div>
       `;
     }
 
     function renderDetailView() {
-      const { type, id } = activeDetail;
+      const { type, id, tab } = activeDetail;
       const item = cache[type].find(x => x.id === id);
       const box = document.getElementById('detailContainer');
+      const topActions = document.getElementById('detailTopActions');
+      const t = UI_TEXT[currentLang] || UI_TEXT.en;
+
       if (!item) { box.innerHTML = `<div class="p-6 bg-white rounded-2xl text-sm">Record not found.</div>`; return; }
+
+      // Show "Show to Officer" ONLY on Laws and Constitution pages
+      if (type === 'laws' || type === 'constitution') {
+        topActions.innerHTML = `
+          <button onclick="toggleOfficerScreen()" id="btnOfficerScreen" class="px-3.5 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold">🪪 Show to Officer</button>
+          <button onclick="shareCurrentDetail()" id="btnShareDetail" class="px-3.5 py-2 rounded-xl bg-white border border-slate-300 text-xs font-bold">📤 Copy / Share</button>
+        `;
+      } else {
+        topActions.innerHTML = `
+          <button onclick="shareCurrentDetail()" id="btnShareDetail" class="px-3.5 py-2 rounded-xl bg-white border border-slate-300 text-xs font-bold">📤 Copy / Share</button>
+        `;
+      }
 
       if (type === 'documents') {
         const sk = getSampleKey('documents', item);
-        box.innerHTML = `
-          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-2xs space-y-4">
-            <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">${item.state} • ${item.category}</span>
-              <a href="${item.official_portal_url}" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">Apply on Official Portal ↗</a>
+        const stepsContent = `
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 page-enter">
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <p class="font-extrabold text-slate-900 text-sm">${t.sec_req_docs}</p>
+              ${formatPointList(item.required_docs)}
             </div>
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">${item.doc_name}</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-              <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 font-mono font-bold text-emerald-800">💰 ${item.official_fee}</div>
-              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 font-semibold">⏱️ Time: ${item.processing_time}</div>
-              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 font-semibold">📋 Mode: ${item.apply_mode}</div>
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <p class="font-extrabold text-slate-900 text-sm">${t.sec_steps}</p>
+              ${formatPointList(item.making_steps)}
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm pt-2">
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200"><p class="font-extrabold text-slate-900 mb-1">1. Required Documents</p><p class="text-slate-600 leading-relaxed">${item.required_docs}</p></div>
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200"><p class="font-extrabold text-slate-900 mb-1">2. Step-by-Step Process</p><p class="text-slate-600 leading-relaxed">${item.making_steps}</p></div>
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200"><p class="font-extrabold text-slate-900 mb-1">3. Track & Download</p><p class="text-slate-600 leading-relaxed">${item.track_download_steps}</p></div>
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <p class="font-extrabold text-slate-900 text-sm">${t.sec_track}</p>
+              ${formatPointList(item.track_download_steps)}
             </div>
           </div>
-          ${renderSampleFormSection(sk)}
         `;
-      } else if (type === 'schemes') {
-        const sk = getSampleKey('schemes', item);
-        const closed = item.status === 'inactive';
+
         box.innerHTML = `
           <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-2xs space-y-4">
             <div class="flex flex-wrap items-center justify-between gap-2">
-              <span class="text-xs font-bold px-3 py-1 rounded-full ${closed ? 'bg-red-100 text-red-800' : 'bg-emerald-100 text-emerald-800'}">${closed ? '⛔ CLOSED / INACTIVE' : '✅ ACTIVE SCHEME'} • ${item.state}</span>
-              <button onclick="requireVerified(() => window.open('${item.proof_url}','_blank'))" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">🔐 Proceed to Official Portal (OTP) ↗</button>
+              <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">${esc(item.state)} • ${esc(item.category)}</span>
+              <a href="${esc(item.official_portal_url)}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">Apply on Official Portal ↗</a>
             </div>
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">${loc(item,'title')}</h1>
-            <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs sm:text-sm"><b class="text-blue-900">🎁 Benefit:</b> ${item.benefit_summary}</div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200"><p class="font-extrabold mb-1">Eligibility</p><p class="text-slate-600">${item.eligibility}</p></div>
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200"><p class="font-extrabold mb-1">Documents Required</p><p class="text-slate-600">${item.documents_required}</p></div>
-              <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200"><p class="font-extrabold mb-1">Application Steps</p><p class="text-slate-600">${item.apply_steps}</p></div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">${esc(item.doc_name)}</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 font-mono font-bold text-emerald-800">💰 ${esc(item.official_fee)}</div>
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 font-semibold">⏱️ ${t.time}: ${esc(item.processing_time)}</div>
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 font-semibold">📋 ${t.mode}: ${esc(item.apply_mode)}</div>
+            </div>
+
+            <!-- Top Switcher Tabs: Steps vs Filled Sample Form -->
+            <div class="flex gap-2 pt-2 border-t border-slate-100">
+              <button onclick="switchDetailTab('steps')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${tab === 'steps' ? 'bg-blue-600 text-white shadow-2xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}">📋 Point-Wise Steps & Checklist</button>
+              <button onclick="switchDetailTab('sample')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${tab === 'sample' ? 'bg-blue-600 text-white shadow-2xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}">📝 Kagaz Meter & Filled Sample Form</button>
             </div>
           </div>
-          ${renderSampleFormSection(sk)}
+          ${tab === 'sample' ? renderSampleFormSection(sk) : stepsContent}
+        `;
+      } else if (type === 'schemes' || type === 'private') {
+        const sk = getSampleKey(type, item);
+        const closed = item.status === 'inactive';
+        const stepsContent = `
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 page-enter">
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <p class="font-extrabold text-slate-900 text-sm">${t.sec_elig}</p>
+              ${formatPointList(item.eligibility)}
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <p class="font-extrabold text-slate-900 text-sm">${t.sec_req_docs}</p>
+              ${formatPointList(item.documents_required)}
+            </div>
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+              <p class="font-extrabold text-slate-900 text-sm">${t.sec_apply}</p>
+              ${formatPointList(item.apply_steps)}
+            </div>
+          </div>
+        `;
+
+        box.innerHTML = `
+          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-2xs space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-bold px-3 py-1 rounded-full ${closed ? 'bg-red-100 text-red-800' : 'bg-emerald-100 text-emerald-800'}">${closed ? t.closed : t.active} • ${esc(item.state || item.provider)}</span>
+              <a href="${esc(item.proof_url)}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">Open Official Portal ↗</a>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">${esc(loc(item,'title'))}</h1>
+            <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs sm:text-sm">
+              <b class="text-blue-900">${t.sec_benefit}:</b> ${esc(item.benefit_summary || item.amount)}
+            </div>
+
+            <div class="flex gap-2 pt-2 border-t border-slate-100">
+              <button onclick="switchDetailTab('steps')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${tab === 'steps' ? 'bg-blue-600 text-white shadow-2xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}">📋 Point-Wise Eligibility & Steps</button>
+              <button onclick="switchDetailTab('sample')" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${tab === 'sample' ? 'bg-blue-600 text-white shadow-2xs' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}">📝 Kagaz Meter & Filled Sample Form</button>
+            </div>
+          </div>
+          ${tab === 'sample' ? renderSampleFormSection(sk) : stepsContent}
         `;
       } else if (type === 'laws') {
         box.innerHTML = `
           <div id="officerReadableArea" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xs space-y-5">
             <div class="p-5 rounded-2xl bg-slate-900 text-white">
-              <p class="font-mono text-xs text-blue-300 font-bold uppercase">${item.act_name}</p>
-              <h1 class="text-2xl sm:text-3xl font-extrabold mt-1">${item.section_number}: ${loc(item,'title')}</h1>
+              <p class="font-mono text-xs text-blue-300 font-bold uppercase">${esc(item.act_name)}</p>
+              <h1 class="text-2xl sm:text-3xl font-extrabold mt-1">${esc(item.section_number)}: ${esc(loc(item,'title'))}</h1>
             </div>
             <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200">
-              <p class="text-xs font-bold uppercase text-blue-700 mb-1">📜 Statutory Written Provision</p>
-              <p class="text-sm sm:text-base font-medium leading-relaxed text-slate-900">${loc(item,'summary')}</p>
+              <p class="text-xs font-bold uppercase text-blue-700 mb-1.5">${t.sec_statute}</p>
+              <p class="text-sm sm:text-base font-medium leading-relaxed text-slate-900">${esc(loc(item,'summary'))}</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
-              <div class="p-4 rounded-2xl bg-red-50 border border-red-200"><p class="font-bold text-red-800">💰 Official Penalty / Fine</p><p class="font-bold text-slate-900 mt-1">${item.fine_details}</p></div>
-              <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200"><p class="font-bold text-slate-700">⚖️ Imprisonment</p><p class="font-bold text-slate-900 mt-1">${item.jail_term}</p></div>
+              <div class="p-4 rounded-2xl bg-red-50 border border-red-200"><p class="font-bold text-red-800">${t.sec_penalty}</p><p class="font-bold text-slate-900 mt-1">${esc(item.fine_details)}</p></div>
+              <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200"><p class="font-bold text-slate-700">${t.sec_jail}</p><p class="font-bold text-slate-900 mt-1">${esc(item.jail_term)}</p></div>
             </div>
-            <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200">
-              <p class="text-xs font-bold uppercase text-emerald-800 mb-1">🛡️ Your Citizen Rights & Immediate Action</p>
-              <p class="text-sm leading-relaxed text-slate-900">${item.citizen_rights}</p>
+            <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2">
+              <p class="text-xs font-bold uppercase text-emerald-800">${t.sec_rights}</p>
+              ${formatPointList(item.citizen_rights)}
             </div>
             <div class="flex flex-wrap justify-between items-center pt-3 border-t border-slate-100 gap-2">
-              <button onclick="speakText('${loc(item,'title').replace(/'/g,'')}. ${loc(item,'summary').replace(/'/g,'')}')" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold">🔊 Read Aloud</button>
-              <a href="${item.proof_url}" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold">Verify on Official Govt Gazette / Portal ↗</a>
+              <button onclick="speakText('${esc(loc(item,'title'))}. ${esc(loc(item,'summary'))}')" class="px-4 py-2 rounded-xl bg-slate-100 text-xs font-bold">${t.listen}</button>
+              <a href="${esc(item.proof_url)}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold">Verify on Official Govt Portal ↗</a>
             </div>
           </div>
         `;
@@ -1662,19 +2236,18 @@
         box.innerHTML = `
           <div id="officerReadableArea" class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xs space-y-5">
             <div class="p-5 rounded-2xl bg-blue-700 text-white">
-              <p class="font-mono text-xs text-blue-200 font-bold">Constitution of India • ${item.part_number} (${item.part_title})</p>
-              <h1 class="text-2xl sm:text-3xl font-extrabold mt-1">${item.article_number} — ${loc(item,'title')}</h1>
+              <p class="font-mono text-xs text-blue-200 font-bold">Constitution of India • ${esc(item.part_number)} (${esc(item.part_title)})</p>
+              <h1 class="text-2xl sm:text-3xl font-extrabold mt-1">${esc(item.article_number)} — ${esc(loc(item,'title'))}</h1>
             </div>
             <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-              <p class="text-xs font-bold uppercase text-slate-500 mb-1">📖 Constitutional Explanation</p>
-              <p class="text-sm sm:text-base font-medium leading-relaxed text-slate-900">${loc(item,'summary')}</p>
+              <p class="text-sm sm:text-base font-medium leading-relaxed text-slate-900">${esc(loc(item,'summary'))}</p>
             </div>
             <div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 text-xs sm:text-sm">
               <p class="font-bold text-blue-800 mb-1">📜 Official Gazette Citation</p>
-              <p>${item.official_text}</p>
+              <p>${esc(item.official_text)}</p>
             </div>
             <div class="flex justify-end">
-              <a href="${item.proof_url}" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold">Open Legislative.gov.in ↗</a>
+              <a href="${esc(item.proof_url)}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold">Open Legislative.gov.in ↗</a>
             </div>
           </div>
         `;
@@ -1685,7 +2258,8 @@
       activeDetail.officerMode = !activeDetail.officerMode;
       const area = document.getElementById('officerReadableArea');
       if (area) area.classList.toggle('text-lg', activeDetail.officerMode);
-      document.getElementById('btnOfficerScreen').textContent = activeDetail.officerMode ? '✓ Big Screen ON' : '🪪 Show to Officer';
+      const btn = document.getElementById('btnOfficerScreen');
+      if (btn) btn.textContent = activeDetail.officerMode ? '✓ Big Screen ON' : '🪪 Show to Officer';
     }
 
     function shareCurrentDetail() {
@@ -1696,66 +2270,73 @@
     }
 
     // =========================================================================
-    // VAULT & APPLICATION TRACKER (OTP PROTECTED)
+    // MY VAULT: APPLICATION ID TRACKER + DIRECT STATUS PORTAL SEARCH
     // =========================================================================
-    let pickedVaultFile = null;
-    function pickVaultFile(inp) {
-      if (inp.files && inp.files[0]) {
-        pickedVaultFile = inp.files[0];
-        document.getElementById('vFileLabel').textContent = pickedVaultFile.name;
-      }
+    function renderStatusPortals() {
+      const q = (document.getElementById('statusPortalSearch')?.value || '').trim().toLowerCase();
+      const grid = document.getElementById('statusPortalsGrid');
+      const filtered = STATUS_PORTALS.filter(sp => !q || sp.name.toLowerCase().includes(q) || sp.code.toLowerCase().includes(q));
+      grid.innerHTML = filtered.map(sp => `
+        <a href="${esc(sp.url)}" target="_blank" rel="noopener" class="p-3.5 rounded-2xl bg-slate-50 hover:bg-blue-50/70 border border-slate-200 hover:border-blue-400 flex flex-col justify-between gap-2 transition-all">
+          <div>
+            <p class="font-bold text-xs text-slate-900">${esc(sp.name)}</p>
+            <p class="text-[11px] text-slate-500 mt-0.5">Keep ready: <span class="font-mono text-slate-700">${esc(sp.code)}</span></p>
+          </div>
+          <span class="text-[11px] font-bold text-blue-600">Check Direct Status ↗</span>
+        </a>
+      `).join('') || `<div class="col-span-full text-xs text-slate-500 py-4">No matching status portal found.</div>`;
     }
 
     function handleVaultAdd(e) {
       e.preventDefault();
       requireVerified(() => {
-        const name = document.getElementById('vDocName').value.trim();
+        const service = document.getElementById('vServiceSelect').value;
         const token = document.getElementById('vTokenId').value.trim();
         const status = document.getElementById('vStatus').value;
-
-        const saveObj = (imgData, fName) => {
-          vaultRecords.unshift({ id: Date.now(), name, token, status, fileName: fName || 'Record only', img: imgData, date: new Date().toLocaleDateString('en-IN') });
-          localStorage.setItem('sahikanoon_vault', JSON.stringify(vaultRecords));
-          pickedVaultFile = null;
-          document.getElementById('vDocName').value = '';
-          document.getElementById('vTokenId').value = '';
-          document.getElementById('vFileLabel').textContent = 'Optional file';
-          renderVault();
-          syncProfileUI();
-        };
-
-        if (pickedVaultFile) {
-          const r = new FileReader();
-          r.onload = (ev) => saveObj(pickedVaultFile.type.startsWith('image/') ? ev.target.result : null, pickedVaultFile.name);
-          r.readAsDataURL(pickedVaultFile);
-        } else {
-          saveObj(null, null);
-        }
+        vaultRecords.unshift({
+          id: Date.now(),
+          service,
+          token,
+          status,
+          date: new Date().toLocaleDateString('en-IN')
+        });
+        localStorage.setItem('sahikanoon_vault', JSON.stringify(vaultRecords));
+        document.getElementById('vTokenId').value = '';
+        renderVault();
+        syncProfileUI();
       });
+    }
+
+    function copyTokenAndOpen(token, serviceName) {
+      navigator.clipboard.writeText(token);
+      const match = STATUS_PORTALS.find(sp => sp.name.toLowerCase().includes(serviceName.split(' ')[0].toLowerCase())) || STATUS_PORTALS[0];
+      window.open(match.url, '_blank', 'noopener');
     }
 
     function renderVault() {
       const g = document.getElementById('vaultGrid');
       if (!vaultRecords.length) {
-        g.innerHTML = `<div class="col-span-full text-center py-8 bg-slate-50 border border-dashed border-slate-300 rounded-2xl text-xs text-slate-500">No documents or Application IDs saved yet.</div>`;
+        g.innerHTML = `<div class="col-span-full text-center py-8 bg-slate-50 border border-dashed border-slate-300 rounded-2xl text-xs text-slate-500">No Application IDs saved yet. Add your SRN / ARN / MahaDBT / RTI number above to track it anytime.</div>`;
         return;
       }
       g.innerHTML = vaultRecords.map(v => `
-        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-          <div class="flex justify-between items-center">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">${v.status}</span>
-            <button onclick="vaultRecords=vaultRecords.filter(x=>x.id!==${v.id});localStorage.setItem('sahikanoon_vault',JSON.stringify(vaultRecords));renderVault();syncProfileUI();" class="text-xs text-red-600 font-bold">Delete</button>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between gap-3">
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">${esc(v.status)}</span>
+              <button onclick="vaultRecords=vaultRecords.filter(x=>x.id!==${v.id});localStorage.setItem('sahikanoon_vault',JSON.stringify(vaultRecords));renderVault();syncProfileUI();" class="text-xs text-red-600 font-bold">Remove</button>
+            </div>
+            <h4 class="font-bold text-sm text-slate-900">${esc(v.service)}</h4>
+            <p class="font-mono text-xs bg-white border border-slate-200 px-3 py-1.5 rounded-xl text-blue-700 font-bold mt-2">${esc(v.token)}</p>
+            <p class="text-[11px] text-slate-400 mt-1">Added: ${esc(v.date)}</p>
           </div>
-          <h4 class="font-bold text-sm text-slate-900">${v.name}</h4>
-          ${v.token ? `<p class="font-mono text-xs bg-white border border-slate-200 px-2.5 py-1 rounded-lg text-blue-700 font-bold">Token ID: ${v.token}</p>` : ''}
-          <p class="text-[11px] text-slate-500">Saved: ${v.date}</p>
-          ${v.img ? `<img src="${v.img}" class="w-full h-32 object-cover rounded-xl border" />` : ''}
+          <button onclick="copyTokenAndOpen('${esc(v.token)}','${esc(v.service)}')" class="w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold">📋 Copy ID & Open Status Portal ↗</button>
         </div>
       `).join('');
     }
 
     // =========================================================================
-    // HAMIPATRA, RTI & COMPLAINT DRAFTER
+    // HAMIPATRA, RTI & OFFICER COMPLAINT DRAFTER
     // =========================================================================
     function generateDraft(type) {
       const p = isVerified() ? profile : { name: '[Applicant Full Name]', age: '[Age]', phone: '[Mobile]', area: '[Area/Locality]', district: '[District]', pincode: '[PIN]', state: '[State]' };
@@ -1782,7 +2363,7 @@
     }
 
     // =========================================================================
-    // CONTEXT-AWARE AI CHATBOT (CAMERA + FILE OCR + VOICE)
+    // CONTEXT-AWARE AI COPILOT + CAMERA/FILE OCR SCANNER
     // =========================================================================
     function toggleAIChat() { document.getElementById('aiChatWin').classList.toggle('hidden'); }
     function quickAsk(q) { document.getElementById('aiIn').value = q; sendAIChat(new Event('submit')); }
@@ -1798,9 +2379,9 @@
       if (!inp.files || !inp.files[0]) return;
       const f = inp.files[0];
       const box = document.getElementById('aiMsgs');
-      box.innerHTML += `<div class="flex justify-end"><div class="bg-blue-600 text-white px-3 py-2 rounded-2xl text-xs font-bold">📎 ${f.name}</div></div>`;
+      box.innerHTML += `<div class="flex justify-end"><div class="bg-blue-600 text-white px-3 py-2 rounded-2xl text-xs font-bold">📎 ${esc(f.name)}</div></div>`;
       const id = 'sc_' + Date.now();
-      box.innerHTML += `<div id="${id}" class="bg-white border p-3 rounded-2xl text-xs">⏳ Scanning document text...</div>`;
+      box.innerHTML += `<div id="${id}" class="bg-white border p-3 rounded-2xl text-xs flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-600 dot-1"></span><span class="w-2 h-2 rounded-full bg-blue-600 dot-2"></span><span class="w-2 h-2 rounded-full bg-blue-600 dot-3"></span><span>Scanning document text...</span></div>`;
       box.scrollTop = box.scrollHeight;
       if (f.type.startsWith('image/') && window.Tesseract) {
         const res = await Tesseract.recognize(f, 'eng');
@@ -1809,6 +2390,7 @@
       } else {
         document.getElementById(id).innerHTML = `<p>File received! Ask your question about this file below.</p>`;
       }
+      inp.value = '';
     }
 
     function sendAIChat(e) {
@@ -1817,12 +2399,18 @@
       const q = inp.value.trim();
       if (!q) return;
       const box = document.getElementById('aiMsgs');
-      box.innerHTML += `<div class="flex justify-end"><div class="bg-blue-600 text-white px-3 py-2 rounded-2xl max-w-[85%]">${q}</div></div>`;
+      box.innerHTML += `<div class="flex justify-end"><div class="bg-blue-600 text-white px-3 py-2 rounded-2xl max-w-[85%]">${esc(q)}</div></div>`;
       inp.value = '';
+
+      const tid = 'tp_' + Date.now();
+      box.innerHTML += `<div id="${tid}" class="bg-white border border-slate-200 px-3.5 py-2.5 rounded-2xl inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-600 dot-1"></span><span class="w-2 h-2 rounded-full bg-blue-600 dot-2"></span><span class="w-2 h-2 rounded-full bg-blue-600 dot-3"></span></div>`;
+      box.scrollTop = box.scrollHeight;
+
       setTimeout(() => {
-        box.innerHTML += `<div class="bg-white border border-slate-200 p-3 rounded-2xl space-y-2">${replyAI(q)}</div>`;
+        const el = document.getElementById(tid);
+        if (el) el.outerHTML = `<div class="bg-white border border-slate-200 p-3 rounded-2xl space-y-2">${replyAI(q)}</div>`;
         box.scrollTop = box.scrollHeight;
-      }, 150);
+      }, 320);
     }
 
     function replyAI(raw) {
@@ -1830,14 +2418,25 @@
       const tokens = q.replace(/chabi|key/g,'keys tow').replace(/scam|fraud/g,'fraud 1930 cybercrime').replace(/pagar/g,'salary').split(/\s+/).filter(w => w.length > 2);
       let hits = [];
       const sc = (o) => tokens.reduce((a, w) => a + (JSON.stringify(o).toLowerCase().includes(w) ? 1 : 0), 0);
-      cache.documents.forEach(d => { const s = sc(d); if (s) hits.push({ s: s+0.3, type: 'documents', id: d.id, title: d.doc_name, sub: `Sample Form Ready • ${d.official_fee}` }); });
-      cache.schemes.forEach(x => { const s = sc(x); if (s) hits.push({ s: s+0.2, type: 'schemes', id: x.id, title: loc(x,'title'), sub: x.benefit_summary.slice(0,80) }); });
-      cache.laws.forEach(l => { const s = sc(l); if (s) hits.push({ s: s+0.4, type: 'laws', id: l.id, title: `${l.act_name} (${l.section_number})`, sub: loc(l,'title') }); });
-      cache.constitution.forEach(c => { const s = sc(c); if (s) hits.push({ s, type: 'constitution', id: c.id, title: `${c.article_number}: ${loc(c,'title')}`, sub: loc(c,'summary').slice(0,80) }); });
+
+      cache.documents.forEach(d => { const s = sc(d); if (s) hits.push({ s: s+0.3, type: 'documents', id: d.id, tab: 'sample', title: d.doc_name, sub: `Filled Sample Form Ready • ${d.official_fee}` }); });
+      cache.private.forEach(p => { const s = sc(p); if (s) hits.push({ s: s+0.3, type: 'private', id: p.id, tab: 'sample', title: loc(p,'title'), sub: `Private Scholarship • ${p.amount}` }); });
+      cache.schemes.forEach(x => { const s = sc(x); if (s) hits.push({ s: s+0.2, type: 'schemes', id: x.id, tab: 'sample', title: loc(x,'title'), sub: x.benefit_summary.slice(0,80) }); });
+      cache.laws.forEach(l => { const s = sc(l); if (s) hits.push({ s: s+0.4, type: 'laws', id: l.id, tab: 'steps', title: `${l.act_name} (${l.section_number})`, sub: loc(l,'title') }); });
+      cache.constitution.forEach(c => { const s = sc(c); if (s) hits.push({ s, type: 'constitution', id: c.id, tab: 'steps', title: `${c.article_number}: ${loc(c,'title')}`, sub: loc(c,'summary').slice(0,80) }); });
+
       hits.sort((a,b) => b.s - a.s);
       const top = hits.slice(0,2);
-      if (!top.length) return `<p>Ask about <b>Aadhaar sample form, MahaDBT scholarship, Bike keys rule, Zero FIR, UPI 1930, or Article 21</b>.</p>`;
-      return top.map(m => `<div class="p-2.5 rounded-xl bg-slate-50 border"><p class="font-bold">${m.title}</p><p class="text-[11px] text-slate-600">${m.sub}</p><button onclick="openDetail('${m.type}',${m.id}); toggleAIChat();" class="mt-1.5 px-2.5 py-1 rounded bg-blue-600 text-white font-bold text-[11px]">Open Page →</button></div>`).join('');
+      if (!top.length) {
+        return `<p>Ask about <b>Aadhaar sample form, Kotak/Reliance private scholarship, MahaDBT, Bike keys rule, Zero FIR, UPI 1930, or Article 21</b>.</p>`;
+      }
+      return top.map(m => `
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+          <p class="font-bold text-slate-900">${esc(m.title)}</p>
+          <p class="text-[11px] text-slate-600 mt-0.5">${esc(m.sub)}</p>
+          <button onclick="openDetail('${m.type}',${m.id},'${m.tab}'); toggleAIChat();" class="mt-2 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-bold text-[11px]">Open Page →</button>
+        </div>
+      `).join('');
     }
 
     // =========================================================================
