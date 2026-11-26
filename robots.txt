@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sahikanoon.vercel.app/sitemap.xml
